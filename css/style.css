@@ -371,9 +371,9 @@ ul {
 
 .header-content h1 {
   font-size: 3.2rem;
-  color: #e67e22; 
+  color: #ff7301; 
   margin-bottom: 25px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
   line-height: 1.2;
 }
 

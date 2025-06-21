@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Proyek - Agung Perkasa Borepile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        :root {
+            --primary-color: #1a3a6e;
+            --secondary-color: #e67e22;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --white: #fff;
+            --black: #000;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            padding-top: 80px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            border-radius: 2px;
+        }
+
+        /* ===== NAVBAR STYLES ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            padding: 10px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(26, 58, 110, 0.98) !important;
+            padding: 5px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .logo span {
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        .navbar.scrolled .logo {
+            color: var(--white);
+        }
+
+        .navbar.scrolled .logo img {
+            height: 35px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            color: var(--dark-color);
+            position: relative;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .nav-menu a {
+            color: var(--white);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .bar {
+            display: block;
+            width: 28px;
+            height: 3px;
+            margin: 6px auto;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .menu-toggle .bar {
+            background-color: var(--white);
+        }
+
+        /* ===== GALLERY STYLES ===== */
+        .gallery-controls {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background: none;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .filter-btn:hover, 
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background: rgba(26, 58, 110, 0.8);
+            color: var(--white);
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* ===== LIGHTBOX STYLES ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            text-align: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-caption {
+            color: var(--white);
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .nav-lightbox {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            z-index: 2001;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        /* ===== FOOTER STYLES ===== */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 140px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-col p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 6px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.7);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 8px;
+        }
+
+        .footer-col ul li i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            background-color: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            margin: 0 10px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu-toggle.active .bar:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            
+            .menu-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active .bar:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transition: var(--transition);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .navbar.scrolled .nav-menu {
+                background-color: var(--primary-color);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+                margin: 3px;
+            }
+            
+            .gallery-caption {
+                padding: 10px;
+            }
+            
+            .gallery-caption h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="imgs/AGUNG PERKASA LOGO BG TRANSPARAN.png" alt="Agung Perkasa Borepile">
+                <span>Agung Perkasa <br>‎ ‎ ‎ ‎ ‎ Borepile</span>
+            </a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#services">Layanan</a></li>
+                <li><a href="gallery.html" class="active">Galeri</a></li>
+                <li><a href="index.html#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Galeri Proyek Kami</h2>
+            
+            <div class="gallery-controls">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="borepile">Borepile</button>
+                <button class="filter-btn" data-filter="strauss">Strauss Pile</button>
+                <button class="filter-btn" data-filter="completed">Proyek Selesai</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Item 1 -->
+                <div class="gallery-item" data-category="borepile completed">
+                    <img src="imgs/WhatsApp Image 2024-05-11 at 21.37.50.jpeg" alt="" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Proyek Pondasi Rumah</h3>
+                        <p>10 titik</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="gallery-item" data-category="strauss completed">
+                    <img src="" alt="" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/WhatsApp Image 2024-05-11 at 21.39.31.jpeg" alt="" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="gallery-item" data-category="strauss completed">
+                    <img src="" alt="" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <!-- Item 5 -->
+                <div class="gallery-item" data-category="borepile completed">
+                    <img src="imgs/WhatsApp Image 2024-05-11 at 21.41.01.jpeg" alt="" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <!-- Item 6 -->
+                <div class="gallery-item" data-category="strauss">
+                    <img src="" alt="" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <!-- Item 7 -->
+                <div class="gallery-item" data-category="borepile completed">
+                    <img src="imgs/WhatsApp Image 2024-05-11 at 21.40.53.jpeg" alt="" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <!-- Item 8 -->
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/WhatsApp Image 2024-05-11 at 21.54.25.jpeg" alt="" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <!-- Item 9 -->
+                <div class="gallery-item" data-category="strauss completed">
+                    <img src="imgs/" alt="Proyek" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <!-- Item 10 -->
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/WhatsApp Image 2024-05-11 at 21.39.30 (1).jpeg" alt="Proyek " class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <!-- Item 11 -->
+                <div class="gallery-item" data-category="strauss completed">
+                    <img src="imgs/proyek11.jpg" alt="Proyek " class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <!-- Item 12 -->
+                <div class="gallery-item" data-category="borepile completed">
+                    <img src="imgs/WhatsApp Image 2024-05-11 at 21.40.02 (1).jpeg" alt="Proyek" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox">&times;</span>
+            <img src="" alt="" class="lightbox-img">
+            <div class="lightbox-caption"></div>
+            <div class="nav-lightbox prev"><i class="fas fa-chevron-left"></i></div>
+            <div class="nav-lightbox next"><i class="fas fa-chevron-right"></i></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <img src="imgs/LOGO AGUNG PERKASA.jpeg" alt="Agung Perkasa Borepile">
+                        <span>Agung Perkasa Borepile</span>
+                    </div>
+                    <p>Spesialis pondasi borepile dan strauss pile dengan pengalaman lebih dari 15 tahun melayani proyek konstruksi di Indonesia.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="index.html#services">Jasa Borepile</a></li>
+                        <li><a href="index.html#services">Jasa Strauss Pile</a></li>
+                        <li><a href="index.html#services">Konsultasi Pondasi</a></li>
+                        <li><a href="index.html#services">Test Sondir Tanah</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Navigasi</h3>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="index.html#services">Layanan</a></li>
+                        <li><a href="gallery.html">Galeri</a></li>
+                        <li><a href="index.html#about">Tentang Kami</a></li>
+                        <li><a href="index.html#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Kontak</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Sunter Muara II, RT.17/RW.05, Sunter Agung, Jakarta Utara</li>
+                        <li><i class="fas fa-phone-alt"></i> +62 82233569632</li>
+                        <li><i class="fas fa-envelope"></i> agungperkasaborepile@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Senin-Minggu: 07.00-23.00 WIB</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Agung Perkasa Borepile. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Kebijakan Privasi</a>
+                    <a href="#">Syarat & Ketentuan</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Functionality
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        // Toggle Mobile Menu
+        mobileMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Toggle body overflow
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 0);
+        });
+
+        // Gallery Filter Functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                
+                // Filter gallery items
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category.includes(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        const lightboxCaption = document.querySelector('.lightbox-caption');
+        const closeBtn = document.querySelector('.close-lightbox');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        
+        let currentIndex = 0;
+        const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
+        const galleryCaptions = Array.from(document.querySelectorAll('.gallery-caption'));
+        
+        // Open lightbox
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentIndex = index;
+                updateLightbox();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Update lightbox content
+        function updateLightbox() {
+            lightboxImg.src = galleryImages[currentIndex].src;
+            lightboxCaption.textContent = galleryCaptions[currentIndex].textContent;
+        }
+        
+        // Navigation
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightbox();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % galleryImages.length;
+            updateLightbox();
+        });
+        
+        // Close lightbox
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                } else if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                    updateLightbox();
+                } else if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % galleryImages.length;
+                    updateLightbox();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
