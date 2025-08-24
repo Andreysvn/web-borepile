@@ -2,16 +2,30 @@
 <html lang="id">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16649506462"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16649506462');
-  <!-- Event snippet for Kontak conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. --> <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-16649506462/GpbhCNXSwYsbEJ6djYM-', 'event_callback': callback }); return false; } </script>
-
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16649506462"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16649506462');
+    </script>
+    
+    <!-- Event snippet for Kontak conversion page -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16649506462/GpbhCNXSwYsbEJ6djYM-',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agung Perkasa Borepile - Jasa Borepile & Strauss Pile Profesional</title>
@@ -62,7 +76,7 @@
             <h1>Solusi Pondasi Profesional untuk Proyek Anda</h1>
             <p>Menyediakan jasa borepile dan strauss pile dengan kualitas terbaik dan pengalaman lebih dari 10 tahun di proyek</p>
             <div class="header-buttons">
-                <a href="#contact" class="btn-primary promo-btn">Dapatkan Harga Promo</a>
+                <a href="#contact" class="btn-primary promo-btn" onclick="return gtag_report_conversion('#contact');">Dapatkan Harga Promo</a>
                 <a href="#services" class="btn-secondary">Layanan Kami</a>
             </div>
         </div>
@@ -145,7 +159,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#contact" class="btn-service-quote">Minta Penawaran</a>
+                        <a href="#contact" class="btn-service-quote" onclick="return gtag_report_conversion('#contact');">Minta Penawaran</a>
                     </div>
                 </div>
                 
@@ -197,7 +211,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#contact" class="btn-service-quote">Minta Penawaran</a>
+                        <a href="#contact" class="btn-service-quote" onclick="return gtag_report_conversion('#contact');">Minta Penawaran</a>
                     </div>
                 </div>
             </div>
@@ -252,7 +266,7 @@
                     </div>
                     <div class="modal-cta">
                         <p>Masih bingung memilih layanan yang tepat? Hubungi kami untuk konsultasi gratis!</p>
-                        <a href="#contact" class="btn-primary">Konsultasi Sekarang</a>
+                        <a href="#contact" class="btn-primary" onclick="return gtag_report_conversion('#contact');">Konsultasi Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -398,7 +412,7 @@
                     </div>
                 </div>
                 
-                <a href="#contact" class="cta-button">Tanya Gratis ke Ahli Pondasi Kami <i class="fas fa-arrow-right"></i></a>
+                <a href="#contact" class="cta-button" onclick="return gtag_report_conversion('#contact');">Tanya Gratis ke Ahli Pondasi Kami <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="about-image" data-aos="fade-left">
                 <img src="imgs/WhatsApp Image 2024-05-11 at 21.39.29.jpeg" alt="Tim Ahli Pondasi Kami" class="featured-image">
@@ -625,7 +639,7 @@
                         <label for="message">Pesan</label>
                         <textarea id="message" rows="5" placeholder="Detail kebutuhan proyek Anda" required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary">Kirim Pesan</button>
+                    <button type="submit" class="btn-primary" onclick="return gtag_report_conversion('#contact');">Kirim Pesan</button>
                 </form>
             </div>
         </div>
@@ -814,7 +828,7 @@
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/6282233569632" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/6282233569632" class="whatsapp-float" target="_blank" onclick="return gtag_report_conversion('https://wa.me/6282233569632');">
         <i class="fab fa-whatsapp"></i>
     </a>
 
