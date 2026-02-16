@@ -214,7 +214,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Form submission
+    // Newsletter/Mulai Layanan Form - Send to WhatsApp
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('newsletter-email').value || '';
+            
+            if (!email) {
+                alert('Mohon isi email Anda terlebih dahulu');
+                return;
+            }
+            
+            // Build WhatsApp message
+            const whatsappMessage = `Halo, saya ingin mulai layanan. Email saya: ${email}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // WhatsApp Business number
+            const whatsappNumber = '6285814173761';
+            
+            // Build WhatsApp URL
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Show confirmation
+            alert('Terima kasih! Anda akan diarahkan ke WhatsApp...');
+            
+            // Open WhatsApp
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 500);
+            
+            // Reset form
+            newsletterForm.reset();
+        });
+    }
+
+    // Form submission - Send to WhatsApp
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -224,11 +260,39 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(contactForm);
             const formValues = Object.fromEntries(formData.entries());
             
-            // Here you would typically send the form data to a server
-            console.log('Form submitted:', formValues);
+            const name = formValues.name || '';
+            const email = formValues.email || '';
+            const phone = formValues.phone || '';
+            const service = formValues.service || '';
+            const message = formValues.message || '';
+            
+            // Build WhatsApp message format
+            const whatsappMessage = `
+*Form Hubungi Kami - Agung Perkasa Borepile*
+
+*Nama:* ${name}
+*Email:* ${email}
+*Nomor Telepon:* ${phone}
+*Jenis Layanan:* ${service}
+*Pesan:* ${message}
+`.trim();
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // WhatsApp Business number (your number)
+            const whatsappNumber = '6285814173761';
+            
+            // Build WhatsApp URL
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
             
             // Show success message
-            alert(`Terima kasih ${formValues.name || ''}! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.`);
+            alert(`Terima kasih ${name}! Pesan Anda akan dikirim ke WhatsApp kami. Silakan tunggu sebentar...`);
+            
+            // Open WhatsApp with pre-filled message after short delay
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 500);
             
             // Reset form
             contactForm.reset();
