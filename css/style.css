@@ -393,52 +393,7 @@ ul {
   margin-top: 30px;
 }
 
-/* ===== STATS SECTION ===== */
-.stats {
-  padding: 80px 0;
-  background-color: var(--light-color);
-  text-align: center;
-}
-
-.stats .container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.stat-item {
-  margin: 20px;
-  padding: 40px 30px;
-  background: var(--white);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  flex: 1;
-  min-width: 200px;
-  transition: var(--transition);
-}
-
-.stat-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-}
-
-.counter {
-  font-size: 3.2rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  transition: color 0.3s ease;
-}
-
-.counter.animating {
-  color: var(--secondary-color);
-}
-
-.stat-item span {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  font-weight: 500;
-}
+/* Stats section removed */
 
 /* ===== ENHANCED SERVICES SECTION ===== */
 .services {
@@ -983,70 +938,7 @@ ul {
     margin-top: 3px;
 }
 
-/* ===== TESTIMONIALS SECTION ===== */
-.testimonials {
-  background-color: var(--light-color);
-  padding: 100px 0;
-}
-
-.testimonial-slider {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.testimonial-card {
-  background-color: var(--white);
-  border-radius: var(--border-radius);
-  padding: 30px;
-  box-shadow: var(--box-shadow);
-  margin: 0 20px;
-}
-
-.testimonial-content {
-  position: relative;
-  margin-bottom: 25px;
-}
-
-.testimonial-content i {
-  color: var(--secondary-color);
-  font-size: 2rem;
-  opacity: 0.3;
-  position: absolute;
-  top: -10px;
-  left: -10px;
-}
-
-.testimonial-content p {
-  font-style: italic;
-  color: var(--text-color);
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-}
-
-.testimonial-author img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 15px;
-  border: 3px solid var(--secondary-color);
-}
-
-.testimonial-author h4 {
-  font-size: 1.1rem;
-  margin-bottom: 5px;
-  color: var(--primary-color);
-}
-
-.testimonial-author span {
-  font-size: 0.9rem;
-  color: var(--text-light);
-}
+/* Testimonials removed */
 
 /* ===== FAQ SECTION ===== */
 .faq {
