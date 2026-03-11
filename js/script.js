@@ -237,6 +237,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Build WhatsApp URL
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
             
+            console.log('Newsletter Form Submitted:', { email, whatsappUrl });
+            
             // Show confirmation
             alert('Terima kasih! Anda akan diarahkan ke WhatsApp...');
             
