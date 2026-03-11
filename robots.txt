@@ -1,0 +1,20 @@
+# robots.txt for Agung Perkasa Borepile
+# Allow all bots to crawl the entire site
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /gallery.html
+Allow: /blog-borepile-vs-strauss.html
+Allow: /css/
+Allow: /js/
+Allow: /imgs/
+
+# Disallow admin or sensitive directories if they exist
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://agungperkasaborepile.com/sitemap.xml
+
+# Crawl delay (optional - adjust based on server capacity)
+# Crawl-delay: 1
