@@ -40,8 +40,11 @@
     <link rel="canonical" href="https://agungperkasaborepile.com">
     <title>Agung Perkasa Borepile - Jasa Borepile & Strauss Pile Profesional</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="preload" as="image" href="imgs/header web borpile.png">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"></noscript>
     
     <!-- JSON-LD Schema Markup -->
     <script type="application/ld+json">
@@ -83,7 +86,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <img src="imgs/AGUNG PERKASA LOGO BG TRANSPARAN.png" alt="Agung Perkasa Borepile">
+                <img src="imgs/AGUNG PERKASA LOGO BG TRANSPARAN.png" alt="Agung Perkasa Borepile" loading="lazy" decoding="async">
                 <span>Agung Perkasa <br>‎ ‎ ‎ ‎ ‎ Borepile</span>
             </a>
             <div class="menu-toggle" id="mobile-menu">
@@ -108,15 +111,8 @@
 
     <!-- Header with Video Background -->
     <header class="header" id="home">
-        <div class="video-background">
-            <video autoplay muted loop playsinline id="bg-video">
-                <source src="vds/WhatsApp Video 2024-08-18 at 16.22.52 (1).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="video-background" data-video-src="vds/WhatsApp Video 2024-08-18 at 16.22.52 (1).mp4">
             <div class="video-overlay"></div>
-            <!-- Fallback image for mobile -->
-            <div class="video-fallback"></div>
-            <img src="imgs/header web borpile.png" alt="Header Solusi Pondasi Profesional Borepile" /> 
         </div>
         <div class="header-content" data-aos="fade-up">
             <h1>Solusi Pondasi untuk Proyek Anda</h1>
@@ -139,7 +135,7 @@
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up">
                     <div class="service-img">
-                        <img src="imgs/layanan 1.jpeg" alt="Jasa Borepile">
+                        <img src="imgs/layanan 1.jpeg" alt="Jasa Borepile" loading="lazy" decoding="async">
                         <div class="service-hover-content">
                             <h3>Detail Borepile</h3>
                             <p>Klik untuk melihat spesifikasi teknis lengkap</p>
@@ -191,7 +187,7 @@
                 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-img">
-                        <img src="imgs/layanan 1.jpeg" alt="Jasa Strauss Pile">
+                        <img src="imgs/layanan 1.jpeg" alt="Jasa Strauss Pile" loading="lazy" decoding="async">
                         <div class="service-hover-content">
                             <h3>Detail Strauss Pile</h3>
                             <p>Klik untuk melihat spesifikasi teknis lengkap</p>
@@ -313,7 +309,7 @@
             
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-aos="fade-up">
-                    <img src="imgs/porto univ.jpeg" alt="Proyek Borepile">
+                    <img src="imgs/porto univ.jpeg" alt="Proyek Borepile" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Proyek Gedung Universitas</h3>
                         <p>Jakarta Selatan - 53 titik borepile</p>
@@ -321,7 +317,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="imgs/porto tiny pik.jpeg" alt="Proyek Strauss Pile">
+                    <img src="imgs/porto tiny pik.jpeg" alt="Proyek Strauss Pile" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Proyek Bangunan</h3>
                         <p>Pantai Indah Kapuk/PIK, Jakarta Utara - 13 titik borepile</p>
@@ -329,7 +325,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="imgs/porto meruya.jpeg" alt="Proyek Borepile">
+                    <img src="imgs/porto meruya.jpeg" alt="Proyek Borepile" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Proyek Bangunan</h3>
                         <p>Puri Kembangan, Jakarta Barat - 20 titik borepile</p>
@@ -337,7 +333,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
-                    <img src="imgs/porto tiny masjid.jpeg" alt="Proyek Borepile">
+                    <img src="imgs/porto tiny masjid.jpeg" alt="Proyek Borepile" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Proyek Bangunan</h3>
                         <p>14 titik borepile</p>
@@ -345,7 +341,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
-                    <img src="imgs/porto kali biru.jpeg" alt="Proyek Borepile">
+                    <img src="imgs/porto kali biru.jpeg" alt="Proyek Borepile" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Proyek Bangunan</h3>
                         <p>8 titik borepile</p>
@@ -353,7 +349,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-aos="fade-up" data-aos-delay="500">
-                    <img src="imgs/porto cor semen.jpeg" alt="Proyek Borepile">
+                    <img src="imgs/porto cor semen.jpeg" alt="Proyek Borepile" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <h3>Proyek Bangunan</h3>
                         <p>16 titik borepile</p>
@@ -372,7 +368,7 @@
             
             <div class="projects-grid">
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="imgs/porto meruya.jpeg" alt="Proyek Pondasi Konstruksi">
+                    <img src="imgs/porto meruya.jpeg" alt="Proyek Pondasi Konstruksi" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>Ready alat dan jasa</h3>
                         <p>Untuk pembuatan pondasi borepile & strausspile</p>
@@ -441,7 +437,7 @@
                 <a href="#contact" class="cta-button">Tanya Gratis ke Owner Pondasi Kami <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="about-image" data-aos="fade-left">
-                <img src="imgs/porto pekerjaan.jpeg" alt="Tim Ahli Pondasi Kami" class="featured-image">
+                <img src="imgs/porto pekerjaan.jpeg" alt="Tim Ahli Pondasi Kami" class="featured-image" loading="lazy" decoding="async">
                 <div class="image-badge">
                     <div class="badge-number">10+</div>
                     <div class="badge-text">Tahun Berpengalaman</div>
@@ -778,7 +774,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="logo">
-                        <img src="imgs/LOGO AGUNG PERKASA.jpeg" alt="Borepile Maju Jaya">
+                        <img src="imgs/LOGO AGUNG PERKASA.jpeg" alt="Borepile Maju Jaya" loading="lazy" decoding="async">
                         <span>Agung Perkasa<br>Borepile</span>
                     </div>
                     <p>Spesialis pondasi borepile dan strauss pile dengan pengalaman lebih dari 10 tahun melayani proyek konstruksi di Indonesia, khususnya di pulau jawa.</p>
@@ -849,7 +845,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

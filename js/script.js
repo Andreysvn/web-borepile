@@ -201,6 +201,33 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', highlightNav);
     highlightNav(); // Run once on load
     
+    const loadHeroVideo = () => {
+        const heroBackground = document.querySelector('.video-background');
+        if (!heroBackground) return;
+
+        const videoSrc = heroBackground.dataset.videoSrc;
+        if (!videoSrc) return;
+
+        if (window.innerWidth >= 992) {
+            const video = document.createElement('video');
+            video.setAttribute('autoplay', '');
+            video.setAttribute('muted', '');
+            video.setAttribute('loop', '');
+            video.setAttribute('playsinline', '');
+            video.setAttribute('preload', 'metadata');
+            video.className = 'hero-video';
+
+            const source = document.createElement('source');
+            source.src = videoSrc;
+            source.type = 'video/mp4';
+            video.appendChild(source);
+
+            heroBackground.insertBefore(video, heroBackground.firstChild);
+        }
+    };
+
+    loadHeroVideo();
+
     // Initialize AOS (Animate On Scroll)
     if (typeof AOS !== 'undefined') {
         AOS.init({
