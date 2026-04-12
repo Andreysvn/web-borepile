@@ -240,6 +240,52 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Footer visitor counter
+    const visitorCounterApiUrl = '/api/visitor-today';
+
+    const updateVisitorCounter = async () => {
+        const counterElement = document.getElementById('visitorCounter');
+        if (!counterElement) return;
+
+        const renderCount = value => {
+            counterElement.innerHTML = `<i class="fas fa-users"></i> Total Visitor: ${value}`;
+        };
+
+        const fetchVisitorCount = async () => {
+            if (!visitorCounterApiUrl) return null;
+            try {
+                const response = await fetch(visitorCounterApiUrl, { cache: 'no-cache' });
+                if (!response.ok) throw new Error('Gagal mengambil data');
+                const data = await response.json();
+                return typeof data.count === 'number' ? data.count : null;
+            } catch (error) {
+                console.warn('Visitor API tidak tersedia:', error);
+                return null;
+            }
+        };
+
+        const apiCount = await fetchVisitorCount();
+        if (apiCount !== null) {
+            renderCount(apiCount.toLocaleString('id-ID'));
+            return;
+        }
+
+        const storageKey = 'apbVisitorCount';
+        let count = 0;
+
+        try {
+            count = parseInt(localStorage.getItem(storageKey), 10) || 0;
+            count += 1;
+            localStorage.setItem(storageKey, count.toString());
+            renderCount(count.toLocaleString('id-ID'));
+        } catch (error) {
+            console.warn('LocalStorage tidak tersedia:', error);
+            counterElement.innerHTML = `<i class="fas fa-users"></i> Total Visitor: tidak tersedia`;
+        }
+    };
+
+    updateVisitorCounter();
     
     // Newsletter/Mulai Layanan Form - Send to WhatsApp
     const newsletterForm = document.getElementById('newsletterForm');

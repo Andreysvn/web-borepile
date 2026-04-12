@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Borepile vs Strauss Pile: Perbedaan, Keunggulan, dan Cara Memilih",
+    "link": "blog-borepile-vs-strauss.html",
+    "image": "imgs/porto borpile biru.jpeg",
+    "excerpt": "Perbandingan lengkap antara borepile dan strauss pile untuk membantu Anda memilih pondasi terbaik.",
+    "categories": ["borepile", "strauss", "perbandingan"],
+    "date": "10 Maret 2026",
+    "popular": true
+  },
+  {
+    "title": "Tips Memilih Pondasi Borepile yang Hemat Biaya",
+    "link": "blog-pondasi-hemat-biaya.html",
+    "image": "imgs/porto pekerjaan.jpeg",
+    "excerpt": "Strategi menghemat biaya pondasi tanpa mengorbankan kekuatan dan kualitas struktur.",
+    "categories": ["borepile", "biaya"],
+    "date": "Segera",
+    "popular": false
+  },
+  {
+    "title": "Panduan Pondasi untuk Area Terbatas",
+    "link": "blog-pondasi-area-terbatas.html",
+    "image": "imgs/porto borpile dn truk molen.jpeg",
+    "excerpt": "Solusi pondasi terbaik untuk proyek di lokasi sempit dan padat.",
+    "categories": ["strauss", "area-terbatas"],
+    "date": "Segera",
+    "popular": false
+  },
+  {
+    "title": "Cara Memperkuat Pondasi di Tanah Lunak",
+    "link": "#",
+    "image": "imgs/porto meruya.jpeg",
+    "excerpt": "Teknik memperkuat pondasi untuk tanah lunak agar struktur lebih stabil dan tahan lama.",
+    "categories": ["borepile"],
+    "date": "Segera",
+    "popular": false
+  }
+]
