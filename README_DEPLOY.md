@@ -14,7 +14,8 @@ Proyek ini adalah website statis dengan backend Node.js sederhana di `server.js`
 
 ### GitHub Pages
 - Cocok untuk website statis seperti `index.html`, `proses-jasa.html`, `css/`, `js/`, dan `imgs/`
-- Saat ini repo sudah disiapkan dengan `CNAME` untuk custom domain `agungperkasaborepile.com`
+- Gunakan alamat default GitHub Pages:
+  `https://Andreysvn.github.io/web-borepile/`
 - Tidak bisa menjalankan `server.js` atau API backend pada GitHub Pages
 - Backend visitor akan dideploy nanti di Render atau hosting terpisah
 
@@ -44,14 +45,14 @@ Proyek ini adalah website statis dengan backend Node.js sederhana di `server.js`
    - root: `.`
 4. Render bisa otomatis membaca `render.yaml` di root repo.
 5. Tambahkan environment variable:
-   - `ALLOWED_ORIGINS=https://agungperkasaborepile.com`
+   - `ALLOWED_ORIGINS=https://Andreysvn.github.io`
 6. Deploy dan tunggu sampai status "Live".
 7. Buka `https://<app-url>/api/visitor-today` untuk verifikasi.
 8. Setelah backend live, gunakan URL tersebut di halaman GitHub Pages.
 
 ## Integrasi GitHub Pages dengan Render visitor API
 
-Jika website utama di-host di GitHub Pages dengan custom domain, ganti endpoint visitor di `js/script.js` dengan alamat Render:
+Jika website utama di-host di GitHub Pages menggunakan domain default GitHub Pages, ganti endpoint visitor di `js/script.js` dengan alamat Render:
 
 ```html
 <script>
@@ -62,7 +63,7 @@ Jika website utama di-host di GitHub Pages dengan custom domain, ganti endpoint 
 
 Letakkan kode ini sebelum `js/script.js` dimuat di `index.html`, `proses-jasa.html`, dan `gallery.html`.
 
-> Jika Anda menggunakan `include`, pastikan `ALLOWED_ORIGINS` di Render diatur ke `https://agungperkasaborepile.com`.
+> Jika Anda menggunakan `include`, pastikan `ALLOWED_ORIGINS` di Render diatur ke `https://Andreysvn.github.io`.
 
 ## Catatan penting
 
