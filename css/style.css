@@ -1026,9 +1026,9 @@ ul {
   line-height: 1.5;
 }
 
-.popular-posts .article-date {
+..popular-posts .article-date {
   display: block;
-  color: var(--secondary-color);
+  color: var(--dark-color);
   font-size: 0.9rem;
   margin-bottom: 6px;
 }
@@ -1088,7 +1088,7 @@ ul {
 .blog-list .article-date {
   display: inline-block;
   width: 120px;
-  color: var(--secondary-color);
+  color: var(--dark-color);
   font-weight: 600;
 }
 
