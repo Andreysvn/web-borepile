@@ -26,6 +26,47 @@ function formatArticleDate(date) {
   return `<span class="article-date">${date}</span> `;
 }
 
+function formatDateString(dateString) {
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toLocaleDateString('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+}
+
+function shouldFetchLastModified(article) {
+  if (!article.link || article.link === '#') return false;
+  const date = article.date ? article.date.toString().trim().toLowerCase() : '';
+  return date === 'segera' || date === 'coming soon' || date === 'tbd' || date === '';
+}
+
+function fetchLastModified(article) {
+  if (!shouldFetchLastModified(article)) return Promise.resolve(article);
+  return fetch(article.link, { method: 'HEAD', cache: 'no-cache' })
+    .then(response => {
+      const lastModified = response.headers.get('last-modified');
+      if (lastModified) {
+        const formatted = formatDateString(lastModified);
+        if (formatted) {
+          article.date = formatted;
+          return article;
+        }
+      }
+      if (response.ok) {
+        const now = new Date();
+        article.date = now.toLocaleDateString('id-ID', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        });
+      }
+      return article;
+    })
+    .catch(() => article);
+}
+
 function createUpdateItem(article) {
   const item = document.createElement('li');
   item.innerHTML = `${formatArticleDate(article.date)}${article.link !== '#' ? `<a href="${article.link}">${article.title}</a>` : article.title}`;
@@ -34,10 +75,7 @@ function createUpdateItem(article) {
 
 function createPopularItem(article) {
   const item = document.createElement('li');
-  item.innerHTML = `
-    ${formatArticleDate(article.date)}
-    ${article.link !== '#' ? `<a href="${article.link}">${article.title}</a>` : article.title}
-  `;
+  item.innerHTML = `${formatArticleDate(article.date)}${article.link !== '#' ? `<a href="${article.link}">${article.title}</a>` : article.title}`;
   return item;
 }
 
@@ -74,12 +112,15 @@ fetch('blog-data.json')
   .then(response => response.json())
   .then(data => {
     blogArticles = data;
-    renderArticles(blogArticles);
-    renderUpdates(blogArticles);
-    renderPopular(blogArticles);
+    Promise.all(blogArticles.map(fetchLastModified)).then(updatedArticles => {
+      blogArticles = updatedArticles;
+      renderArticles(blogArticles);
+      renderUpdates(blogArticles);
+      renderPopular(blogArticles);
 
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => applyFilter(button.dataset.category));
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => applyFilter(button.dataset.category));
+      });
     });
   })
   .catch(error => {

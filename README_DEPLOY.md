@@ -28,15 +28,18 @@ Proyek ini adalah website statis dengan backend Node.js sederhana di `server.js`
 
 ## Langkah deploy ke Render
 
-1. Push kode ke GitHub
-2. Buat akun Render dan hubungkan repo
+1. Push kode ke GitHub (sudah dilakukan).
+2. Buat akun Render dan hubungkan repo GitHub.
 3. Tambahkan service baru:
    - type: Web Service
    - branch: main
    - build command: `npm install`
    - start command: `npm start`
-4. Render akan mem-build dan menjalankan `server.js`
-5. Buka URL hasil deploy dan cek footer `Total Visitor`
+   - root: `.`
+4. Render bisa otomatis membaca `render.yaml` di root repo.
+5. Deploy dan tunggu sampai status "Live".
+6. Buka `https://<app-url>/api/visitor-today` untuk verifikasi.
+7. Buka situs deploy untuk memastikan footer `Total Visitor` tampil.
 
 ## Catatan penting
 

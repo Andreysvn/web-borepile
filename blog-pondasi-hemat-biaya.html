@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -50,6 +51,10 @@
         <div class="blog-content">
             <h2>Memahami biaya pondasi sebelum pengerjaan</h2>
             <p>Pondasi borepile bisa menjadi investasi yang kuat jika dipilih dengan benar. Artikel ini membahas cara memilih komponen dan metode yang memang menghasilkan efisiensi biaya tanpa mengurangi kekuatan struktur.</p>
+            <figure>
+                <img class="blog-image" src="imgs/porto%20pondasi%20rumah.jpeg" alt="Contoh proyek pondasi borepile" loading="lazy" decoding="async">
+                <figcaption class="blog-image-caption">Contoh proyek pondasi borepile yang efisien dan hemat biaya.</figcaption>
+            </figure>
             <h3>1. Pilih desain yang tepat</h3>
             <p>Desain yang tepat membantu mengurangi volume beton dan besi yang tidak perlu. Diskusikan kedalaman dan diameter pondasi dengan engineer untuk memastikan kebutuhan beban sesuai kondisi tanah.</p>
             <h3>2. Optimalkan penggunaan material</h3>
@@ -57,11 +62,31 @@
             <h3>3. Pilih metode pengerjaan yang efisien</h3>
             <p>Pekerjaan yang terencana dan rapi mengurangi waktu tunggu alat dan mobilisasi. Pastikan tim borepile menggunakan alat yang sesuai dan operator berpengalaman agar pekerjaan selesai sesuai jadwal.</p>
             <div class="cta-box">
-                <h3>Ingin diskusi lebih lanjut?</h3>
+                <h3 style="color: #ffd966; margin-top: 0;">Ingin diskusi lebih lanjut?</h3>
                 <p>Hubungi kami untuk konsultasi gratis mengenai estimasi biaya pondasi borepile yang sesuai dengan proyek Anda.</p>
-                <a href="index.html#contact">Hubungi Kami Sekarang</a>
+                <a href="index.html#contact" class="btn-primary">Hubungi Kami Sekarang</a>
             </div>
         </div>
     </div>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6282233569632" class="whatsapp-float" target="_blank" onclick="return gtag_report_conversion('https://wa.me/6282233569632');" aria-label="Hubungi via WhatsApp" title="Hubungi via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

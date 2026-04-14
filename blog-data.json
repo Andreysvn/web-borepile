@@ -14,7 +14,7 @@
     "image": "imgs/porto pekerjaan.jpeg",
     "excerpt": "Strategi menghemat biaya pondasi tanpa mengorbankan kekuatan dan kualitas struktur.",
     "categories": ["borepile", "biaya"],
-    "date": "Segera",
+    "date": "10 April 2026",
     "popular": false
   },
   {
@@ -23,14 +23,149 @@
     "image": "imgs/porto borpile dn truk molen.jpeg",
     "excerpt": "Solusi pondasi terbaik untuk proyek di lokasi sempit dan padat.",
     "categories": ["strauss", "area-terbatas"],
-    "date": "Segera",
+    "date": "11 April 2026",
     "popular": false
   },
   {
     "title": "Cara Memperkuat Pondasi di Tanah Lunak",
-    "link": "#",
+    "link": "blog-cara-memperkuat-pondasi-di-tanah-lunak.html",
     "image": "imgs/porto meruya.jpeg",
     "excerpt": "Teknik memperkuat pondasi untuk tanah lunak agar struktur lebih stabil dan tahan lama.",
+    "categories": ["borepile"],
+    "date": "12 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Panduan Lengkap Perencanaan Pondasi Borepile",
+    "link": "blog-panduan-lengkap-perencanaan-pondasi-borepile.html",
+    "image": "imgs/porto cor semen.jpeg",
+    "excerpt": "Langkah perencanaan pondasi borepile dari survei tanah hingga finishing struktur.",
+    "categories": ["borepile"],
+    "date": "13 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Strauss Pile untuk Pondasi Rumah di Lokasi Sempit",
+    "link": "blog-strauss-pile-untuk-pondasi-rumah-di-lokasi-sempit.html",
+    "image": "imgs/porto lubang.jpeg",
+    "excerpt": "Solusi strauss pile yang hemat ruang untuk proyek rumah dan renovasi di area terbatas.",
+    "categories": ["strauss", "area-terbatas"],
+    "date": "14 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Strategi Mengurangi Biaya Pondasi Borepile Tanpa Kompromi",
+    "link": "blog-strategi-mengurangi-biaya-pondasi-borepile-tanpa-kompromi.html",
+    "image": "imgs/porto pekerjaan.jpeg",
+    "excerpt": "Tips menekan biaya pondasi borepile melalui desain efisien, material tepat, dan perencanaan matang.",
+    "categories": ["biaya", "borepile"],
+    "date": "9 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Jasa Bore Pile Murah: Solusi Ekonomis untuk Pondasi",
+    "link": "blog-jasa-bore-pile-murah.html",
+    "image": "imgs/porto pekerjaan.jpeg",
+    "excerpt": "Panduan memilih jasa bore pile murah dengan tetap menjaga kualitas pondasi bore pile.",
+    "categories": ["biaya", "borepile"],
+    "date": "4 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Jasa Bore Pile Profesional untuk Pondasi Kuat",
+    "link": "blog-jasa-bore-pile.html",
+    "image": "imgs/porto cor semen.jpeg",
+    "excerpt": "Layanan jasa bore pile yang menyediakan perencanaan, bor, dan pengecoran untuk pondasi bore pile terbaik.",
+    "categories": ["borepile"],
+    "date": "5 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Jasa Bore Pile Jakarta: Pondasi untuk Ibukota",
+    "link": "blog-jasa-bore-pile-jakarta.html",
+    "image": "imgs/porto borpile dn truk molen.jpeg",
+    "excerpt": "Informasi jasa bore pile Jakarta dengan metode bore pile machine dan manual yang sesuai lokasi.",
+    "categories": ["borepile", "biaya"],
+    "date": "6 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Jasa Bore Pile Bekasi: Pondasi Bekasi yang Andal",
+    "link": "blog-jasa-bore-pile-bekasi.html",
+    "image": "imgs/porto borpile dn truk molen.jpeg",
+    "excerpt": "Panduan jasa bore pile Bekasi lengkap dengan perhitungan ukuran pondasi bore pile dan biaya.",
+    "categories": ["borepile"],
+    "date": "7 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Harga Bore Pile Diameter 30cm: Perhitungan Biaya Pondasi",
+    "link": "blog-harga-bore-pile-diameter-30cm.html",
+    "image": "imgs/porto cor semen.jpeg",
+    "excerpt": "Penjelasan harga bore pile diameter 30cm dan faktor yang mempengaruhi biaya pondasi bore pile.",
+    "categories": ["biaya", "borepile"],
+    "date": "8 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Ukuran Pondasi Bore Pile: Diameter dan Kedalaman Ideal",
+    "link": "blog-ukuran-pondasi-bore-pile.html",
+    "image": "imgs/porto borpile biru.jpeg",
+    "excerpt": "Panduan menentukan ukuran pondasi bore pile untuk rumah dan bangunan bertingkat.",
+    "categories": ["borepile"],
+    "date": "4 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Gambar Pondasi Bore Pile: Referensi Visual Proyek",
+    "link": "blog-gambar-pondasi-bore-pile.html",
+    "image": "imgs/porto lubang.jpeg",
+    "excerpt": "Contoh gambar pondasi bore pile untuk memperjelas tahapan kerja dan ukuran pondasi.",
+    "categories": ["borepile"],
+    "date": "5 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Bore Pile Machine: Mesin Bor untuk Pondasi Modern",
+    "link": "blog-bore-pile-machine.html",
+    "image": "imgs/porto borpile biru.jpeg",
+    "excerpt": "Ulasan bore pile machine dan keunggulannya dalam pemasangan pondasi bore pile.",
+    "categories": ["borepile"],
+    "date": "6 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Bore Pile Manual: Solusi Pondasi untuk Lokasi Terbatas",
+    "link": "blog-bore-pile-manual.html",
+    "image": "imgs/porto pekerjaan.jpeg",
+    "excerpt": "Penjelasan bore pile manual sebagai alternatif pondasi bore pile ketika akses terbatas.",
+    "categories": ["borepile", "area-terbatas"],
+    "date": "7 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Bore Pile Adalah: Definisi dan Kelebihan Pondasi",
+    "link": "blog-bore-pile-adalah.html",
+    "image": "imgs/porto cor semen.jpeg",
+    "excerpt": "Definisi bore pile dan manfaatnya untuk pondasi bangunan yang lebih stabil.",
+    "categories": ["borepile"],
+    "date": "8 April 2026",
+    "popular": false
+  },
+  {
+    "title": "Pondasi Bore Pile: Solusi Pondasi Dalam yang Kuat",
+    "link": "blog-pondasi-bore-pile.html",
+    "image": "imgs/porto borpile dn truk molen.jpeg",
+    "excerpt": "Artikel tentang pondasi bore pile, metode, dan manfaatnya untuk struktur tahan lama.",
+    "categories": ["borepile"],
+    "date": "Segera",
+    "popular": false
+  },
+  {
+    "title": "Bore Pile: Informasi Lengkap Tentang Teknik Pondasi",
+    "link": "blog-bore-pile.html",
+    "image": "imgs/porto borpile biru.jpeg",
+    "excerpt": "Ulasan lengkap bore pile, dari definisi, layanan, hingga gambar pondasi bore pile.",
     "categories": ["borepile"],
     "date": "Segera",
     "popular": false

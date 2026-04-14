@@ -259,8 +259,8 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 18px;
         }
 
         .gallery-item {
@@ -272,13 +272,13 @@
         }
 
         .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.14);
         }
 
         .gallery-img {
             width: 100%;
-            height: 250px;
+            height: 220px;
             object-fit: cover;
             display: block;
             transition: transform 0.5s ease;
@@ -408,6 +408,38 @@
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
         }
 
+        .scroll-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+            box-shadow: 0 5px 20px rgba(230, 126, 34, 0.3);
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: #d35400;
+            transform: translateY(-5px);
+        }
+
         /* ===== FOOTER STYLES ===== */
         .footer {
             background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
@@ -501,6 +533,31 @@
             margin-bottom: 0;
             color: rgba(255,255,255,0.5);
             font-size: 0.9rem;
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .footer-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border: 1px solid rgba(255,255,255,0.45);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .footer-counter i {
+            display: inline-block;
+            width: 1rem;
+            text-align: center;
+            color: #4ade80;
         }
 
         .footer-links {
@@ -638,119 +695,104 @@
             <h2>Galeri Proyek Kami</h2>
             
             <div class="gallery-controls">
-                <button class="filter-btn active" data-filter="all">Semua</button>
-                <button class="filter-btn" data-filter="borepile">Borepile</button>
-                <button class="filter-btn" data-filter="strauss">Strauss Pile</button>
-                <button class="filter-btn" data-filter="completed">Proyek Selesai</button>
+                <button class="filter-btn active" data-filter="borepile">Borepile</button>
             </div>
             
             <div class="gallery-grid">
                 <!-- Item 1 -->
-                <div class="gallery-item" data-category="borepile completed">
-                    <img src="imgs/porto pondasi rumah.jpeg" alt="Proyek Borepile Pondasi Rumah - 10 Titik" class="gallery-img">
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/porto pondasi rumah.jpeg" alt="Proyek Borepile Pondasi Rumah" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3>Proyek Pondasi Rumah</h3>
-                        <p>14 titik</p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 2 -->
-                <div class="gallery-item" data-category="strauss completed">
-                    <img src="" alt="" class="gallery-img">
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/porto borpile dn truk molen.jpeg" alt="Proyek Borepile dengan truk molen" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 3 -->
                 <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto borpile dn truk molen.jpeg" alt="Proyek Borepile Kedalaman Hingga 30 Meter" class="gallery-img">
+                    <img src="imgs/porto borpile biru.jpeg" alt="Hasil proyek borepile" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 4 -->
-                <div class="gallery-item" data-category="strauss completed">
-                    <img src="" alt="" class="gallery-img">
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/porto borpile dkt dinding.jpeg" alt="Borepile dekat dinding bangunan" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 5 -->
-                <div class="gallery-item" data-category="borepile completed">
-                    <img src="imgs/porto borpile biru.jpeg" alt="Proyek Borepile Selesai - Konstruksi Pondasi" class="gallery-img">
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/porto dkt gedung.jpeg" alt="Proyek borepile di dekat gedung" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 6 -->
-                <div class="gallery-item" data-category="strauss">
-                    <img src="" alt="" class="gallery-img">
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/porto berembun.jpeg" alt="Proyek borepile di kondisi berembun" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 7 -->
-                <div class="gallery-item" data-category="borepile completed">
-                    <img src="imgs/porto borpile dkt dinding.jpeg" alt="Proyek Borepile Langsung dari Tapak Konstruksi" class="gallery-img">
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/porto cor semen.jpeg" alt="Cor semen borepile" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 8 -->
                 <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto dkt gedung.jpeg" alt="Proses Borepile Dengan Mesin Pengeboran Profesional" class="gallery-img">
+                    <img src="imgs/porto tiny masjid.jpeg" alt="Pondasi borepile untuk masjid kecil" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 9 -->
-                <div class="gallery-item" data-category="strauss completed">
-                    <img src="imgs/" alt="Proyek" class="gallery-img">
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/porto kali biru.jpeg" alt="Proyek borepile di tepi kali" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 10 -->
                 <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto berembun.jpeg" alt="Proyek Borepile Konstruksi di Jakarta" class="gallery-img">
+                    <img src="imgs/porto masjid tosca .jpeg" alt="Pondasi borepile untuk masjid tosca" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 11 -->
-                <div class="gallery-item" data-category="strauss completed">
-                    <img src="imgs/proyek11.jpg" alt="Proyek Strauss Pile Selesai - Pondasi Dalam" class="gallery-img">
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/porto meruya.jpeg" alt="Proyek borepile di Meruya" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
                 
                 <!-- Item 12 -->
-                <div class="gallery-item" data-category="borepile completed">
-                    <img src="imgs/porto masjid tosca .jpeg" alt="Proyek Borepile Profesional - Jasa Pondasi Terbaik" class="gallery-img">
+                <div class="gallery-item" data-category="borepile">
+                    <img src="imgs/porto univ.jpeg" alt="Proyek borepile universitas" class="gallery-img">
                     <div class="gallery-caption">
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                        <h3>Borepile</h3>
+                        </div>
                 </div>
             </div>
         </div>
@@ -771,6 +813,11 @@
     <a href="https://wa.me/6282233569632" class="whatsapp-float" target="_blank" onclick="return gtag_report_conversion('https://wa.me/6282233569632');" aria-label="Hubungi via WhatsApp" title="Hubungi via WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Footer -->
     <footer class="footer">
@@ -929,7 +976,7 @@
         });
         
         // Close lightbox
-        closeBtn.addEventListener('click', () {
+        closeBtn.addEventListener('click', () => {
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
         });
@@ -943,7 +990,7 @@
         });
         
         // Keyboard navigation
-        document.addEventListener('keydown', (e) {
+        document.addEventListener('keydown', (e) => {
             if (lightbox.classList.contains('active')) {
                 if (e.key === 'Escape') {
                     lightbox.classList.remove('active');
@@ -956,6 +1003,21 @@
                     updateLightbox();
                 }
             }
+        });
+
+        // Scroll to Top Button
+        const scrollTopButton = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopButton.classList.add('active');
+            } else {
+                scrollTopButton.classList.remove('active');
+            }
+        });
+
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>

@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: web-borepile
+    env: node
+    plan: free
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    root: .
+    autoDeploy: true
+    healthCheckPath: /api/visitor-today
