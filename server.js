@@ -21,6 +21,13 @@ function saveCounts(counts) {
 }
 
 app.use(cookieParser());
+
+// Content Security Policy for allowed external resources
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://s10.histats.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net https://s10.histats.com; img-src 'self' data: https://www.google-analytics.com https://stats.g.doubleclick.net https://sstatic1.histats.com https://www.googletagmanager.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.google.com https://www.googletagmanager.com;");
+  next();
+});
+
 app.use(express.static(path.join(__dirname)));
 
 app.get('/api/visitor-today', (req, res) => {

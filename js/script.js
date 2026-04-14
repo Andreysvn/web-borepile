@@ -1,3 +1,18 @@
+window.gtag_report_conversion = function(url) {
+    if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16649506462',
+            'event_callback': function() {
+                if (url) {
+                    window.location = url;
+                }
+            }
+        });
+    }
+
+    return true;
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobile-menu');
@@ -249,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!counterElement) return;
 
         const renderCount = value => {
-            counterElement.innerHTML = `<i class="fas fa-users"></i> Total Visitor: ${value}`;
+            counterElement.innerHTML = `<i class="fas fa-users"></i> Pengunjung Hari Ini: ${value}`;
         };
 
         const fetchVisitorCount = async () => {
@@ -281,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
             renderCount(count.toLocaleString('id-ID'));
         } catch (error) {
             console.warn('LocalStorage tidak tersedia:', error);
-            counterElement.innerHTML = `<i class="fas fa-users"></i> Total Visitor: tidak tersedia`;
+            counterElement.innerHTML = `<i class="fas fa-users"></i> Pengunjung Hari Ini: tidak tersedia`;
         }
     };
 

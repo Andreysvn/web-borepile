@@ -377,6 +377,16 @@ ul {
   padding: 12px 28px;
 }
 
+.blog {
+  padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .blog {
+    padding-top: 60px;
+  }
+}
+
 /* ===== NAVBAR STYLES ===== */
 .navbar {
   position: fixed;
@@ -1741,7 +1751,9 @@ ul {
   justify-content: center;
   font-size: 1.8rem;
   box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
-  z-index: 100;
+  z-index: 9999;
+  pointer-events: auto;
+  cursor: pointer;
   transition: var(--transition);
   animation: pulse 2s infinite;
 }

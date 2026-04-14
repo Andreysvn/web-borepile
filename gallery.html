@@ -1,669 +1,84 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0XR9HSRRWX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16649506462"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-0XR9HSRRWX');
+        gtag('config', 'AW-16649506462');
         gtag('config', 'AW-16649506462');
     </script>
-    
-    <!-- Event snippet for Kontak conversion page -->
-    <script>
-        function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof(url) != 'undefined') {
-                    window.location = url;
-                }
-            };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-16649506462/GpbhCNXSwYsbEJ6djYM-',
-                'event_callback': callback
-            });
-            return false;
-        }
-    </script>
-    
+
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://s10.histats.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net https://s10.histats.com; img-src 'self' data: https://www.google-analytics.com https://stats.g.doubleclick.net https://sstatic1.histats.com https://www.googletagmanager.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.google.com https://www.googletagmanager.com;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Galeri proyek borepile dan strauss pile profesional. Lihat portfolio kami dari berbagai proyek konstruksi di Jakarta, Bogor, Depok, Tangerang, dan Bekasi.">
-    <meta name="keywords" content="galeri borepile, portfolio strauss pile, proyek pondasi, galeri konstruksi, portfolio borepile Jakarta">
+    <meta name="description" content="Ketahui 3 tahapan proses jasa borepile kami: pengeboran, pemasangan besi, dan penuangan beton. Panduan lengkap dengan ilustrasi interaktif.">
+    <meta name="keywords" content="proses borepile, tahapan pengeboran, pemasangan besi, penuangan beton, pondasi, borepile">
     <meta name="author" content="Agung Perkasa Borepile">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://agungperkasaborepile.com/gallery.html">
-    <meta property="og:title" content="Galeri Proyek - Agung Perkasa Borepile">
-    <meta property="og:description" content="Lihat portfolio lengkap proyek borepile dan strauss pile kami dari berbagai lokasi di Jakarta dan sekitarnya.">
+    <meta property="og:url" content="https://agungperkasaborepile.com/proses-jasa.html">
+    <meta property="og:title" content="3 Tahapan Proses Jasa Borepile - Agung Perkasa">
+    <meta property="og:description" content="Pelajari 3 tahapan proses borepile: pengeboran, pemasangan besi, dan penuangan beton dengan panduan lengkap.">
     <meta property="og:image" content="https://agungperkasaborepile.com/imgs/LOGO%20AGUNG%20PERKASA.jpeg">
     <meta name="theme-color" content="#1a3a6e">
-    <link rel="canonical" href="https://agungperkasaborepile.com/gallery.html">
-    <title>Galeri Proyek - Agung Perkasa Borepile</title>
+    <link rel="canonical" href="https://agungperkasaborepile.com/proses-jasa.html">
+    <title>3 Tahapan Proses Jasa Borepile & Strauss Pile - Agung Perkasa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/proses-jasa.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/solid.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css">
-    
-    <!-- JSON-LD Schema untuk Gallery Page -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <!-- JSON-LD Schema Markup - HowTo -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Galeri Proyek Borepile dan Strauss Pile",
-        "description": "Portfolio lengkap proyek borepile dan strauss pile dari Agung Perkasa Borepile",
-        "url": "https://agungperkasaborepile.com/gallery.html",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Agung Perkasa Borepile",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://agungperkasaborepile.com/imgs/LOGO%20AGUNG%20PERKASA.jpeg"
+        "@type": "HowTo",
+        "name": "Proses Jasa Borepile - 3 Tahapan Utama",
+        "description": "Panduan lengkap 3 tahapan proses pembuatan pondasi borepile",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": "1",
+                "name": "Pengeboran",
+                "text": "Tahap pertama adalah pengeboran tanah dengan menggunakan mesin rotary bor atau hand auger. Proses ini dilakukan untuk membuat lubang dengan kedalaman dan diameter sesuai dengan desain pondasi.",
+                "image": "https://agungperkasaborepile.com/imgs/pengeboran.jpg"
+            },
+            {
+                "@type": "HowToStep",
+                "position": "2",
+                "name": "Pemasangan Besi",
+                "text": "Tahap kedua adalah memasang tulangan besi (rebar) ke dalam lubang yang telah dibuat. Besi dipasang sesuai dengan rancangan struktural untuk memberikan kekuatan pada pondasi.",
+                "image": "https://agungperkasaborepile.com/imgs/pemasangan-besi.jpg"
+            },
+            {
+                "@type": "HowToStep",
+                "position": "3",
+                "name": "Penuangan Beton",
+                "text": "Tahap terakhir adalah penuangan beton untuk mengisi seluruh lubang dan membungkus tulangan besi. Beton ini akan mengeras dan menjadi fondasi yang kuat untuk menopang bangunan.",
+                "image": "https://agungperkasaborepile.com/imgs/penuangan-beton.jpg"
             }
-        }
+        ]
     }
     </script>
-    
-    <style>
-        /* ===== GLOBAL STYLES ===== */
-        :root {
-            --primary-color: #1a3a6e;
-            --secondary-color: #e67e22;
-            --light-color: #f8f9fa;
-            --dark-color: #2c3e50;
-            --white: #fff;
-            --black: #000;
-            --border-radius: 8px;
-            --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-            padding-top: 80px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-            border-radius: 2px;
-        }
-
-        /* ===== NAVBAR STYLES ===== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-            z-index: 1000;
-            padding: 10px 0;
-            transition: var(--transition);
-        }
-
-        .navbar.scrolled {
-            background-color: rgba(26, 58, 110, 0.98) !important;
-            padding: 5px 0;
-        }
-
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 60px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-            transition: var(--transition);
-        }
-
-        .logo span {
-            font-size: 1.1rem;
-            line-height: 1.2;
-        }
-
-        .navbar.scrolled .logo {
-            color: var(--white);
-        }
-
-        .navbar.scrolled .logo img {
-            height: 35px;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-menu li {
-            margin-left: 20px;
-        }
-
-        .nav-menu a {
-            font-weight: 600;
-            color: var(--dark-color);
-            position: relative;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .navbar.scrolled .nav-menu a {
-            color: var(--white);
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-        }
-
-        .nav-menu a:hover::after,
-        .nav-menu a.active::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-        }
-
-        .bar {
-            display: block;
-            width: 28px;
-            height: 3px;
-            margin: 6px auto;
-            background-color: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .navbar.scrolled .menu-toggle .bar {
-            background-color: var(--white);
-        }
-
-        /* ===== GALLERY STYLES ===== */
-        .gallery-controls {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .filter-btn {
-            background: none;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 8px 20px;
-            margin: 5px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 600;
-        }
-
-        .filter-btn:hover, 
-        .filter-btn.active {
-            background: var(--primary-color);
-            color: var(--white);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 18px;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.14);
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-            cursor: pointer;
-        }
-
-        .gallery-item:hover .gallery-img {
-            transform: scale(1.1);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 15px;
-            background: rgba(26, 58, 110, 0.8);
-            color: var(--white);
-            transform: translateY(100%);
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .gallery-caption {
-            transform: translateY(0);
-        }
-
-        .gallery-caption h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        /* ===== LIGHTBOX STYLES ===== */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-            text-align: center;
-        }
-
-        .lightbox-img {
-            max-width: 100%;
-            max-height: 80vh;
-            border-radius: var(--border-radius);
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-
-        .lightbox-caption {
-            color: var(--white);
-            margin-top: 15px;
-            font-size: 1.1rem;
-        }
-
-        .close-lightbox {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: var(--white);
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        .nav-lightbox {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--white);
-            font-size: 2rem;
-            cursor: pointer;
-            background: rgba(0,0,0,0.5);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            z-index: 2001;
-        }
-
-        .prev {
-            left: 20px;
-        }
-
-        .next {
-            right: 20px;
-        }
-
-        /* WhatsApp Float Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
-        }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--secondary-color);
-            color: var(--white);
-            border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 99;
-            box-shadow: 0 5px 20px rgba(230, 126, 34, 0.3);
-        }
-
-        .scroll-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            background-color: #d35400;
-            transform: translateY(-5px);
-        }
-
-        /* ===== FOOTER STYLES ===== */
-        .footer {
-            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
-            color: var(--white);
-            padding: 60px 0 0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 140px;
-            height: 3px;
-            background-color: var(--secondary-color);
-        }
-
-        .footer-col p {
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 6px;
-        }
-
-        .footer-col ul li a {
-            color: rgba(255,255,255,0.7);
-            transition: var(--transition);
-            font-size: 0.95rem;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--white);
-            padding-left: 8px;
-        }
-
-        .footer-col ul li i {
-            margin-right: 10px;
-            color: var(--secondary-color);
-            width: 20px;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255,255,255,0.1);
-            color: var(--white);
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: var(--transition);
-            font-size: 1.1rem;
-        }
-
-        .social-links a:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-5px);
-        }
-
-        .footer-bottom {
-            background-color: rgba(0,0,0,0.2);
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            margin-bottom: 0;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.9rem;
-            display: inline-flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-        }
-
-        .footer-counter {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.35rem 0.85rem;
-            border: 1px solid rgba(255,255,255,0.45);
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-        }
-
-        .footer-counter i {
-            display: inline-block;
-            width: 1rem;
-            text-align: center;
-            color: #4ade80;
-        }
-
-        .footer-links {
-            margin-top: 10px;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.5);
-            margin: 0 10px;
-            font-size: 0.85rem;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        /* ===== RESPONSIVE STYLES ===== */
-        @media (max-width: 992px) {
-            h2 {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .menu-toggle.active .bar:nth-child(1) {
-                transform: translateY(9px) rotate(45deg);
-            }
-            
-            .menu-toggle.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .menu-toggle.active .bar:nth-child(3) {
-                transform: translateY(-9px) rotate(-45deg);
-            }
-            
-            .nav-menu {
-                position: fixed;
-                top: 60px;
-                left: -100%;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                transition: var(--transition);
-            }
-            
-            .nav-menu.active {
-                left: 0;
-            }
-            
-            .nav-menu li {
-                margin: 15px 0;
-            }
-            
-            .navbar.scrolled .nav-menu {
-                background-color: var(--primary-color);
-            }
-            
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            section {
-                padding: 60px 0;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .filter-btn {
-                padding: 6px 15px;
-                font-size: 0.9rem;
-                margin: 3px;
-            }
-            
-            .gallery-caption {
-                padding: 10px;
-            }
-            
-            .gallery-caption h3 {
-                font-size: 1rem;
-            }
-            
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-    </style>
+    <!-- JSON-LD Schema - Product/Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Jasa Borepile",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Agung Perkasa Borepile"
+        },
+        "description": "Layanan borepile profesional dengan 3 tahapan: pengeboran, pemasangan besi, dan penuangan beton",
+        "areaServed": ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"]
+    }
+    </script>
 </head>
 <body>
     <!-- Navbar -->
@@ -671,354 +86,599 @@
         <div class="container">
             <a href="index.html" class="logo">
                 <img src="imgs/AGUNG PERKASA LOGO BG TRANSPARAN.png" alt="Agung Perkasa Borepile">
-                <span>Agung Perkasa <br>‎ ‎ ‎ ‎ ‎ Borepile</span>
+                <span>Agung Perkasa <br> Borepile</span>
             </a>
-            
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-            
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html">Beranda</a></li>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Beranda</a></li>
                 <li><a href="index.html#services">Layanan</a></li>
-                <li><a href="gallery.html" class="active">Galeri</a></li>
+                <li><a href="proses-jasa.html" class="active">Proses Jasa</a></li>
+                <li><a href="index.html#portfolio">Portofolio</a></li>
+                <li><a href="index.html#about">Tentang Kami</a></li>
                 <li><a href="index.html#contact">Kontak</a></li>
+                <li class="desktop-only"><a href="gallery.html" class="btn-nav">Galeri</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-        <div class="container">
-            <h2>Galeri Proyek Kami</h2>
-            
-            <div class="gallery-controls">
-                <button class="filter-btn active" data-filter="borepile">Borepile</button>
+    <!-- Header Section -->
+    <section class="proses-header">
+        <div class="header-content" data-aos="fade-up">
+            <h1>3 Tahapan Proses Jasa Borepile</h1>
+            <p>Pahami setiap tahapan pembuatan pondasi borepile & strausspile </p>
+            <div class="header-breadcrumb">
+                <a href="index.html">Beranda</a>
+                <span>/</span>
+                <span>Proses Jasa</span>
             </div>
-            
-            <div class="gallery-grid">
-                <!-- Item 1 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto pondasi rumah.jpeg" alt="Proyek Borepile Pondasi Rumah" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
+        </div>
+        <div class="header-bg-pattern"></div>
+    </section>
+
+    <!-- Main Process Section -->
+    <section class="proses-section" id="proses">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Proses Lengkap Jasa Borepile</h2>
+                <p>Kami menyediakan layanan borepile dengan 3 tahapan utama yang telah teruji dan terbukti efektif, simak penjelasan berikut ini agar mudah dipahami.</p>
+            </div>
+
+            <!-- Process Steps Container -->
+            <div class="proses-steps-container">
+                <!-- Step 1: Pengeboran -->
+                <div class="proses-step" data-step="1" data-aos="fade-right">
+                    <div class="step-header">
+                        <div class="step-number">
+                            <span class="number">1</span>
                         </div>
+                        <div class="step-title-group">
+                            <h3 class="step-title">Pengeboran</h3>
+                            <p class="step-subtitle">Persiapan Lubang Pondasi</p>
+                        </div>
+                    </div>
+
+                    <div class="step-content-wrapper">
+                        <div class="step-image-container">
+                            <img src="imgs/layanan 1.jpeg" alt="Proses Pengeboran Borepile" class="step-image" loading="lazy">
+                            <div class="image-overlay">
+                                <span class="image-label">Fase Pengeboran</span>
+                            </div>
+                        </div>
+
+                        <div class="step-details">
+                            <div class="step-description">
+                                <p>Pengeboran adalah tahap pertama dan paling kritis dalam proses pembuatan pondasi borepile. Pada tahap ini, kami menggunakan mesin rotary bor atau hand auger untuk membuat lubang dengan kedalaman dan diameter sesuai dengan desain teknis pondasi atau permintaan klien.</p>
+                            </div>
+
+                            <div class="step-features">
+                                <h4>Spesifikasi Pengeboran:</h4>
+                                <ul class="features-list">
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Kedalaman Presisi</strong>
+                                            <span>Pengeboran tanah hingga 30m untuk borepile dengan akurasi tinggi</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Diameter Bervariasi</strong>
+                                            <span>30cm hingga 100cm sesuai kebutuhan proyek</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Teknologi </strong>
+                                            <span>Menggunakan mesin bor terawat agar efisien dalam pengerjaan</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Pemeriksaan lubang</strong>
+                                            <span>Pemeriksaan kondisi lapisan dan kedalaman tanah setiap 1 titik pengeboran, pekerja melihat apakah sudah sesuai dengan kedalaman yang diminta</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Minim Getaran</strong>
+                                            <span>Metode pengeboran yang ramah lingkungan dan aman untuk bangunan disekitarnya dikarenakan minimnya getaran yang ditimbulkan saat proses pengeboran, berbeda dengan metode tiang pancang yang dipalu ke dalam tanah.</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="step-timeline">
+                                <h4>Estimasi Waktu:</h4>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>1-3 titik perhari</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <i class="fas fa-hourglass-start"></i>
+                                        <span>Tergantung kedalaman, diameter, dan kondisi tanah, serta pasokan energi selama pengerjaan, contohnya air dan listrik.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="toggle-details-btn" aria-expanded="false">
+                                <span>Lihat Detail Teknis</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+
+                            <div class="technical-details" style="display: none;">
+                                <div class="tech-spec-grid">
+                                    <div class="tech-spec-item">
+                                        <h5>Kedalaman Pengeboran</h5>
+                                        <p>Hingga 30 meter dengan presisi akurat</p>
+                                    </div>
+                                    <div class="tech-spec-item">
+                                        <h5>Diameter Lubang</h5>
+                                        <p>30-150cm sesuai desain struktur</p>
+                                    </div>
+                                    <div class="tech-spec-item">
+                                        <h5>Durasi Pengerjaan</h5>
+                                        <p>1-3 titik perhari</p>
+                                    </div>
+                                    <div class="tech-spec-item">
+                                        <h5>Metode Pengeboran</h5>
+                                        <p>Rotary bor / Hand auger (sesuai lokasi)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Item 2 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto borpile dn truk molen.jpeg" alt="Proyek Borepile dengan truk molen" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
-                        </div>
+
+                <!-- Connection Line -->
+                <div class="step-connector" data-aos="zoom-in">
+                    <div class="connector-line"></div>
+                    <div class="connector-icon">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
                 </div>
-                
-                <!-- Item 3 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto borpile biru.jpeg" alt="Hasil proyek borepile" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
+
+                <!-- Step 2: Pemasangan Besi -->
+                <div class="proses-step" data-step="2" data-aos="fade-left">
+                    <div class="step-header">
+                        <div class="step-number">
+                            <span class="number">2</span>
                         </div>
+                        <div class="step-title-group">
+                            <h3 class="step-title">Pemasangan Besi</h3>
+                            <p class="step-subtitle">Pembuatan Struktur Tulangan</p>
+                        </div>
+                    </div>
+
+                    <div class="step-content-wrapper">
+                        <div class="step-image-container">
+                            <img src="imgs/layanan 1.jpeg" alt="Proses Pemasangan Besi Borepile" class="step-image" loading="lazy">
+                            <div class="image-overlay">
+                                <span class="image-label">Fase Pemasangan Besi</span>
+                            </div>
+                        </div>
+
+                        <div class="step-details">
+                            <div class="step-description">
+                                <p>Pemasangan besi adalah tahap kedua yang sangat penting untuk kekuatan struktural pondasi. Tulangan besi dibuat dalam bentuk spiral yang kemudian dipasang dengan hati-hati sesuai dengan rancangan teknisi untuk memastikan distribusi atau pemerataan beban yang optimal.</p>
+                            </div>
+
+                            <div class="step-features">
+                                <h4>Spesifikasi Pemasangan Besi:</h4>
+                                <ul class="features-list">
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Besi Sesuai Permintaan Klien</strong>
+                                            <span>Menggunakan besi tulangan permintaan klien atau teknik sipil yang memimpin proyek, contohnya besi U32, U39, atau sesuai spesifikasi dan material yang sudah ditetapkan.</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Pemasangan Presisi</strong>
+                                            <span>Sesuai desain permintaan teknik sipil untuk kekuatan maksimal</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Pengecekan Ketegakan</strong>
+                                            <span>Pemeriksaan posisi besi agar tetap tegak dan stabil sesuai titik tersebut</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Inspeksi Menyeluruh</strong>
+                                            <span>Pengecekan struktur lubang dan besi sebelum penuangan beton</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="step-timeline">
+                                <h4>Estimasi Waktu:</h4>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>1-3 titik perhari</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <i class="fas fa-hourglass-start"></i>
+                                        <span>Sebelum, saat, dan setelah pengeboran selesai. Sesuai waktu kedatangan material.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="toggle-details-btn" aria-expanded="false">
+                                <span>Lihat Detail Teknis</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+
+                            <div class="technical-details" style="display: none;">
+                                <div class="tech-spec-grid">
+                                    <div class="tech-spec-item">
+                                        <h5>Jenis Besi</h5>
+                                        <p>U32, U39, atau sesuai permintaan</p>
+                                    </div>
+                                    <div class="tech-spec-item">
+                                        <h5>Diameter Besi</h5>
+                                        <p>10mm, 12mm, 16mm, 20mm, dll</p>
+                                    </div>
+                                    <div class="tech-spec-item">
+                                        <h5>Durasi Pembuatan Tulangan</h5>
+                                        <p>5-10 perhari sesuai dengan kebutuhan titik pengeboran</p>
+                                    </div>
+                                    <div class="tech-spec-item">
+                                        <h5>Durasi Pemasangan</h5>
+                                        <p>1-3 titik perhari</p>
+                                    </div>
+                                    <div class="tech-spec-item">
+                                        <h5>Standar Pekerjaan</h5>
+                                        <p>SNI 7 Part 1:2012 & SNI 2052:2017</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Item 4 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto borpile dkt dinding.jpeg" alt="Borepile dekat dinding bangunan" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
-                        </div>
+
+                <!-- Connection Line -->
+                <div class="step-connector" data-aos="zoom-in">
+                    <div class="connector-line"></div>
+                    <div class="connector-icon">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
                 </div>
-                
-                <!-- Item 5 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto dkt gedung.jpeg" alt="Proyek borepile di dekat gedung" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
+
+                <!-- Step 3: Penuangan Beton -->
+                <div class="proses-step" data-step="3" data-aos="fade-right">
+                    <div class="step-header">
+                        <div class="step-number">
+                            <span class="number">3</span>
                         </div>
+                        <div class="step-title-group">
+                            <h3 class="step-title">Penuangan Beton</h3>
+                            <p class="step-subtitle">Pengisian & Pengerasan Pondasi</p>
+                        </div>
+                    </div>
+
+                    <div class="step-content-wrapper">
+                        <div class="step-image-container">
+                            <img src="imgs/layanan 1.jpeg" alt="Proses Penuangan Beton Borepile" class="step-image" loading="lazy">
+                            <div class="image-overlay">
+                                <span class="image-label">Fase Penuangan Beton</span>
+                            </div>
+                        </div>
+
+                        <div class="step-details">
+                            <div class="step-description">
+                                <p>Penuangan beton adalah tahap akhir dalam proses pembuatan pondasi borepile. Pembuatan beton sesuai dengan permintaan klien. Beton berkualitas tinggi dengan mutu sesuai spesifikasi dituangkan untuk mengisi seluruh lubang dan membungkus tulangan besi, menciptakan pondasi yang kuat untuk menahan beban bangunan di atasnya.</p>
+                            </div>
+
+                            <div class="step-features">
+                                <h4>Spesifikasi Penuangan Beton:</h4>
+                                <ul class="features-list">
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Beton Berkualitas</strong>
+                                            <span>Mutu F'c 250-500 kg/cm² sesuai desain</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Jenis Beton</strong>
+                                            <span>Jenis beton sesuai dengan permintaan klien yaitu jenis beton K250 - K300</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Kontrol Kualitas</strong>
+                                            <span>Test beton (slump, kuat tekan) sesuai standar (biasanya dilakukan oleh teknik sipil atau yang memimpin proyek pembangunan).</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Curing Process</strong>
+                                            <span>Perawatan beton selama 28 hari agar mendapatkan kualitas beton yang optimal (biasanya dilakukan oleh teknik sipil atau yang memimpin proyek pembangunan).</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <div>
+                                            <strong>Perlindungan Material</strong>
+                                            <span>Beton terlindungi dari cuaca ekstrem selama pengerasan (biasanya dilakukan oleh teknik sipil atau yang memimpin proyek pembangunan).</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="step-timeline">
+                                <h4>Estimasi Waktu:</h4>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>1-3 titik perhari (penuangan beton)</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <i class="fas fa-hourglass-start"></i>
+                                        <span>Pengerasan 28 hari (untuk hasil optimal)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="toggle-details-btn" aria-expanded="false">
+                                <span>Lihat Detail Teknis</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+
+                            <div class="technical-details" style="display: none;">
+                                <div class="tech-spec-grid">
+                                    <div class="tech-spec-item">
+                                        <h5>Mutu Beton</h5>
+                                        <p>F'c 250-500 kg/cm²</p>
+                                    </div>
+                                    <div class="tech-spec-item">
+                                        <h5>Slump Beton</h5>
+                                        <p>12-14 cm (semi-dry mix)</p>
+                                    </div>
+                                    <div class="tech-spec-item">
+                                        <h5>Waktu Pengerasan</h5>
+                                        <p>28 hari untuk kekuatan tertinggi</p>
+                                    </div>
+                                    <div class="tech-spec-item">
+                                        <h5>Standar Beton</h5>
+                                        <p>SNI 2847:2019 & ACI 318</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Item 6 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto berembun.jpeg" alt="Proyek borepile di kondisi berembun" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
+            </div>
+
+            <!-- Interactive Process Timeline Summary -->
+            <div class="proses-summary" data-aos="fade-up">
+                <h3>Ringkasan Proses Keseluruhan</h3>
+                <div class="timeline-summary">
+                    <div class="timeline-bar">
+                        <div class="timeline-progress" style="width: 33.33%; background: linear-gradient(90deg, #e67e22 0%, #3498db 100%);"></div>
+                    </div>
+                    <div class="timeline-labels">
+                        <div class="timeline-label active">
+                            <span class="label-step">Pengeboran</span>
+                            <span class="label-time">1-3 titik perhari</span>
                         </div>
-                </div>
-                
-                <!-- Item 7 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto cor semen.jpeg" alt="Cor semen borepile" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
+                        <div class="timeline-label">
+                            <span class="label-step">Pemasangan Besi</span>
+                            <span class="label-time">1-3 titik perhari</span>
                         </div>
-                </div>
-                
-                <!-- Item 8 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto tiny masjid.jpeg" alt="Pondasi borepile untuk masjid kecil" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
+                        <div class="timeline-label">
+                            <span class="label-step">Penuangan Beton</span>
+                            <span class="label-time">1-3 titik perhari</span>
                         </div>
-                </div>
-                
-                <!-- Item 9 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto kali biru.jpeg" alt="Proyek borepile di tepi kali" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
-                        </div>
-                </div>
-                
-                <!-- Item 10 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto masjid tosca .jpeg" alt="Pondasi borepile untuk masjid tosca" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
-                        </div>
-                </div>
-                
-                <!-- Item 11 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto meruya.jpeg" alt="Proyek borepile di Meruya" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
-                        </div>
-                </div>
-                
-                <!-- Item 12 -->
-                <div class="gallery-item" data-category="borepile">
-                    <img src="imgs/porto univ.jpeg" alt="Proyek borepile universitas" class="gallery-img">
-                    <div class="gallery-caption">
-                        <h3>Borepile</h3>
-                        </div>
+                    </div>
+                    <div class="timeline-total">
+                        <strong>Total Waktu Pengerjaan 1 Titik Borepile:</strong> 1-3 titik perhari (sudah termasuk pengeboran, pembuatan dan pemasangan tulangan, serta penuangan isian beton).
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <span class="close-lightbox">&times;</span>
-            <img src="" alt="" class="lightbox-img">
-            <div class="lightbox-caption"></div>
-            <div class="nav-lightbox prev"><i class="fas fa-chevron-left"></i></div>
-            <div class="nav-lightbox next"><i class="fas fa-chevron-right"></i></div>
+    <!-- Comparison Section -->
+    <section class="comparison-section" id="comparison" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Pilih Layanan Sesuai Kebutuhan dan Lokasi</h2>
+            <p class="section-subtitle">Perbandingan detail antara Borepile dan Strauss Pile</p>
+
+            <div class="comparison-wrapper">
+                <div class="comparison-card borepile">
+                    <div class="card-header">
+                        <h3>Borepile</h3>
+                        <p>Untuk Proyek Sedang - Besar</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="comparison-list">
+                            <li><span class="label">Kedalaman:</span> <span class="value">Hingga 30m</span></li>
+                            <li><span class="label">Diameter:</span> <span class="value">30-150cm</span></li>
+                            <li><span class="label">Kapasitas:</span> <span class="value">50-200 ton</span></li>
+                            <li><span class="label">Waktu:</span> <span class="value">1-3 titik perhari</span></li>
+                            <li><span class="label">Harga:</span> <span class="value">Rp 100.000-150.000/m (sesuai diameter)</span></li>
+                            <li><span class="label">Cocok untuk:</span> <span class="value">Gedung, Rumah tingkat, Kantor, Proyek Sedang hingga Besar, contohnya pengeboran diameter 30 & kedalaman 8m</span></li>
+                        </ul>
+                        <a href="index.html#contact" class="btn-primary">Konsultasi Borepile</a>
+                    </div>
+                </div>
+
+                <div class="comparison-divider">
+                    <span>VS</span>
+                </div>
+
+                <div class="comparison-card strauss">
+                    <div class="card-header">
+                        <h3>Strauss Pile</h3>
+                        <p>Untuk Proyek Kecil-Sedang</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="comparison-list">
+                            <li><span class="label">Kedalaman:</span> <span class="value">Hingga 10m</span></li>
+                            <li><span class="label">Diameter:</span> <span class="value">20-40cm</span></li>
+                            <li><span class="label">Kapasitas:</span> <span class="value">10-30 ton</span></li>
+                            <li><span class="label">Waktu:</span> <span class="value">1-3 titik perhari</span></li>
+                            <li><span class="label">Harga:</span> <span class="value">Rp 80.000 - 120.000/m (sesuai diameter)</span></li>
+                            <li><span class="label">Cocok untuk:</span> <span class="value">Rumah atau Bangunan di area sempit/terbatas, contohnya pengeboran pondasi rumah di gang sempit dikarenakan alat besar tidak bisa masuk.</span></li>
+                        </ul>
+                        <a href="index.html#contact" class="btn-primary">Konsultasi Strauss</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/6282233569632" class="whatsapp-float" target="_blank" onclick="return gtag_report_conversion('https://wa.me/6282233569632');" aria-label="Hubungi via WhatsApp" title="Hubungi via WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq-proses" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+            <p class="section-subtitle">Informasi lengkap tentang proses jasa borepile kami</p>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+            <div class="faq-container">
+                <div class="faq-item" data-aos="fade-up">
+                    <button class="faq-question">
+                        <span>Berapa lama waktu yang dibutuhkan untuk setiap tahapan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pengeboran membutuhkan 2-4 jam per titik, pemasangan besi 1-2 jam, dan penuangan beton 1-2 jam. Total pengerjaan per titik sekitar 4-8 jam, namun beton memerlukan waktu pengerasan 28 hari untuk mencapai kekuatan penuh.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-question">
+                        <span>Apakah proses pengeboran akan merusak bangunan sekitar?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tidak. Metode pengeboran kami menggunakan teknologi modern dengan getaran minimal. Kami juga melakukan inspeksi pre-work untuk memastikan keamanan bangunan sekitar dan mengikuti protokol keselamatan yang ketat.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <button class="faq-question">
+                        <span>Jenis besi apa yang digunakan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kami menggunakan besi tulangan berkualitas tinggi sesuai standar SNI, dengan pilihan U32, U39, atau sesuai dengan desain teknis yang telah ditentukan oleh engineer proyek Anda.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <button class="faq-question">
+                        <span>Bagaimana proses quality control?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Quality control dilakukan di setiap tahapan. Kami melakukan pengujian beton (slump test, kuat tekan), inspeksi kedalaman bor, pengecekan ketegakan besi, dan monitoring selama proses curing untuk memastikan hasil yang optimal.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <button class="faq-question">
+                        <span>Apakah ada garansi untuk pekerjaan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya, kami memberikan garansi 1 tahun untuk semua pekerjaan borepile. Jika terjadi masalah dalam periode garansi yang disebabkan oleh kesalahan pekerjaan kami, kami siap melakukan perbaikan tanpa biaya tambahan.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <button class="faq-question">
+                        <span>Bilamana saya bisa membangun di atas pondasi?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Beton memerlukan waktu minimal 28 hari untuk mencapai kekuatan penuh. Namun, pembangunan di atas pondasi bisa dimulai setelah 14 hari dengan pembebanan terbatas. Untuk pembebanan penuh, disarankan menunggu 28 hari.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container" data-aos="zoom-in">
+            <h2>Siap Membuat Bangunan Anda?</h2>
+            <p>Hubungi kami untuk konsultasi gratis dan dapatkan penawaran terbaik untuk proyek pondasi Anda</p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="btn-primary btn-lg">Hubungi Kami Sekarang</a>
+                <a href="gallery.html" class="btn-secondary btn-lg">Lihat Portofolio</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo">
-                        <img src="imgs/LOGO AGUNG PERKASA.jpeg" alt="Agung Perkasa Borepile">
-                        <span>Agung Perkasa Borepile</span>
-                    </div>
-                    <p>Spesialis pondasi borepile dan strauss pile dengan pengalaman lebih dari 15 tahun melayani proyek konstruksi di Indonesia.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Agung Perkasa Borepile</h4>
+                    <p>Menyediakan jasa pondasi borepile profesional dengan pengalaman lebih dari 10 tahun.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/agungperkasaborepile" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/agungperkasaborepile" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://wa.me/62858141737" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h3>Layanan</h3>
-                    <ul>
-                        <li><a href="index.html#services">Jasa Borepile</a></li>
-                        <li><a href="index.html#services">Jasa Strauss Pile</a></li>
-                        <li><a href="index.html#services">Konsultasi Pondasi</a></li>
-                        <li><a href="index.html#services">Test Sondir Tanah</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Navigasi</h3>
+                <div class="footer-section">
+                    <h4>Tautan Cepat</h4>
                     <ul>
                         <li><a href="index.html">Beranda</a></li>
                         <li><a href="index.html#services">Layanan</a></li>
+                        <li><a href="proses-jasa.html">Proses Jasa</a></li>
                         <li><a href="gallery.html">Galeri</a></li>
-                        <li><a href="index.html#about">Tentang Kami</a></li>
-                        <li><a href="index.html#contact">Kontak</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>Kontak</h3>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Jl. Sunter Muara II, RT.17/RW.05, Sunter Agung, Jakarta Utara</li>
-                        <li><i class="fas fa-phone-alt"></i> +62 822 3356 9632</li>
+                        <li><i class="fas fa-phone"></i> +62 858-141737</li>
                         <li><i class="fas fa-envelope"></i> agungperkasaborepile@gmail.com</li>
-                        <li><i class="fas fa-clock"></i> Senin-Minggu: 07.00-23.00 WIB</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta Utara, DKI Jakarta</li>
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2025 Agung Perkasa Borepile. All Rights Reserved. <span id="visitorCounter" class="footer-counter"><i class="fas fa-users"></i> Total Visitor: 0</span></p>
-                <div class="footer-links">
-                    <a href="#">Kebijakan Privasi</a>
-                    <a href="#">Syarat & Ketentuan</a>
-                    <a href="#">Sitemap</a>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Agung Perkasa Borepile. Semua hak dilindungi. <span id="visitorCounter" class="footer-counter"><i class="fas fa-users"></i> Total Visitor: 0</span></p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Navbar Functionality
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navMenu = document.getElementById('nav-menu');
-        
-        // Toggle Mobile Menu
-        mobileMenu.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            
-            // Toggle body overflow
-            if (navMenu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('scrolled', window.scrollY > 0);
-        });
-
-        // Gallery Filter Functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                const filter = this.dataset.filter;
-                
-                // Filter gallery items
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.dataset.category.includes(filter)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Lightbox Functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.querySelector('.lightbox-img');
-        const lightboxCaption = document.querySelector('.lightbox-caption');
-        const closeBtn = document.querySelector('.close-lightbox');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        
-        let currentIndex = 0;
-        const galleryImages = Array.from(document.querySelectorAll('.gallery-img'));
-        const galleryCaptions = Array.from(document.querySelectorAll('.gallery-caption'));
-        
-        // Open lightbox
-        galleryImages.forEach((img, index) => {
-            img.addEventListener('click', () => {
-                currentIndex = index;
-                updateLightbox();
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        
-        // Update lightbox content
-        function updateLightbox() {
-            lightboxImg.src = galleryImages[currentIndex].src;
-            lightboxCaption.textContent = galleryCaptions[currentIndex].textContent;
-        }
-        
-        // Navigation
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-            updateLightbox();
-        });
-        
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % galleryImages.length;
-            updateLightbox();
-        });
-        
-        // Close lightbox
-        closeBtn.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-        
-        // Close when clicking outside image
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.classList.contains('active')) {
-                if (e.key === 'Escape') {
-                    lightbox.classList.remove('active');
-                    document.body.style.overflow = '';
-                } else if (e.key === 'ArrowLeft') {
-                    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-                    updateLightbox();
-                } else if (e.key === 'ArrowRight') {
-                    currentIndex = (currentIndex + 1) % galleryImages.length;
-                    updateLightbox();
-                }
-            }
-        });
-
-        // Scroll to Top Button
-        const scrollTopButton = document.getElementById('scrollTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollTopButton.classList.add('active');
-            } else {
-                scrollTopButton.classList.remove('active');
-            }
-        });
-
-        scrollTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/proses-jasa.js"></script>
 </body>
 </html>
+
+
