@@ -12,6 +12,12 @@ Proyek ini adalah website statis dengan backend Node.js sederhana di `server.js`
 
 ## Hosting yang direkomendasikan
 
+### GitHub Pages
+- Cocok untuk website statis seperti `index.html`, `proses-jasa.html`, `css/`, `js/`, dan `imgs/`
+- Saat ini repo sudah disiapkan dengan `CNAME` untuk custom domain `agungperkasaborepile.com`
+- Tidak bisa menjalankan `server.js` atau API backend pada GitHub Pages
+- Backend visitor akan dideploy nanti di Render atau hosting terpisah
+
 ### Render
 - Bisa deploy Node.js sekaligus file statis
 - Mendukung repo GitHub
