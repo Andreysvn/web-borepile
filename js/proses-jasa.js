@@ -1,4 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+function ready(callback) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', callback);
+    } else {
+        callback();
+    }
+}
+
+ready(function() {
     // Initialize AOS (Animate on Scroll)
     if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -197,12 +205,16 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.style.opacity = '0';
-                    img.onload = function() {
-                        setTimeout(() => {
-                            img.style.opacity = '1';
-                        }, 100);
-                    };
+                    if (img.complete && img.naturalWidth > 0) {
+                        img.style.opacity = '1';
+                    } else {
+                        img.style.opacity = '0';
+                        img.onload = function() {
+                            setTimeout(() => {
+                                img.style.opacity = '1';
+                            }, 100);
+                        };
+                    }
                     observer.unobserve(img);
                 }
             });

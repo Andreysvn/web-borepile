@@ -14,15 +14,24 @@
     <!-- Event snippet for Kontak conversion page -->
     <script>
         function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof(url) != 'undefined') {
-                    window.location = url;
+            var opened = false;
+            var openUrl = function () {
+                if (!opened && typeof(url) !== 'undefined') {
+                    opened = true;
+                    window.open(url, '_blank');
                 }
             };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-16649506462/GpbhCNXSwYsbEJ6djYM-',
-                'event_callback': callback
-            });
+
+            try {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-16649506462/GpbhCNXSwYsbEJ6djYM-',
+                    'event_callback': openUrl
+                });
+            } catch (error) {
+                openUrl();
+            }
+
+            setTimeout(openUrl, 500);
             return false;
         }
     </script>

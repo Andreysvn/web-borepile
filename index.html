@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
     <!-- Google tag (gtag.js) -->
@@ -14,15 +14,24 @@
     <!-- Event snippet for Kontak conversion page -->
     <script>
         function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof(url) != 'undefined') {
-                    window.location = url;
+            var opened = false;
+            var openUrl = function () {
+                if (!opened && typeof(url) !== 'undefined') {
+                    opened = true;
+                    window.open(url, '_blank');
                 }
             };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-16649506462/GpbhCNXSwYsbEJ6djYM-',
-                'event_callback': callback
-            });
+
+            try {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-16649506462/GpbhCNXSwYsbEJ6djYM-',
+                    'event_callback': openUrl
+                });
+            } catch (error) {
+                openUrl();
+            }
+
+            setTimeout(openUrl, 500);
             return false;
         }
     </script>
@@ -104,7 +113,7 @@
             <ul class="nav-menu">
                 <li><a href="#home">Beranda</a></li>
                 <li><a href="#services">Layanan</a></li>
-                <li><a href="proses-jasa.html">Proses Jasa</a></li>
+                <li><a href="#proses">Proses Jasa</a></li>
                 <li><a href="#portfolio">Portofolio</a></li>
                 <li><a href="#projects">Proyek Kami</a></li>
                 <li><a href="#blog">Blog</a></li>
@@ -387,6 +396,33 @@
             
             <div class="portfolio-cta" data-aos="fade-up">
                 <a href="gallery.html" class="btn-primary">Lihat foto proyek Lainnya</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Summary Section -->
+    <section class="process-summary" id="proses">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Proses Jasa</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Tiga tahapan utama pengerjaan pondasi borepile dan strauss pile.</p>
+
+            <div class="process-grid">
+                <article class="process-item process-step-1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-icon"><i class="fas fa-drill"></i></div>
+                    <h3>1. Pengeboran tanah</h3>
+                </article>
+                <article class="process-item process-step-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3>2. Perakitan besi</h3>
+                </article>
+                <article class="process-item process-step-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process-icon"><i class="fas fa-shovel"></i></div>
+                    <h3>3. Penuangan Beton </h3>
+                </article>
+            </div>
+
+            <div class="portfolio-cta" data-aos="fade-up" data-aos-delay="500">
+                <a href="proses-jasa.html" class="btn-primary">Lihat Proses Lengkap</a>
             </div>
         </div>
     </section>
