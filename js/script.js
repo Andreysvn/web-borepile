@@ -242,7 +242,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Footer visitor counter
-    const visitorCounterApiUrl = '/api/visitor-today';
+    const visitorCounterApiUrl = window.VISITOR_API_URL || '/api/visitor-today';
+    const visitorApiCredentials = window.VISITOR_API_CREDENTIALS || 'omit';
 
     const updateVisitorCounter = async () => {
         const counterElement = document.getElementById('visitorCounter');
@@ -255,7 +256,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const fetchVisitorCount = async () => {
             if (!visitorCounterApiUrl) return null;
             try {
-                const response = await fetch(visitorCounterApiUrl, { cache: 'no-cache' });
+                const response = await fetch(visitorCounterApiUrl, {
+                    cache: 'no-cache',
+                    credentials: visitorApiCredentials,
+                });
                 if (!response.ok) throw new Error('Gagal mengambil data');
                 const data = await response.json();
                 return typeof data.count === 'number' ? data.count : null;

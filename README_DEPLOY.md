@@ -43,9 +43,26 @@ Proyek ini adalah website statis dengan backend Node.js sederhana di `server.js`
    - start command: `npm start`
    - root: `.`
 4. Render bisa otomatis membaca `render.yaml` di root repo.
-5. Deploy dan tunggu sampai status "Live".
-6. Buka `https://<app-url>/api/visitor-today` untuk verifikasi.
-7. Buka situs deploy untuk memastikan footer `Total Visitor` tampil.
+5. Tambahkan environment variable:
+   - `ALLOWED_ORIGINS=https://agungperkasaborepile.com`
+6. Deploy dan tunggu sampai status "Live".
+7. Buka `https://<app-url>/api/visitor-today` untuk verifikasi.
+8. Setelah backend live, gunakan URL tersebut di halaman GitHub Pages.
+
+## Integrasi GitHub Pages dengan Render visitor API
+
+Jika website utama di-host di GitHub Pages dengan custom domain, ganti endpoint visitor di `js/script.js` dengan alamat Render:
+
+```html
+<script>
+  window.VISITOR_API_URL = 'https://<your-render-service>.onrender.com/api/visitor-today';
+  window.VISITOR_API_CREDENTIALS = 'include';
+</script>
+```
+
+Letakkan kode ini sebelum `js/script.js` dimuat di `index.html`, `proses-jasa.html`, dan `gallery.html`.
+
+> Jika Anda menggunakan `include`, pastikan `ALLOWED_ORIGINS` di Render diatur ke `https://agungperkasaborepile.com`.
 
 ## Catatan penting
 

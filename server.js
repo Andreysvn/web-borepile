@@ -7,6 +7,36 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'visitor-counts.json');
 
+app.set('trust proxy', true);
+
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || '*')
+  .split(',')
+  .map(origin => origin.trim())
+  .filter(Boolean);
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  const allowAny = allowedOrigins.includes('*');
+
+  if (origin && (allowAny || allowedOrigins.includes(origin))) {
+    res.setHeader('Access-Control-Allow-Origin', allowAny ? '*' : origin);
+    if (!allowAny) {
+      res.setHeader('Access-Control-Allow-Credentials', 'true');
+    }
+  } else if (!origin) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(204);
+  }
+
+  next();
+});
+
 function loadCounts() {
   try {
     const raw = fs.readFileSync(DATA_FILE, 'utf8');
@@ -37,10 +67,13 @@ app.get('/api/visitor-today', (req, res) => {
     saveCounts(counts);
   }
 
+  const useSecureCookie = req.secure || req.headers['x-forwarded-proto'] === 'https';
+
   res.cookie('apb_last_visit', today, {
     maxAge: 1000 * 60 * 60 * 24 * 7,
     httpOnly: true,
-    sameSite: 'Lax',
+    sameSite: 'None',
+    secure: useSecureCookie,
     path: '/',
   });
 
