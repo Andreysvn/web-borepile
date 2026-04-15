@@ -1,3 +1,4 @@
+const https = require('https');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const fs = require('fs');
@@ -6,6 +7,9 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'visitor-counts.json');
+const SSL_DIR = path.join(__dirname, 'ssl');
+const SSL_KEY = path.join(SSL_DIR, 'privkey.pem');
+const SSL_CERT = path.join(SSL_DIR, 'fullchain.pem');
 
 app.set('trust proxy', true);
 
@@ -80,6 +84,19 @@ app.get('/api/visitor-today', (req, res) => {
   res.json({ count: counts[today] });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+const hasSsl = fs.existsSync(SSL_KEY) && fs.existsSync(SSL_CERT);
+
+if (hasSsl) {
+  const options = {
+    key: fs.readFileSync(SSL_KEY),
+    cert: fs.readFileSync(SSL_CERT),
+  };
+
+  https.createServer(options, app).listen(PORT, () => {
+    console.log(`Server running at https://localhost:${PORT}`);
+  });
+} else {
+  app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+  });
+}
