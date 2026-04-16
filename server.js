@@ -55,6 +55,43 @@ function saveCounts(counts) {
 }
 
 app.use(cookieParser());
+
+const SHARED_HEAD_SNIPPET = path.join(__dirname, 'head-snippet.html');
+const sharedHeadSnippet = fs.existsSync(SHARED_HEAD_SNIPPET)
+  ? fs.readFileSync(SHARED_HEAD_SNIPPET, 'utf8')
+  : '';
+
+app.use((req, res, next) => {
+  let requestedPath = req.path;
+  if (requestedPath === '/') {
+    requestedPath = '/index.html';
+  }
+
+  if (path.extname(requestedPath).toLowerCase() !== '.html') {
+    return next();
+  }
+
+  const filePath = path.join(__dirname, requestedPath);
+  if (!fs.existsSync(filePath)) {
+    return next();
+  }
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      return next(err);
+    }
+
+    if (sharedHeadSnippet && data.includes('</head>')) {
+      const modified = data.replace('</head>', `${sharedHeadSnippet}\n</head>`);
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      return res.send(modified);
+    }
+
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.send(data);
+  });
+});
+
 app.use(express.static(path.join(__dirname)));
 
 app.get('/api/visitor-today', (req, res) => {

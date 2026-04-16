@@ -156,6 +156,19 @@
     box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
 }
 
+.step-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.step-title-group .step-icon {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
 .step-title-group h3 {
     font-size: 1.8rem;
     color: var(--primary-color);

@@ -504,7 +504,11 @@ ul {
   background-color: white;
 }
 
-/* Hide gallery button on mobile */
+/* Hide mobile-only links on desktop and desktop-only links on mobile */
+.mobile-only {
+  display: none;
+}
+
 .desktop-only {
   display: block;
 }
@@ -1019,8 +1023,20 @@ ul {
 }
 
 .portfolio-cta {
+  position: relative;
+  z-index: 2;
   text-align: center;
   margin-top: 60px;
+}
+
+.portfolio-cta a {
+  position: relative;
+  z-index: 2;
+}
+
+.process-summary {
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== PROJECTS SECTION ===== */
@@ -1955,9 +1971,12 @@ ul {
     color: white;
   }
   
-  /* Hide gallery button on mobile */
   .desktop-only {
     display: none;
+  }
+
+  .mobile-only {
+    display: block;
   }
   
   .header {
