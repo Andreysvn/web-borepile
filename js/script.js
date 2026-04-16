@@ -35,45 +35,70 @@ ready(function() {
     }
     
     // Navbar scroll effect with improved performance
+    const initNavbar = () => {
+        const navbar = document.querySelector('.navbar');
+        if (!navbar) return;
+
+        const currentScroll = Math.max(window.pageYOffset || 0, document.documentElement.scrollTop || 0);
+
+        if (document.body.classList.contains('home')) {
+            if (currentScroll <= 120) {
+                navbar.classList.remove('solid');
+            } else {
+                navbar.classList.add('solid');
+            }
+        } else {
+            if (currentScroll <= 120) {
+                navbar.classList.remove('scrolled');
+            } else {
+                navbar.classList.add('scrolled');
+            }
+        }
+    };
+
     let lastScroll = 0;
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (navbar) {
-            if (currentScroll <= 0) {
-                // At top of page
-                navbar.classList.remove('scrolled');
-            } else if (currentScroll > lastScroll) {
-                // Scrolling down
-                navbar.classList.add('scrolled');
+        const currentScroll = Math.max(window.pageYOffset || 0, document.documentElement.scrollTop || 0);
+
+        if (!navbar) return;
+
+        if (document.body.classList.contains('home')) {
+            if (currentScroll <= 120) {
+                navbar.classList.remove('solid');
             } else {
-                // Scrolling up
+                navbar.classList.add('solid');
+            }
+        } else {
+            if (currentScroll <= 120) {
+                navbar.classList.remove('scrolled');
+            } else {
                 navbar.classList.add('scrolled');
             }
-            
-            lastScroll = currentScroll <= 0 ? 0 : currentScroll;
         }
+
+        lastScroll = currentScroll;
     }, { passive: true });
-    
+
     // Initialize navbar state on page load
-    window.dispatchEvent(new Event('scroll'));
-    
+    initNavbar();
+    window.addEventListener('load', initNavbar);
+
     // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
-    
     if (faqQuestions.length > 0) {
         faqQuestions.forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
-                const isOpen = question.classList.contains('active');
                 
                 // Close all other FAQs
                 faqQuestions.forEach(q => {
                     if (q !== question) {
                         q.classList.remove('active');
-                        q.nextElementSibling.style.maxHeight = null;
-                        q.nextElementSibling.classList.remove('show');
+                        if (q.nextElementSibling) {
+                            q.nextElementSibling.style.maxHeight = null;
+                            q.nextElementSibling.classList.remove('show');
+                        }
                     }
                 });
                 

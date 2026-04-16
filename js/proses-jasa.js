@@ -72,41 +72,6 @@ ready(function() {
         });
     });
 
-    // FAQ Accordion Functionality (delegated)
-    const faqContainer = document.querySelector('.faq-container');
-    if (faqContainer) {
-        window.faqDelegateAttached = true;
-        faqContainer.addEventListener('click', function(event) {
-            const question = event.target.closest('.faq-question');
-            if (!question) return;
-            window.faqClickHandlerInvoked = (window.faqClickHandlerInvoked || 0) + 1;
-            event.preventDefault();
-
-            const answer = question.parentElement ? question.parentElement.querySelector('.faq-answer') : null;
-            const isOpen = question.classList.contains('active');
-            const allQuestions = faqContainer.querySelectorAll('.faq-question');
-
-            allQuestions.forEach(q => {
-                if (q !== question) {
-                    q.classList.remove('active');
-                    q.setAttribute('aria-expanded', 'false');
-                    const a = q.parentElement ? q.parentElement.querySelector('.faq-answer') : null;
-                    if (a) {
-                        a.classList.remove('show');
-                        a.style.maxHeight = '0';
-                    }
-                }
-            });
-
-            question.classList.toggle('active');
-            question.setAttribute('aria-expanded', String(!isOpen));
-            if (answer) {
-                answer.classList.toggle('show');
-                answer.style.maxHeight = !isOpen ? answer.scrollHeight + 'px' : '0';
-            }
-        });
-    }
-
     // Timeline Labels Click Functionality
     const timelineLabels = document.querySelectorAll('.timeline-label');
     

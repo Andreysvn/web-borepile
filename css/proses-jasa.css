@@ -656,7 +656,7 @@
     gap: 15px;
 }
 
-.faq-item {
+details.faq-item {
     background: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -683,6 +683,11 @@
     color: var(--primary-color);
     transition: var(--transition);
     text-align: left;
+    list-style: none;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
 }
 
 .faq-question:hover {

@@ -7,7 +7,6 @@ let blogArticles = [];
 function createArticleCard(article) {
   const card = document.createElement('div');
   card.className = 'project-card';
-  card.setAttribute('data-aos', 'fade-up');
   card.innerHTML = `
     <img src="${article.image}" alt="${article.title}" loading="lazy" decoding="async">
     <div class="project-info">
