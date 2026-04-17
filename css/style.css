@@ -25,7 +25,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 110px;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
 }
@@ -36,7 +36,7 @@ body {
   color: var(--text-color);
   background-color: var(--white);
   overflow-x: hidden;
-  padding-top: 80px;
+  padding-top: 90px;
 }
 
 body.home {
@@ -47,13 +47,58 @@ body.home {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 clamp(20px, 3vw, 60px);
 }
 
 @media (min-width: 992px) {
   .container {
-    padding: 0 40px;
+    padding: 0 clamp(30px, 3vw, 80px);
   }
+}
+
+body:not(.home) .navbar + section,
+body:not(.home) .navbar + .blog-container,
+body:not(.home) .navbar + .gallery-section {
+  padding-top: 120px;
+}
+
+.navbar {
+  min-height: 72px;
+}
+
+.blog,
+.gallery-section {
+  padding-top: 140px;
+}
+
+.blog-container,
+.gallery-section .container {
+  max-width: 1180px;
+}
+
+.blog-container {
+  padding-left: clamp(24px, 4vw, 64px);
+  padding-right: clamp(24px, 4vw, 64px);
+}
+
+.blog-content,
+.blog-list,
+.popular-posts,
+.blog-controls,
+.gallery-controls,
+.gallery-grid {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.blog-content,
+.blog-list,
+.popular-posts {
+  max-width: 940px;
+}
+
+.gallery-grid {
+  gap: 30px;
 }
 
 section {
@@ -141,7 +186,23 @@ ul {
 
 @media (min-width: 992px) {
   .blog-container {
-    padding: 120px 40px 60px;
+    padding: 120px 50px 60px;
+  }
+}
+
+.blog-container .blog-header,
+.blog-container .blog-content,
+.blog-container .blog-back-link {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (min-width: 992px) {
+  .blog-container .blog-header,
+  .blog-container .blog-content,
+  .blog-container .blog-back-link {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
