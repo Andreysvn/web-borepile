@@ -280,7 +280,8 @@ ready(function() {
     }
 
     // Footer visitor counter
-    const visitorCounterApiUrl = window.VISITOR_API_URL || '/api/visitor-today';
+    // TODO: Nyalakan kembali setelah Render deployment dengan window.VISITOR_API_URL
+    const visitorCounterApiUrl = ''; // Disabled untuk sekarang
     const visitorApiCredentials = window.VISITOR_API_CREDENTIALS || 'omit';
 
     const updateVisitorCounter = async () => {
