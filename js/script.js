@@ -185,7 +185,23 @@ ready(function() {
         });
     }
     
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for anchor links - Cache navbar height to avoid forced reflow
+    let cachedNavbarHeight = null;
+    
+    const getNavbarHeight = () => {
+        if (cachedNavbarHeight !== null) return cachedNavbarHeight;
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            cachedNavbarHeight = navbar.offsetHeight;
+        }
+        return cachedNavbarHeight || 90;
+    };
+    
+    // Update cache on resize
+    window.addEventListener('resize', () => {
+        cachedNavbarHeight = null;
+    }, { passive: true });
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -195,7 +211,7 @@ ready(function() {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const navbarHeight = getNavbarHeight();
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
                 
                 window.scrollTo({
@@ -206,21 +222,38 @@ ready(function() {
         });
     });
     
-    // Highlight active navigation link
+    // Highlight active navigation link - Optimized to reduce forced reflows
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-menu a');
     
+    // Cache section positions to avoid repeated queries
+    let sectionCache = [];
+    
+    const updateSectionCache = () => {
+        sectionCache = Array.from(sections).map(section => ({
+            id: section.getAttribute('id'),
+            top: section.offsetTop,
+            height: section.clientHeight
+        }));
+    };
+    
+    // Update cache on resize with debounce
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(updateSectionCache, 250);
+    }, { passive: true });
+    
     function highlightNav() {
         let current = '';
+        const scrollPosition = window.scrollY;
         
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.scrollY >= sectionTop - sectionHeight / 3) {
-                current = section.getAttribute('id');
+        for (let i = 0; i < sectionCache.length; i++) {
+            const section = sectionCache[i];
+            if (scrollPosition >= section.top - section.height / 3) {
+                current = section.id;
             }
-        });
+        }
         
         navLinks.forEach(link => {
             link.classList.remove('active');
@@ -231,7 +264,10 @@ ready(function() {
         });
     }
     
-    window.addEventListener('scroll', highlightNav);
+    // Initialize cache
+    updateSectionCache();
+    
+    window.addEventListener('scroll', highlightNav, { passive: true });
     highlightNav(); // Run once on load
     
     const loadHeroVideo = () => {
