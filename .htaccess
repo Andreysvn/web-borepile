@@ -1,3 +1,37 @@
 RewriteEngine On
+
+# Redirect HTTP ke HTTPS
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ------------------------------------------------------------------------------
+# REDIRECT URL LAMA KE URL BARU (SESUAI SITEMAP)
+# ------------------------------------------------------------------------------
+
+# Blog articles (yang masih pakai prefix blog-)
+Redirect 301 /blog-bore-pile-adalah.html /pahami-bore-pile.html
+Redirect 301 /blog-bore-pile-machine.html /blog-bore-pile-machine.html
+Redirect 301 /blog-bore-pile-manual.html /blog-bore-pile-manual.html
+
+# Perbandingan
+Redirect 301 /borepile-vs-strauss.html /bore-pile-vs-strauss.html
+
+# Gambar
+Redirect 301 /gambar-pondasi-bore-pile.html /gambar-bore-pile.html
+
+# Proses
+Redirect 301 /proses-jasa.html /proses-bore-pile.html
+Redirect 301 /proses-borepile.html /proses-bore-pile.html
+
+# Strauss
+Redirect 301 /strauss-pile-lokasi-sempit.html /strauss-lokasi-sempit.html
+
+# Pondasi tanah lunak
+Redirect 301 /memperkuat-pondasi-di-tanah-lunak.html /perkuat-pondasi-tanah-lunak.html
+
+# Biaya (merge ke hemat-biaya-pondasi)
+Redirect 301 /mengurangi-biaya-borepile.html /hemat-biaya-pondasi.html
+
+# Jasa bore pile (merge ke pilih-jasa-bore-pile)
+Redirect 301 /cara-memilih-jasa-bore-pile-yang-tepat.html /pilih-jasa-bore-pile.html
+Redirect 301 /panduan-memilih-kontraktor-bore-pile-terpercaya.html /pilih-jasa-bore-pile.html
