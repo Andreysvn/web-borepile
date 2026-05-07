@@ -7,7 +7,9 @@ function ready(callback) {
 }
 
 ready(function() {
-    // Mobile Menu Toggle
+    <script>
+// ==================== MOBILE MENU TOGGLE ====================
+document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -16,7 +18,6 @@ ready(function() {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
             
-            // Toggle body overflow when menu is open
             if (navMenu.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
             } else {
@@ -24,7 +25,7 @@ ready(function() {
             }
         });
         
-        // Close mobile menu when clicking on a link
+        // Tutup menu saat klik link
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
@@ -34,7 +35,7 @@ ready(function() {
         });
     }
     
-    // Navbar scroll effect with improved performance
+    // Navbar scroll effect
     const initNavbar = () => {
         const navbar = document.querySelector('.navbar');
         if (!navbar) return;
@@ -56,7 +57,6 @@ ready(function() {
         }
     };
 
-    let lastScroll = 0;
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         const currentScroll = Math.max(window.pageYOffset || 0, document.documentElement.scrollTop || 0);
@@ -76,95 +76,43 @@ ready(function() {
                 navbar.classList.add('scrolled');
             }
         }
-
-        lastScroll = currentScroll;
     }, { passive: true });
 
-    // Initialize navbar state on page load
     initNavbar();
     window.addEventListener('load', initNavbar);
 
-    // FAQ Accordion
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    if (faqQuestions.length > 0) {
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
+    // ==================== FAQ ACCORDION ====================
+    const faqButtons = document.querySelectorAll('.faq-question');
+    
+    if (faqButtons.length > 0) {
+        console.log('FAQ ditemukan: ' + faqButtons.length + ' tombol');
+        
+        faqButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
                 
-                // Close all other FAQs
-                faqQuestions.forEach(q => {
-                    if (q !== question) {
-                        q.classList.remove('active');
-                        if (q.nextElementSibling) {
-                            q.nextElementSibling.style.maxHeight = null;
-                            q.nextElementSibling.classList.remove('show');
-                        }
+                // Tutup semua FAQ lain
+                faqButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.nextElementSibling) {
+                        btn.nextElementSibling.classList.remove('show');
+                        btn.nextElementSibling.style.maxHeight = null;
                     }
                 });
                 
-                // Toggle current FAQ
-                question.classList.toggle('active');
-                if (answer) {
-                    answer.classList.toggle('show');
-                    if (answer.classList.contains('show')) {
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                    } else {
-                        answer.style.maxHeight = null;
+                // Buka yang diklik jika belum aktif
+                if (!isActive) {
+                    this.classList.add('active');
+                    if (answer) {
+                        answer.classList.add('show');
+                        answer.style.maxHeight = answer.scrollHeight + 50 + 'px';
                     }
                 }
             });
         });
     }
-    
-    // Counter Animation with Intersection Observer
-    const counterAnimation = () => {
-        const counters = document.querySelectorAll('.counter');
-        const speed = 20; // Lower is faster
-        const animationDuration = 2000; // Total duration in ms
-        
-        if (counters.length > 0) {
-            const startCounters = () => {
-                counters.forEach(counter => {
-                    const target = +counter.getAttribute('data-target') || 0;
-                    const increment = target / (animationDuration / speed);
-                    let current = 0;
-                    
-                    // Reset counter to 0
-                    counter.textContent = '0';
-                    counter.classList.add('animating');
-                    
-                    const updateCounter = () => {
-                        current += increment;
-                        if (current < target) {
-                            counter.textContent = Math.ceil(current);
-                            setTimeout(updateCounter, speed);
-                        } else {
-                            counter.textContent = target;
-                            counter.classList.remove('animating');
-                        }
-                    };
-                    
-                    updateCounter();
-                });
-            };
-            
-            // Only animate when in viewport
-            const statsSection = document.querySelector('.stats');
-            if (statsSection) {
-                const observer = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) {
-                        startCounters();
-                        observer.unobserve(statsSection);
-                    }
-                }, { threshold: 0.5 });
-                
-                observer.observe(statsSection);
-            }
-        }
-    };
-    
-    // Initialize counter animation
-    counterAnimation();
+});
     
     // Scroll to Top Button
     const scrollTopBtn = document.getElementById('scrollTop');
@@ -185,7 +133,7 @@ ready(function() {
         });
     }
     
-    // Smooth scrolling for anchor links - Cache navbar height to avoid forced reflow
+    // Smooth scrolling for anchor links
     let cachedNavbarHeight = null;
     
     const getNavbarHeight = () => {
@@ -197,7 +145,6 @@ ready(function() {
         return cachedNavbarHeight || 90;
     };
     
-    // Update cache on resize
     window.addEventListener('resize', () => {
         cachedNavbarHeight = null;
     }, { passive: true });
@@ -222,11 +169,10 @@ ready(function() {
         });
     });
     
-    // Highlight active navigation link - Optimized to reduce forced reflows
+    // Highlight active navigation link
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-menu a');
     
-    // Cache section positions to avoid repeated queries
     let sectionCache = [];
     
     const updateSectionCache = () => {
@@ -237,7 +183,6 @@ ready(function() {
         }));
     };
     
-    // Update cache on resize with debounce
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
@@ -264,12 +209,11 @@ ready(function() {
         });
     }
     
-    // Initialize cache
     updateSectionCache();
-    
     window.addEventListener('scroll', highlightNav, { passive: true });
-    highlightNav(); // Run once on load
+    highlightNav();
     
+    // Load hero video
     const loadHeroVideo = () => {
         const heroBackground = document.querySelector('.video-background');
         if (!heroBackground) return;
@@ -297,76 +241,7 @@ ready(function() {
 
     loadHeroVideo();
 
-    // Initialize AOS (Animate On Scroll)
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100,
-            disable: function() {
-                return window.innerWidth < 768;
-            }
-        });
-    } else {
-        document.querySelectorAll('[data-aos]').forEach(el => {
-            el.style.opacity = '1';
-            el.style.transform = 'none';
-        });
-    }
-
-    // Footer visitor counter
-    // TODO: Nyalakan kembali setelah Render deployment dengan window.VISITOR_API_URL
-    const visitorCounterApiUrl = ''; // Disabled untuk sekarang
-    const visitorApiCredentials = window.VISITOR_API_CREDENTIALS || 'omit';
-
-    const updateVisitorCounter = async () => {
-        const counterElement = document.getElementById('visitorCounter');
-        if (!counterElement) return;
-
-        const renderCount = value => {
-            counterElement.innerHTML = `<i class="fas fa-users"></i> Total Visitor: ${value}`;
-        };
-
-        const fetchVisitorCount = async () => {
-            if (!visitorCounterApiUrl) return null;
-            try {
-                const response = await fetch(visitorCounterApiUrl, {
-                    cache: 'no-cache',
-                    credentials: visitorApiCredentials,
-                });
-                if (!response.ok) throw new Error('Gagal mengambil data');
-                const data = await response.json();
-                return typeof data.count === 'number' ? data.count : null;
-            } catch (error) {
-                console.warn('Visitor API tidak tersedia:', error);
-                return null;
-            }
-        };
-
-        const apiCount = await fetchVisitorCount();
-        if (apiCount !== null) {
-            renderCount(apiCount.toLocaleString('id-ID'));
-            return;
-        }
-
-        const storageKey = 'apbVisitorCount';
-        let count = 0;
-
-        try {
-            count = parseInt(localStorage.getItem(storageKey), 10) || 0;
-            count += 1;
-            localStorage.setItem(storageKey, count.toString());
-            renderCount(count.toLocaleString('id-ID'));
-        } catch (error) {
-            console.warn('LocalStorage tidak tersedia:', error);
-            counterElement.innerHTML = `<i class="fas fa-users"></i> Total Visitor: tidak tersedia`;
-        }
-    };
-
-    updateVisitorCounter();
-    
-    // Newsletter/Mulai Layanan Form - Send to WhatsApp
+    // Newsletter Form
     const newsletterForm = document.getElementById('newsletterForm');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
@@ -379,38 +254,27 @@ ready(function() {
                 return;
             }
             
-            // Build WhatsApp message
             const whatsappMessage = `Halo, saya ingin mulai layanan. Email saya: ${email}`;
             const encodedMessage = encodeURIComponent(whatsappMessage);
-            
-            // WhatsApp Business number
             const whatsappNumber = '6285814173761';
-            
-            // Build WhatsApp URL
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
             
-            console.log('Newsletter Form Submitted:', { email, whatsappUrl });
-            
-            // Show confirmation
             alert('Terima kasih! Anda akan diarahkan ke WhatsApp...');
             
-            // Open WhatsApp
             setTimeout(() => {
                 window.open(whatsappUrl, '_blank');
             }, 500);
             
-            // Reset form
             newsletterForm.reset();
         });
     }
 
-    // Form submission - Send to WhatsApp
+    // Contact Form
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
             const formData = new FormData(contactForm);
             const formValues = Object.fromEntries(formData.entries());
             
@@ -420,35 +284,18 @@ ready(function() {
             const service = formValues.service || '';
             const message = formValues.message || '';
             
-            // Build WhatsApp message format
-            const whatsappMessage = `
-*Form Hubungi Kami - Agung Perkasa Borepile*
-
-*Nama:* ${name}
-*Email:* ${email}
-*Nomor Telepon:* ${phone}
-*Jenis Layanan:* ${service}
-*Pesan:* ${message}
-`.trim();
+            const whatsappMessage = `*Form Hubungi Kami - Agung Perkasa Borepile*\n\n*Nama:* ${name}\n*Email:* ${email}\n*Nomor Telepon:* ${phone}\n*Jenis Layanan:* ${service}\n*Pesan:* ${message}`.trim();
             
-            // Encode message for URL
             const encodedMessage = encodeURIComponent(whatsappMessage);
-            
-            // WhatsApp Business number (your number)
             const whatsappNumber = '6285814173761';
-            
-            // Build WhatsApp URL
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
             
-            // Show success message
-            alert(`Terima kasih ${name}! Pesan Anda akan dikirim ke WhatsApp kami. Silakan tunggu sebentar...`);
+            alert(`Terima kasih ${name}! Pesan Anda akan dikirim ke WhatsApp kami.`);
             
-            // Open WhatsApp with pre-filled message after short delay
             setTimeout(() => {
                 window.open(whatsappUrl, '_blank');
             }, 500);
             
-            // Reset form
             contactForm.reset();
         });
     }
@@ -458,32 +305,27 @@ ready(function() {
     const videoFallback = document.querySelector('.video-fallback');
     
     if (bgVideo && videoFallback) {
-        // Check if mobile device
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         
         if (isMobile) {
-            // Hide video and show fallback image on mobile
             bgVideo.style.display = 'none';
             videoFallback.style.display = 'block';
         } else {
-            // Ensure video plays on desktop
             bgVideo.play().catch(e => {
                 console.log('Video autoplay prevented:', e);
-                // Fallback to image if video fails to play
                 bgVideo.style.display = 'none';
                 videoFallback.style.display = 'block';
             });
         }
     }
 
-    // Enhanced Service Section Interactions
+    // Service Card Interactions
     const serviceCards = document.querySelectorAll('.service-card');
     const featureToggleBtns = document.querySelectorAll('.features-toggle-btn');
     const compareServicesBtn = document.getElementById('compareServicesBtn');
     const comparisonModal = document.getElementById('comparisonModal');
     const closeModal = document.querySelector('.close-modal');
     
-    // Service Card Hover Effect
     serviceCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px)';
@@ -494,49 +336,39 @@ ready(function() {
             this.style.transform = 'translateY(0)';
             this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
         });
-        
-        // For mobile touch devices
-        card.addEventListener('touchstart', function() {
-            this.style.transform = 'translateY(-10px)';
-            this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
-        });
-        
-        card.addEventListener('touchend', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-        });
     });
     
-    // Toggle Service Features
     featureToggleBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const featuresContent = this.nextElementSibling;
             const isOpen = this.classList.contains('active');
             
-            // Close all other feature toggles
             featureToggleBtns.forEach(b => {
                 if (b !== btn) {
                     b.classList.remove('active');
-                    b.nextElementSibling.classList.remove('show');
+                    if (b.nextElementSibling) {
+                        b.nextElementSibling.classList.remove('show');
+                    }
                 }
             });
             
-            // Toggle current feature
             this.classList.toggle('active');
-            featuresContent.classList.toggle('show');
+            if (featuresContent) {
+                featuresContent.classList.toggle('show');
+            }
             
-            // Update button text
             const toggleText = this.querySelector('.toggle-text');
-            if (this.classList.contains('active')) {
-                toggleText.textContent = 'Sembunyikan Fitur';
-            } else {
-                toggleText.textContent = 'Lihat Fitur Lengkap';
+            if (toggleText) {
+                if (this.classList.contains('active')) {
+                    toggleText.textContent = 'Sembunyikan Fitur';
+                } else {
+                    toggleText.textContent = 'Lihat Fitur Lengkap';
+                }
             }
         });
     });
     
-    // Service Comparison Modal
-    if (compareServicesBtn && comparisonModal) {
+    if (compareServicesBtn && comparisonModal && closeModal) {
         compareServicesBtn.addEventListener('click', function() {
             comparisonModal.style.display = 'block';
             document.body.style.overflow = 'hidden';
@@ -555,39 +387,31 @@ ready(function() {
         });
     }
     
-    // Service Image Click Effect
+    // Service image click
     const serviceImages = document.querySelectorAll('.service-img');
     serviceImages.forEach(img => {
         img.addEventListener('click', function() {
-            const btn = this.closest('.service-card').querySelector('.features-toggle-btn');
-            btn.click();
+            const btn = this.closest('.service-card')?.querySelector('.features-toggle-btn');
+            if (btn) btn.click();
         });
     });
-
-    // Enhanced service card hover effects
+    
+    // Service hover effects
     serviceCards.forEach(card => {
-        const img = card.querySelector('.service-img');
         const hoverContent = card.querySelector('.service-hover-content');
         
         card.addEventListener('mouseenter', () => {
-            hoverContent.style.opacity = '1';
-            hoverContent.style.transform = 'translateY(0)';
+            if (hoverContent) {
+                hoverContent.style.opacity = '1';
+                hoverContent.style.transform = 'translateY(0)';
+            }
         });
         
         card.addEventListener('mouseleave', () => {
-            hoverContent.style.opacity = '0';
-            hoverContent.style.transform = 'translateY(20px)';
-        });
-        
-        // For mobile touch devices
-        card.addEventListener('touchstart', () => {
-            hoverContent.style.opacity = '1';
-            hoverContent.style.transform = 'translateY(0)';
-        });
-        
-        card.addEventListener('touchend', () => {
-            hoverContent.style.opacity = '0';
-            hoverContent.style.transform = 'translateY(20px)';
+            if (hoverContent) {
+                hoverContent.style.opacity = '0';
+                hoverContent.style.transform = 'translateY(20px)';
+            }
         });
     });
     

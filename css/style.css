@@ -555,6 +555,7 @@ ul {
   width: 100%;
 }
 
+/* ===== HAMBURGER MENU STYLES (FIX) ===== */
 .menu-toggle {
   display: none;
   cursor: pointer;
@@ -562,17 +563,13 @@ ul {
   z-index: 1001;
 }
 
-.bar {
+.menu-toggle .bar {
   display: block;
   width: 28px;
   height: 3px;
   margin: 6px auto;
   background-color: var(--primary-color);
   transition: var(--transition);
-}
-
-.navbar.scrolled .menu-toggle .bar {
-  background-color: white;
 }
 
 /* Hide mobile-only links on desktop and desktop-only links on mobile */
@@ -667,13 +664,6 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-    background-image: url('../imgs/header\ web\ borpile.jpeg');
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .header-content {
@@ -705,8 +695,6 @@ ul {
   gap: 25px;
   margin-top: 30px;
 }
-
-/* Stats section removed */
 
 /* ===== ENHANCED SERVICES SECTION ===== */
 .services {
@@ -1639,13 +1627,12 @@ ul {
   margin-top: 35px;
 }
 
-/* CSS untuk mengatur jarak antara heading dan paragraf */
 .feature-text {
     margin-left: 15px;
 }
 
 .feature-text h3 {
-    margin-bottom: 5px; /* Jarak antara h3 dan p */
+    margin-bottom: 5px;
     line-height: 1.3;
 }
 
@@ -1666,8 +1653,6 @@ ul {
     color: #2a7fba;
     margin-top: 3px;
 }
-
-/* Testimonials removed */
 
 /* ===== FAQ SECTION ===== */
 .faq {
@@ -1769,7 +1754,6 @@ ul {
 .contact-info p {
   color: var(--dark-color);
 }
-
 
 .contact-details {
   margin-top: 40px;
@@ -1891,14 +1875,12 @@ ul {
   border-radius: 2px;
 }
 
-/* Card Jabodetabek (Full Width) */
 .area-card.full-width {
   width: 100%;
   margin: 0 auto 30px;
   box-shadow: var(--box-shadow);
 }
 
-/* Header Card */
 .area-header {
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   color: var(--white);
@@ -1908,7 +1890,6 @@ ul {
   width: 100%;
 }
 
-/* Daftar Area */
 .area-list {
   padding: 20px;
   text-align: left;
@@ -1938,7 +1919,6 @@ ul {
   font-size: 1.2rem;
 }
 
-/* Container untuk card lainnya */
 .areas-container {
   display: flex;
   flex-wrap: wrap;
@@ -1947,7 +1927,6 @@ ul {
   margin-top: 30px;
 }
 
-/* Card biasa (Jawa Barat, Tengah, Timur) */
 .area-card:not(.full-width) {
   flex: 1;
   min-width: 300px;
@@ -2117,13 +2096,6 @@ ul {
 .footer-links {
   margin-top: 10px;
 }
-          text-align: center;
-          color: #4ade80;
-        }
-
-        .footer-links {
-          margin-top: 10px;
-        }
 
 .footer-links a {
   color: rgba(255, 255, 255, 0.5);
@@ -2194,21 +2166,7 @@ ul {
   transform: translateY(-5px);
 }
 
-/* ===== RESPONSIVE STYLES ===== */
-@media (max-width: 1200px) {
-  .header-content h1 {
-    font-size: 2.8rem;
-  }
-  
-  .section-title {
-    font-size: 2.2rem;
-  }
-  
-  .areas-container {
-    justify-content: center;
-  }
-}
-
+/* ===== RESPONSIVE STYLES & HAMBURGER MENU FIX ===== */
 @media (max-width: 992px) {
   .header-content h1 {
     font-size: 2.5rem;
@@ -2235,8 +2193,12 @@ ul {
 }
 
 @media (max-width: 768px) {
+  /* TAMPILKAN HAMBURGER MENU */
   .menu-toggle {
     display: block;
+    position: relative;
+    top: 0;
+    right: 0;
   }
   
   .menu-toggle.active .bar:nth-child(1) {
@@ -2251,22 +2213,24 @@ ul {
     transform: translateY(-9px) rotate(-45deg);
   }
   
+  /* NAV MENU SEMBUNYI DULU */
   .nav-menu {
     position: fixed;
-    top: 60px;
     left: -100%;
+    top: 70px;
     width: 100%;
-    max-height: calc(100vh - 60px);
+    max-height: calc(100vh - 70px);
     overflow-y: auto;
     background-color: var(--white);
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
-    z-index: 1002;
+    transition: left 0.3s ease;
+    z-index: 1000;
   }
   
+  /* SAAT AKTIF, MUNCUL KE KIRI */
   .nav-menu.active {
     left: 0;
   }
@@ -2280,21 +2244,34 @@ ul {
   .nav-menu a {
     display: block;
     padding: 10px 0;
+    font-size: 1rem;
   }
   
   .btn-nav {
     margin-left: 0;
     margin-top: 10px;
+    display: inline-block;
   }
   
+  /* SCROLLED STATE */
   .navbar.scrolled .nav-menu {
     background-color: var(--primary-color);
   }
   
   .navbar.scrolled .nav-menu a {
-    color: white;
+    color: white !important;
   }
   
+  /* HOME PAGE MENU */
+  .home .nav-menu {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .home .nav-menu a {
+    color: white !important;
+  }
+  
+  /* DESKTOP ONLY & MOBILE ONLY */
   .desktop-only {
     display: none;
   }
@@ -2303,12 +2280,13 @@ ul {
     display: block;
   }
   
+  /* HEADER */
   .header {
     min-height: 600px;
   }
   
   .header-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   
   .header-content p {
@@ -2320,76 +2298,71 @@ ul {
     gap: 15px;
   }
 
+  /* BLOG */
   .blog-container {
     padding: 40px 16px;
   }
 
   .blog-header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .blog-content h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .blog-content h3 {
     font-size: 1.2rem;
   }
   
+  /* GRID */
   .services-grid,
   .portfolio-grid,
   .projects-grid {
     grid-template-columns: 1fr;
   }
   
-  .stat-item {
-    min-width: 140px;
-    padding: 25px 15px;
-  }
-  
-  .counter {
-    font-size: 2.5rem;
-  }
-  
-  /* Show video fallback image on mobile */
-  .video-background video {
-    display: none;
-  }
-  
-  .video-fallback {
-    display: block;
-  }
-  
+  /* AREA LIST */
   .area-list ul {
     column-count: 1;
   }
   
+  /* MAP */
   .map-container {
     height: 350px;
+  }
+  
+  /* SERVICE CARD */
+  .service-content {
+    padding: 20px;
+  }
+  
+  .specs-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 576px) {
   section {
-    padding: 70px 0;
+    padding: 60px 0;
   }
   
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding-bottom: 15px;
   }
   
   .section-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 40px;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
   }
   
   .header-content h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
   .header-content p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
   .btn {
@@ -2397,32 +2370,21 @@ ul {
     font-size: 0.9rem;
   }
   
-  .stat-item {
-    min-width: 120px;
-    padding: 20px 10px;
-    margin: 8px;
+  .service-content {
+    padding: 20px;
   }
   
-  .counter {
-    font-size: 2rem;
-  }
-  
-  .stat-item span {
-    font-size: 0.9rem;
-  }
-  
-  .service-content,
   .contact-form {
     padding: 20px;
   }
   
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 30px;
   }
   
   .footer-col {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .footer-col h3 {
@@ -2444,11 +2406,19 @@ ul {
     bottom: 80px;
     right: 20px;
   }
+  
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+  
+  .faq-answer p {
+    font-size: 0.85rem;
+  }
 }
 
 /* ===== WINDOWS SPECIFIC FIXES ===== */
 @supports (-ms-ime-align:auto) {
-  /* IE/Edge specific fixes */
   .area-card {
     margin-left: 0;
     margin-right: 0;
