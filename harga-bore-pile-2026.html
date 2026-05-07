@@ -146,14 +146,15 @@
             color: var(--secondary-color);
         }
         
+        /* PERBAIKAN KONTRAST - btn-nav */
         .btn-nav {
-            background: var(--secondary-color);
+            background: #d35400;
             padding: 8px 16px;
             border-radius: 30px;
         }
         
         .btn-nav:hover {
-            background: #d35400;
+            background: #a04000;
             color: white !important;
         }
         
@@ -208,17 +209,23 @@
             .blog-container { padding: 100px 20px 40px; }
         }
         
+        /* PERBAIKAN KONTRAST - breadcrumb */
         .breadcrumb {
             padding: 0.8rem 0;
             margin-bottom: 1rem;
             font-size: 0.8rem;
         }
-        .breadcrumb a { color: var(--primary-color); text-decoration: none; }
-        .breadcrumb .separator { margin: 0 0.3rem; color: #999; }
-        .breadcrumb .current { color: #666; }
+        .breadcrumb a { 
+            color: #0d3b6e; 
+            text-decoration: underline;
+        }
+        .breadcrumb .separator { margin: 0 0.3rem; color: #555; }
+        .breadcrumb .current { color: #333; font-weight: 500; }
         
+        /* PERBAIKAN KONTRAST - update badge */
         .update-badge {
-            background: #e8f5e9;
+            background: #2e7d32;
+            color: #ffffff;
             padding: 0.5rem 1rem;
             border-radius: 8px;
             font-size: 0.85rem;
@@ -263,11 +270,13 @@
             text-align: center;
             font-weight: 600;
             transition: var(--transition);
+            color: #222;
         }
+        /* PERBAIKAN KONTRAST - method-btn.active */
         .method-btn.active {
-            border-color: var(--secondary-color);
-            background: #fff3e0;
-            color: var(--secondary-color);
+            border-color: #d35400;
+            background: #d35400;
+            color: #ffffff;
         }
         .calculator-form-group { margin-bottom: 1rem; }
         .calculator-form-group label {
@@ -275,6 +284,7 @@
             font-weight: 600;
             margin-bottom: 0.4rem;
             font-size: 0.9rem;
+            color: #222;
         }
         .calculator-form-group select, 
         .calculator-form-group input {
@@ -300,7 +310,7 @@
         }
         .calculator-result .detail-price {
             font-size: 0.8rem;
-            color: #666;
+            color: #555;
             margin-top: 0.3rem;
         }
         .calculator-result .estimation-time {
@@ -309,6 +319,7 @@
             border-radius: 8px;
             margin-top: 0.6rem;
             font-size: 0.85rem;
+            color: #1b5e20;
         }
         .btn-wa {
             background: #25D366;
@@ -326,11 +337,15 @@
         .btn-wa:hover { background: #128C7E; }
         .calculator-note {
             font-size: 0.7rem;
-            color: #888;
+            color: #555;
             margin-top: 0.8rem;
             text-align: center;
         }
-        .price-hint { font-size: 0.7rem; color: #888; margin-top: 0.2rem; }
+        .price-hint { 
+            font-size: 0.7rem; 
+            color: #555; 
+            margin-top: 0.2rem; 
+        }
         
         @media (min-width: 768px) {
             .calculator-box { padding: 1.8rem; }
@@ -351,6 +366,7 @@
             border-left: 4px solid var(--primary-color);
         }
         .info-card h3 { color: var(--primary-color); margin-bottom: 0.3rem; font-size: 1rem; }
+        .info-card p { color: #222; }
         
         .illustration-row {
             display: flex;
@@ -373,11 +389,12 @@
         }
         .illustration-img .caption {
             font-size: 0.7rem;
-            color: #666;
+            color: #555;
             margin-top: 0.3rem;
         }
         .illustration-text {
             flex: 1.5;
+            color: #222;
         }
         .illustration-bg {
             background: #f5f7fa;
@@ -391,29 +408,30 @@
             border-radius: 12px;
             margin-bottom: 0.8rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border: 1px solid #e9ecef;
+            border: 1px solid #ddd;
             overflow: hidden;
         }
         .faq-question {
             width: 100%;
-            background: #f8f9fa;
+            background: #f5f5f5;
             border: none;
             text-align: left;
             padding: 1rem 1.2rem;
             font-weight: 600;
-            color: var(--primary-color);
+            color: #0d3b6e;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .faq-question i { transition: transform 0.3s; color: var(--secondary-color); }
+        .faq-question i { transition: transform 0.3s; color: #d35400; }
         .faq-question.active i { transform: rotate(180deg); }
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
             padding: 0 1.2rem;
+            color: #222;
         }
         .faq-answer.show { max-height: 300px; padding: 0 1.2rem 1rem 1.2rem; }
         
@@ -436,6 +454,7 @@
             padding: 8px;
             border: 1px solid #ddd;
             text-align: center;
+            color: #222;
         }
         .price-table tr:nth-child(even) {
             background: #f9f9f9;
@@ -458,11 +477,11 @@
             background: #f9f9f9;
             border-radius: 12px;
             padding: 1rem;
-            border: 1px solid #eee;
+            border: 1px solid #ddd;
         }
         .area-box h3 {
-            color: var(--primary-color);
-            border-left: 3px solid var(--secondary-color);
+            color: #0d3b6e;
+            border-left: 3px solid #d35400;
             padding-left: 10px;
             margin-top: 0;
             margin-bottom: 0.8rem;
@@ -478,7 +497,8 @@
             padding: 4px 10px;
             border-radius: 20px;
             font-size: 0.75rem;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
+            color: #222;
         }
         
         .footer {
@@ -506,16 +526,16 @@
             left: 0;
             width: 50px;
             height: 2px;
-            background: var(--secondary-color);
+            background: #d35400;
         }
         .footer-col p, .footer-col li {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.8);
             font-size: 0.85rem;
         }
         .footer-col ul { list-style: none; }
         .footer-col li { margin-bottom: 8px; }
-        .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; }
-        .footer-col a:hover { color: var(--secondary-color); }
+        .footer-col a { color: rgba(255,255,255,0.8); text-decoration: underline; }
+        .footer-col a:hover { color: #f39c12; }
         .footer-bottom {
             background: rgba(0,0,0,0.2);
             padding: 20px;
@@ -536,7 +556,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
-            box-shadow: 0 5px 25px rgba(7,94,84,0.4);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
             z-index: 100;
             transition: var(--transition);
             text-decoration: none;
@@ -560,7 +580,7 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: var(--secondary-color);
+            background: #d35400;
             color: white;
             border: none;
             border-radius: 50%;
@@ -571,30 +591,10 @@
             z-index: 99;
         }
         .scroll-top.active { opacity: 1; visibility: visible; }
-        .scroll-top:hover { background: #d35400; transform: translateY(-5px); }
+        .scroll-top:hover { background: #a04000; }
         
         .text-center { text-align: center; }
         .mt-2 { margin-top: 2rem; }
-        
-        /* PERBAIKAN KONTRAST UNTUK AKSESIBILITAS */
-        .btn-wa, .btn-wa-konsultasi {
-            background: #1e7b34;
-            color: #ffffff;
-            font-weight: bold;
-        }
-        .btn-wa:hover, .btn-wa-konsultasi:hover {
-            background: #166329;
-        }
-        .btn-primary, .method-btn.active {
-            background: #d35400;
-            color: #ffffff;
-        }
-        .price-hint, .calculator-note {
-            color: #555555;
-        }
-        .info-card p, .info-card h3 {
-            color: #222222;
-        }
         
         @media (max-width: 768px) {
             .method-selector { flex-direction: column; }
@@ -628,20 +628,13 @@
         
         /* Fokus style untuk aksesibilitas keyboard */
         :focus {
-            outline: 3px solid var(--secondary-color);
+            outline: 3px solid #d35400;
             outline-offset: 2px;
         }
         
-        /* Perbaikan kontras untuk teks */
-        .breadcrumb a, .blog-back-link {
-            color: #0d3b6e;
-        }
-        .update-badge {
-            background: #2e7d32;
-            color: #ffffff;
-        }
-        .update-badge i {
-            color: #ffcc00;
+        /* PERBAIKAN: link distinguishable */
+        a:not(.btn-nav):not(.btn-wa-konsultasi):not(.whatsapp-float) {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -653,15 +646,15 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6GBTKJB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <!-- NAVBAR - Perbaikan ARIA: HAPUS aria-label dan aria-expanded dari div, pindahkan ke button -->
+    <!-- NAVBAR - Perbaikan ARIA -->
     <nav class="navbar" aria-label="Navigasi utama">
         <div class="container">
             <a href="index.html" class="logo" aria-label="Agung Perkasa Borepile - Beranda">
                 <img src="imgs/logo-agung-perkasa-transparan.png" alt="Logo Agung Perkasa Borepile" loading="lazy" width="45" height="45">
                 <span>Agung Perkasa <br>Borepile</span>
             </a>
-            <!-- PERBAIKAN ARIA: Ganti div dengan button untuk menu toggle -->
-            <button class="menu-toggle" id="mobile-menu" aria-label="Menu navigasi" aria-expanded="false" aria-haspopup="true">
+            <!-- PERBAIKAN ARIA: button untuk menu toggle -->
+            <button class="menu-toggle" id="mobile-menu" aria-label="Menu navigasi" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -933,11 +926,11 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>30 cm</strong></strong></td><td><strong>120.000</strong></strong></td><td>20 meter</strong></strong></td><td>Rumah 1-2 lantai</strong></strong></td></tr>
-                            <tr><td>40 cm</strong></strong></td><td><strong>135.000</strong></strong></td><td>20 meter</strong></strong></td><td>Ruko, kantor</strong></strong></td></tr>
-                            <tr><td>50 cm</strong></strong></td><td><strong>190.000</strong></strong></td><td>20 meter</strong></strong></td><td>Gudang, pabrik kecil</strong></strong></td></tr>
-                            <tr><td>60 cm</strong></strong></td><td><strong>250.000</strong></strong></td><td>15 meter</strong></strong></td><td>Hotel 3-4 lantai</strong></strong></td></tr>
-                            <tr><td>80 cm</strong></strong></td><td><strong>350.000</strong></strong></td><td>10 meter</strong></strong></td><td>Gedung 5-8 lantai</strong></strong></td></tr>
+                            <tr><td>30 cm</td><td><strong>120.000</strong></td><td>20 meter</td><td>Rumah 1-2 lantai</td></tr>
+                            <tr><td>40 cm</td><td><strong>135.000</strong></td><td>20 meter</td><td>Ruko, kantor</td></tr>
+                            <tr><td>50 cm</td><td><strong>190.000</strong></td><td>20 meter</td><td>Gudang, pabrik kecil</td></tr>
+                            <tr><td>60 cm</td><td><strong>250.000</strong></td><td>15 meter</td><td>Hotel 3-4 lantai</td></tr>
+                            <tr><td>80 cm</td><td><strong>350.000</strong></td><td>10 meter</td><td>Gedung 5-8 lantai</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -950,10 +943,10 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>20 cm</strong></strong></td><td><strong>70.000</strong></strong></td><td>6 meter</strong></strong></td><td>Area sangat sempit</strong></strong></td></tr>
-                            <tr><td>25 cm</strong></strong></td><td><strong>75.000</strong></strong></td><td>6 meter</strong></strong></td><td>Gang kecil</strong></strong></td></tr>
-                            <tr><td>30 cm</strong></strong></td><td><strong>85.000</strong></strong></td><td>6 meter</strong></strong></td><td>Rumah 1-2 lantai (tanah padat)</strong></strong></td></tr>
-                            <tr><td>40 cm</strong></strong></td><td><strong>100.000</strong></strong></td><td>6 meter</strong></strong></td><td>Rumah 2 lantai (tanah padat)</strong></strong></td></tr>
+                            <tr><td>20 cm</td><td><strong>70.000</strong></td><td>6 meter</td><td>Area sangat sempit</td></tr>
+                            <tr><td>25 cm</td><td><strong>75.000</strong></td><td>6 meter</td><td>Gang kecil</td></tr>
+                            <tr><td>30 cm</td><td><strong>85.000</strong></td><td>6 meter</td><td>Rumah 1-2 lantai (tanah padat)</td></tr>
+                            <tr><td>40 cm</td><td><strong>100.000</strong></td><td>6 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1117,7 +1110,7 @@
                     });
                 });
                 
-                // Mobile menu toggle - Perbaikan ARIA
+                // Mobile menu toggle
                 const mobileMenu = document.getElementById('mobile-menu');
                 const navMenu = document.querySelector('.nav-menu');
                 if (mobileMenu) {
@@ -1137,7 +1130,7 @@
         </div>
     </main>
 
-    <!-- AREA LAYANAN SECTION (di luar main) -->
+    <!-- AREA LAYANAN SECTION -->
     <div style="max-width: 980px; margin: 0 auto; padding: 0 20px;">
         <h2 style="color: var(--primary-color); margin: 25px 0 10px;">Cakupan Area Layanan Kami</h2>
         <p>Agung Perkasa Borepile melayani proyek konstruksi di wilayah Jabodetabek berikut ini.</p>
