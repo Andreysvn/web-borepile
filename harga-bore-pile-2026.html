@@ -92,7 +92,6 @@
             padding: 0 20px;
         }
         
-        /* NAVBAR */
         .navbar {
             background: var(--primary-color);
             padding: 15px 0;
@@ -143,17 +142,19 @@
         }
         
         .nav-menu a:hover {
-            color: var(--secondary-color);
+            color: #f39c12;
+            text-decoration: underline;
         }
         
         .btn-nav {
-            background: var(--secondary-color);
+            background: #d35400;
             padding: 8px 16px;
             border-radius: 30px;
+            color: white !important;
         }
         
         .btn-nav:hover {
-            background: #d35400;
+            background: #a04000;
             color: white !important;
         }
         
@@ -213,26 +214,23 @@
             margin-bottom: 1rem;
             font-size: 0.8rem;
         }
-        .breadcrumb a { color: var(--primary-color); text-decoration: none; }
-        .breadcrumb .separator { margin: 0 0.3rem; color: #999; }
-        .breadcrumb .current { color: #666; }
+        .breadcrumb a { 
+            color: #0d3b6e; 
+            text-decoration: underline;
+        }
+        .breadcrumb a:hover { color: #d35400; }
+        .breadcrumb .separator { margin: 0 0.3rem; color: #555; }
+        .breadcrumb .current { color: #333; font-weight: 500; }
         
         .update-badge {
-            background: #e8f5e9;
+            background: #2e7d32;
+            color: #ffffff;
             padding: 0.5rem 1rem;
             border-radius: 8px;
             font-size: 0.85rem;
             margin-bottom: 1.5rem;
             display: inline-block;
         }
-        
-        .blog-back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        .blog-back-link:hover { text-decoration: underline; }
         
         .calculator-box {
             background: linear-gradient(135deg, #f5f7fa 0%, #e8edf5 100%);
@@ -257,17 +255,18 @@
             flex: 1;
             padding: 12px;
             background: white;
-            border: 2px solid #ddd;
+            border: 2px solid #ccc;
             border-radius: 10px;
             cursor: pointer;
             text-align: center;
             font-weight: 600;
             transition: var(--transition);
+            color: #222;
         }
         .method-btn.active {
-            border-color: var(--secondary-color);
-            background: #fff3e0;
-            color: var(--secondary-color);
+            border-color: #d35400;
+            background: #d35400;
+            color: #ffffff;
         }
         .calculator-form-group { margin-bottom: 1rem; }
         .calculator-form-group label {
@@ -275,12 +274,13 @@
             font-weight: 600;
             margin-bottom: 0.4rem;
             font-size: 0.9rem;
+            color: #222;
         }
         .calculator-form-group select, 
         .calculator-form-group input {
             width: 100%;
             padding: 10px 12px;
-            border: 2px solid #ddd;
+            border: 2px solid #ccc;
             border-radius: 10px;
             font-size: 0.95rem;
             background: white;
@@ -300,7 +300,7 @@
         }
         .calculator-result .detail-price {
             font-size: 0.8rem;
-            color: #666;
+            color: #555;
             margin-top: 0.3rem;
         }
         .calculator-result .estimation-time {
@@ -309,6 +309,7 @@
             border-radius: 8px;
             margin-top: 0.6rem;
             font-size: 0.85rem;
+            color: #1b5e20;
         }
         .btn-wa {
             background: #25D366;
@@ -326,11 +327,15 @@
         .btn-wa:hover { background: #128C7E; }
         .calculator-note {
             font-size: 0.7rem;
-            color: #888;
+            color: #555555;
             margin-top: 0.8rem;
             text-align: center;
         }
-        .price-hint { font-size: 0.7rem; color: #888; margin-top: 0.2rem; }
+        .price-hint { 
+            font-size: 0.7rem; 
+            color: #555555; 
+            margin-top: 0.2rem; 
+        }
         
         @media (min-width: 768px) {
             .calculator-box { padding: 1.8rem; }
@@ -351,6 +356,7 @@
             border-left: 4px solid var(--primary-color);
         }
         .info-card h3 { color: var(--primary-color); margin-bottom: 0.3rem; font-size: 1rem; }
+        .info-card p { color: #222222; }
         
         .illustration-row {
             display: flex;
@@ -373,11 +379,12 @@
         }
         .illustration-img .caption {
             font-size: 0.7rem;
-            color: #666;
+            color: #555;
             margin-top: 0.3rem;
         }
         .illustration-text {
             flex: 1.5;
+            color: #222;
         }
         .illustration-bg {
             background: #f5f7fa;
@@ -391,29 +398,30 @@
             border-radius: 12px;
             margin-bottom: 0.8rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border: 1px solid #e9ecef;
+            border: 1px solid #ddd;
             overflow: hidden;
         }
         .faq-question {
             width: 100%;
-            background: #f8f9fa;
+            background: #f5f5f5;
             border: none;
             text-align: left;
             padding: 1rem 1.2rem;
             font-weight: 600;
-            color: var(--primary-color);
+            color: #0d3b6e;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .faq-question i { transition: transform 0.3s; color: var(--secondary-color); }
+        .faq-question i { transition: transform 0.3s; color: #d35400; }
         .faq-question.active i { transform: rotate(180deg); }
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
             padding: 0 1.2rem;
+            color: #222;
         }
         .faq-answer.show { max-height: 300px; padding: 0 1.2rem 1rem 1.2rem; }
         
@@ -436,6 +444,7 @@
             padding: 8px;
             border: 1px solid #ddd;
             text-align: center;
+            color: #222;
         }
         .price-table tr:nth-child(even) {
             background: #f9f9f9;
@@ -458,11 +467,11 @@
             background: #f9f9f9;
             border-radius: 12px;
             padding: 1rem;
-            border: 1px solid #eee;
+            border: 1px solid #ddd;
         }
         .area-box h3 {
-            color: var(--primary-color);
-            border-left: 3px solid var(--secondary-color);
+            color: #0d3b6e;
+            border-left: 3px solid #d35400;
             padding-left: 10px;
             margin-top: 0;
             margin-bottom: 0.8rem;
@@ -478,7 +487,8 @@
             padding: 4px 10px;
             border-radius: 20px;
             font-size: 0.75rem;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
+            color: #222;
         }
         
         .footer {
@@ -506,16 +516,16 @@
             left: 0;
             width: 50px;
             height: 2px;
-            background: var(--secondary-color);
+            background: #d35400;
         }
         .footer-col p, .footer-col li {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.8);
             font-size: 0.85rem;
         }
         .footer-col ul { list-style: none; }
         .footer-col li { margin-bottom: 8px; }
-        .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; }
-        .footer-col a:hover { color: var(--secondary-color); }
+        .footer-col a { color: rgba(255,255,255,0.8); text-decoration: underline; }
+        .footer-col a:hover { color: #f39c12; }
         .footer-bottom {
             background: rgba(0,0,0,0.2);
             padding: 20px;
@@ -536,7 +546,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
-            box-shadow: 0 5px 25px rgba(7,94,84,0.4);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
             z-index: 100;
             transition: var(--transition);
             text-decoration: none;
@@ -560,7 +570,7 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: var(--secondary-color);
+            background: #d35400;
             color: white;
             border: none;
             border-radius: 50%;
@@ -571,30 +581,10 @@
             z-index: 99;
         }
         .scroll-top.active { opacity: 1; visibility: visible; }
-        .scroll-top:hover { background: #d35400; transform: translateY(-5px); }
+        .scroll-top:hover { background: #a04000; }
         
         .text-center { text-align: center; }
         .mt-2 { margin-top: 2rem; }
-        
-        /* PERBAIKAN KONTRAST UNTUK AKSESIBILITAS */
-        .btn-wa, .btn-wa-konsultasi {
-            background: #1e7b34;
-            color: #ffffff;
-            font-weight: bold;
-        }
-        .btn-wa:hover, .btn-wa-konsultasi:hover {
-            background: #166329;
-        }
-        .btn-primary, .method-btn.active {
-            background: #d35400;
-            color: #ffffff;
-        }
-        .price-hint, .calculator-note {
-            color: #555555;
-        }
-        .info-card p, .info-card h3 {
-            color: #222222;
-        }
         
         @media (max-width: 768px) {
             .method-selector { flex-direction: column; }
@@ -611,12 +601,11 @@
             }
         }
         
-        /* Skip to main content link untuk aksesibilitas */
         .skip-link {
             position: absolute;
             top: -40px;
             left: 0;
-            background: var(--primary-color);
+            background: #1a3a6e;
             color: white;
             padding: 8px;
             text-decoration: none;
@@ -626,42 +615,32 @@
             top: 0;
         }
         
-        /* Fokus style untuk aksesibilitas keyboard */
         :focus {
-            outline: 3px solid var(--secondary-color);
+            outline: 3px solid #d35400;
             outline-offset: 2px;
         }
         
-        /* Perbaikan kontras untuk teks */
-        .breadcrumb a, .blog-back-link {
-            color: #0d3b6e;
+        a:not(.btn-nav):not(.btn-wa-konsultasi):not(.whatsapp-float) {
+            text-decoration: underline;
         }
-        .update-badge {
-            background: #2e7d32;
-            color: #ffffff;
-        }
-        .update-badge i {
-            color: #ffcc00;
+        
+        h1, h2, h3, h4 {
+            color: #1a3a6e;
         }
     </style>
 </head>
 <body>
-    <!-- Skip to main content link -->
     <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
     
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6GBTKJB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     
-    <!-- NAVBAR - Perbaikan ARIA: HAPUS aria-label dan aria-expanded dari div, pindahkan ke button -->
     <nav class="navbar" aria-label="Navigasi utama">
         <div class="container">
             <a href="index.html" class="logo" aria-label="Agung Perkasa Borepile - Beranda">
                 <img src="imgs/logo-agung-perkasa-transparan.png" alt="Logo Agung Perkasa Borepile" loading="lazy" width="45" height="45">
                 <span>Agung Perkasa <br>Borepile</span>
             </a>
-            <!-- PERBAIKAN ARIA: Ganti div dengan button untuk menu toggle -->
-            <button class="menu-toggle" id="mobile-menu" aria-label="Menu navigasi" aria-expanded="false" aria-haspopup="true">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Menu navigasi" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -677,7 +656,6 @@
         </div>
     </nav>
 
-    <!-- MAIN CONTENT - LANDMARK UTAMA -->
     <main id="main-content">
         <div class="blog-container">
             <nav class="breadcrumb" aria-label="Breadcrumb navigasi">
@@ -686,24 +664,23 @@
                 <span class="current" aria-current="page">Harga Bore Pile Jakarta 2026</span>
             </nav>
             
-            <h1 style="color: var(--primary-color); font-size: 1.8rem; margin-bottom: 15px;">Harga Bore Pile Jakarta Terbaru 2026: Kalkulator Estimasi Biaya (Mesin & Manual)</h1>
-            <div style="margin-bottom: 20px; color: var(--text-light); font-size: 0.85rem;">
+            <h1>Harga Bore Pile Jakarta Terbaru 2026: Kalkulator Estimasi Biaya (Mesin & Manual)</h1>
+            <div style="margin-bottom: 20px; color: #555; font-size: 0.85rem;">
                 <span>Mei 2026</span> |
                 <span>Tim Agung Perkasa</span> |
                 <span>Melayani Jakarta & Sekitarnya</span>
             </div>
 
             <div class="update-badge">
-                Update harga bore pile terbaru Mei 2026 untuk wilayah Jabodetabek
+                ✅ Update harga bore pile terbaru Mei 2026 untuk wilayah Jabodetabek
             </div>
 
-            <p style="background: #f0f7ff; padding: 1rem; border-left: 5px solid var(--primary-color); border-radius: 8px; margin-bottom: 1.5rem;">
+            <p style="background: #f0f7ff; padding: 1rem; border-left: 5px solid #1a3a6e; border-radius: 8px; margin-bottom: 1.5rem; color: #222;">
                 <strong>Dibuat oleh tim Agung Perkasa:</strong> Kalkulator ini bisa memberikan estimasi total biaya jasa borepile untuk memilih metode 2 bore pile (mesin atau manual), caranya tinggal pilih diameter, masukkan kedalaman & jumlah titik. 
                 Harga dan kedalaman bisa diatur sendiri sesuai keinginan atau dikosongkan mengikuti harga tabel. Hasil perhitungan akan muncul otomatis.
                 Estimasi bisa kami pastikan cukup akurat karena kami menggunakan data aktual dari proyek-proyek yang sudah kami kerjakan di Jakarta dan sekitarnya.
             </p>
 
-            <!-- KALKULATOR SECTION -->
             <section aria-labelledby="calculator-heading">
                 <div class="calculator-box">
                     <h2 id="calculator-heading">Kalkulator Estimasi Biaya Bore Pile</h2>
@@ -720,7 +697,7 @@
                     <div class="form-row">
                         <div class="calculator-form-group">
                             <label for="diameterSelect">Diameter (cm)</label>
-                            <select id="diameterSelect" aria-describedby="diameter-hint">
+                            <select id="diameterSelect">
                                 <option value="30">30 cm</option>
                                 <option value="40" selected>40 cm</option>
                                 <option value="50">50 cm</option>
@@ -731,22 +708,21 @@
                         
                         <div class="calculator-form-group">
                             <label for="priceInput">Harga Jasa per Meter (Rp)</label>
-                            <input type="text" id="priceInput" inputmode="numeric" placeholder="Contoh: 130000" value="" aria-describedby="price-hint">
-                            <div id="price-hint" class="price-hint">*Kosongkan untuk menggunakan harga standar tabel</div>
+                            <input type="text" id="priceInput" inputmode="numeric" placeholder="Contoh: 130000" value="">
+                            <div class="price-hint">*Kosongkan untuk menggunakan harga standar tabel</div>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="calculator-form-group">
                             <label for="depthInput">Kedalaman (meter)</label>
-                            <input type="text" id="depthInput" inputmode="numeric" placeholder="Contoh: 12" value="12" aria-describedby="depthHint">
-                            <div id="depthHint" class="price-hint">Maksimal kedalaman 20 meter (bore pile mesin)</div>
+                            <input type="text" id="depthInput" inputmode="numeric" placeholder="Contoh: 12" value="12">
+                            <div class="price-hint" id="depthHint">Maksimal kedalaman 20 meter (bore pile mesin)</div>
                         </div>
                         
                         <div class="calculator-form-group">
                             <label for="pointsInput">Jumlah Titik</label>
-                            <input type="number" id="pointsInput" value="16" min="1" max="200" step="1" aria-describedby="points-hint">
-                            <div id="points-hint" class="price-hint">Minimal order: mesin 200m, manual 100m</div>
+                            <input type="number" id="pointsInput" value="16" min="1" max="200" step="1">
                         </div>
                     </div>
                     
@@ -794,17 +770,11 @@
                         depthHint.innerHTML = 'Maksimal kedalaman 20 meter (bore pile mesin)';
                         currentDiameter = 40;
                         diameterSelect.value = '40';
-                        if (priceInput.value === '') {
-                            priceInput.value = '';
-                        }
                     } else {
                         diameterSelect.innerHTML = `<option value="20">20 cm</option><option value="25">25 cm</option><option value="30">30 cm</option><option value="40" selected>40 cm</option>`;
                         depthHint.innerHTML = 'Maksimal kedalaman 6 meter (bore pile manual)';
                         currentDiameter = 40;
                         diameterSelect.value = '40';
-                        if (priceInput.value === '') {
-                            priceInput.value = '';
-                        }
                     }
                     updateCalculator();
                 }
@@ -825,32 +795,21 @@
                 function updateCalculator() {
                     currentDiameter = parseInt(diameterSelect.value);
                     
-                    let pricePerM;
+                    let pricePerM = getDefaultPrice();
                     const priceRaw = priceInput.value.trim();
-                    if (priceRaw === '') {
-                        pricePerM = getDefaultPrice();
-                    } else {
-                        pricePerM = parseInt(priceRaw);
-                        if (isNaN(pricePerM) || pricePerM < 10000) {
-                            pricePerM = getDefaultPrice();
+                    if (priceRaw !== '') {
+                        const customPrice = parseInt(priceRaw);
+                        if (!isNaN(customPrice) && customPrice >= 10000) {
+                            pricePerM = customPrice;
                         }
                     }
                     
-                    let depth;
-                    const depthRaw = depthInput.value.trim();
-                    if (depthRaw === '') {
+                    let depth = parseFloat(depthInput.value);
+                    if (isNaN(depth) || depth <= 0) {
                         totalPriceDiv.innerHTML = 'Rp 0';
-                        detailPriceDiv.innerHTML = 'Masukkan kedalaman terlebih dahulu';
+                        detailPriceDiv.innerHTML = 'Masukkan kedalaman yang valid';
                         estimationTimeDiv.innerHTML = 'Estimasi waktu: -';
                         return;
-                    } else {
-                        depth = parseFloat(depthRaw);
-                        if (isNaN(depth) || depth <= 0) {
-                            totalPriceDiv.innerHTML = 'Rp 0';
-                            detailPriceDiv.innerHTML = 'Kedalaman tidak valid';
-                            estimationTimeDiv.innerHTML = 'Estimasi waktu: -';
-                            return;
-                        }
                     }
                     
                     let depthForCalc = depth;
@@ -864,7 +823,7 @@
                         warningMsg = ' (dibatasi 6m maksimal)';
                     }
                     
-                    const points = parseInt(pointsInput.value);
+                    const points = parseInt(pointsInput.value) || 0;
                     const totalPrice = pricePerM * depthForCalc * points;
                     
                     totalPriceDiv.innerHTML = formatRp(totalPrice);
@@ -908,8 +867,8 @@
                 function sendToWA() {
                     const method = currentMethod === 'mesin' ? 'Bore Pile Mesin (Mini Crane)' : 'Bore Pile Manual';
                     const diameter = diameterSelect.value;
-                    let pricePerM = priceInput.value || '(harga standar)';
-                    const depth = depthInput.value || '(belum diisi)';
+                    const pricePerM = priceInput.value || 'harga standar';
+                    const depth = depthInput.value || '?';
                     const points = pointsInput.value;
                     const totalPrice = document.getElementById('totalPrice').innerText;
                     const msg = `Halo Agung Perkasa,%0A%0ASaya mau tanya estimasi bore pile:%0A- Metode: ${method}%0A- Diameter: ${diameter} cm%0A- Harga jasa/m: Rp ${pricePerM}%0A- Kedalaman: ${depth} m%0A- Jumlah titik: ${points} titik%0A%0AEstimasi total: ${totalPrice}%0A%0ATolong info penawaran resmi. Terima kasih.`;
@@ -920,262 +879,45 @@
                 updateDiameterOptions();
             </script>
 
-            <!-- TABLE SECTION -->
-            <section aria-labelledby="table-heading">
-                <h2 id="table-heading" style="color: var(--primary-color); margin: 30px 0 10px;">Tabel Harga Bore Pile Jakarta 2026 (Jasa Bor Saja)</h2>
-                <p>Berikut <strong>harga JASA PENGEBORAN SAJA</strong> (belum termasuk material beton & besi), untuk wilayah Jakarta dan sekitarnya.</p>
+            <h2>Tabel Harga Bore Pile Jakarta 2026 (Jasa Bor Saja)</h2>
+            <p>Berikut <strong>harga JASA PENGEBORAN SAJA</strong> (belum termasuk material beton & besi), untuk wilayah Jakarta dan sekitarnya.</p>
 
-                <h3>Bore Pile Mesin (Mini Crane)</h3>
-                <div class="table-responsive">
-                    <table class="price-table">
-                        <caption style="text-align: left; margin-bottom: 5px; font-size: 0.8rem;">Tabel harga bore pile mesin per meter</caption>
-                        <thead>
-                            <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>30 cm</strong></strong></td><td><strong>120.000</strong></strong></td><td>20 meter</strong></strong></td><td>Rumah 1-2 lantai</strong></strong></td></tr>
-                            <tr><td>40 cm</strong></strong></td><td><strong>135.000</strong></strong></td><td>20 meter</strong></strong></td><td>Ruko, kantor</strong></strong></td></tr>
-                            <tr><td>50 cm</strong></strong></td><td><strong>190.000</strong></strong></td><td>20 meter</strong></strong></td><td>Gudang, pabrik kecil</strong></strong></td></tr>
-                            <tr><td>60 cm</strong></strong></td><td><strong>250.000</strong></strong></td><td>15 meter</strong></strong></td><td>Hotel 3-4 lantai</strong></strong></td></tr>
-                            <tr><td>80 cm</strong></strong></td><td><strong>350.000</strong></strong></td><td>10 meter</strong></strong></td><td>Gedung 5-8 lantai</strong></strong></td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Bore Pile Manual</h3>
-                <div class="table-responsive">
-                    <table class="price-table">
-                        <caption style="text-align: left; margin-bottom: 5px; font-size: 0.8rem;">Tabel harga bore pile manual per meter</caption>
-                        <thead>
-                            <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>20 cm</strong></strong></td><td><strong>70.000</strong></strong></td><td>6 meter</strong></strong></td><td>Area sangat sempit</strong></strong></td></tr>
-                            <tr><td>25 cm</strong></strong></td><td><strong>75.000</strong></strong></td><td>6 meter</strong></strong></td><td>Gang kecil</strong></strong></td></tr>
-                            <tr><td>30 cm</strong></strong></td><td><strong>85.000</strong></strong></td><td>6 meter</strong></strong></td><td>Rumah 1-2 lantai (tanah padat)</strong></strong></td></tr>
-                            <tr><td>40 cm</strong></strong></td><td><strong>100.000</strong></strong></td><td>6 meter</strong></strong></td><td>Rumah 2 lantai (tanah padat)</strong></strong></td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <div class="illustration-row">
-                <div class="illustration-img">
-                    <img src="imgs/porto-cor-semen.jpg" alt="Proses pengecoran beton pada lubang bore pile menggunakan pipa tremie" loading="lazy" width="400" height="250">
-                    <div class="caption">Proses pengecoran bore pile</div>
-                </div>
-                <div class="illustration-text">
-                    <p><strong>Bore Pile Mesin (Mini Crane):</strong> Kedalaman hingga 20 meter, lebih kuat, cocok untuk bangunan besar dan tanah lunak.</p>
-                    <p><strong>Bore Pile Manual:</strong> Kedalaman hingga 6 meter, lebih ekonomis, cocok untuk area sempit dan bangunan kecil.</p>
-                    <p>Konsultasikan dengan tim Ahli kami untuk menentukan metode terbaik sesuai kondisi tanah dan beban bangunan Anda.</p>
-                </div>
+            <h3>Bore Pile Mesin (Mini Crane)</h3>
+            <div class="table-responsive">
+                <table class="price-table">
+                    <caption>Tabel harga bore pile mesin per meter</caption>
+                    <thead><tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr></thead>
+                    <tbody>
+                        <tr><td>30 cm</td><td><strong>120.000</strong></td><td>20 meter</td><td>Rumah 1-2 lantai</td></tr>
+                        <tr><td>40 cm</td><td><strong>135.000</strong></td><td>20 meter</td><td>Ruko, kantor</td></tr>
+                        <tr><td>50 cm</td><td><strong>190.000</strong></td><td>20 meter</td><td>Gudang, pabrik kecil</td></tr>
+                        <tr><td>60 cm</td><td><strong>250.000</strong></td><td>15 meter</td><td>Hotel 3-4 lantai</td></tr>
+                        <tr><td>80 cm</td><td><strong>350.000</strong></td><td>10 meter</td><td>Gedung 5-8 lantai</td></tr>
+                    </tbody>
+                </table>
             </div>
 
-            <section aria-labelledby="factors-heading">
-                <h2 id="factors-heading" style="color: var(--primary-color); margin: 30px 0 10px;">Hal yang Mempengaruhi Harga Bore Pile Jakarta</h2>
-                <p>Harga bore pile tidak sama untuk setiap proyek. Berikut 6 faktor utama yang menyebabkan perbedaan biaya:</p>
-
-                <div class="illustration-row">
-                    <div class="illustration-img">
-                        <img src="imgs/porto-pondasi-rumah.jpg" alt="Proses pengeboran tanah menggunakan mini crane untuk pondasi rumah" loading="lazy" width="400" height="250">
-                        <div class="caption">Proses pengeboran bore pile mini crane</div>
-                    </div>
-                    <div class="illustration-text">
-                        <p>Pengeboran bore pile menggunakan <strong>mini crane</strong> yang mampu menembus tanah lunak hingga kedalaman <strong>20 meter</strong>. Setelah lubang selesai, dirakit rangka besi dan dimasukkan besi tulangan tersebut kemudian dicor beton.</p>
-                        <p>Metode ini menghasilkan sedikit getaran sehingga aman untuk bangunan di sekitarnya, berbeda dengan tiang pancang yang menghasilkan getaran yang lebih besar karena beton langsung dipalu ke dalam tanah.</p>
-                    </div>
-                </div>
-
-                <div class="info-grid">
-                    <div class="info-card"><h3>Diameter & Kedalaman</h3><p>Semakin besar diameter dan semakin dalam pengeboran, maka biaya per meter semakin tinggi.</p></div>
-                    <div class="info-card"><h3>Kondisi Tanah</h3><p>Tanah lunak (bekas rawa/sawah) membutuhkan pengeboran yang lebih dalam, biaya bisa lebih besar.</p></div>
-                    <div class="info-card"><h3>Jarak Lokasi</h3><p>Proyek jauh dari gudang kami bisa dikenakan biaya mobilisasi lebih tinggi (di luar jakarta).</p></div>
-                    <div class="info-card"><h3>Volume Pekerjaan</h3><p>Minimal order 200m (mesin) dan 100m (manual).</p></div>
-                    <div class="info-card"><h3>Tingkat Kesulitan</h3><p>Akses sulit, area sempit, atau bangunan khusus bisa berbeda biayanya.</p></div>
-                    <div class="info-card"><h3>Jenis Proyek</h3><p>Proyek rumah tinggal pribadi lebih murah daripada proyek kontraktor besar.</p></div>
-                </div>
-            </section>
-
-            <div class="illustration-row" style="flex-direction: row-reverse;">
-                <div class="illustration-img">
-                    <img src="imgs/porto-lubang.jpg" alt="Perbandingan ukuran lubang bore pile diameter 30, 40, dan 50 centimeter" loading="lazy" width="400" height="250">
-                    <div class="caption">Foto lubang bore pile berbagai diameter</div>
-                </div>
-                <div class="illustration-text">
-                    <p><strong>Pilih diameter yang tepat</strong> sangat mempengaruhi biaya dan kekuatan pondasi.</p>
-                    <ul>
-                        <li>Diameter 30 cm → rumah 1-2 lantai</li>
-                        <li>Diameter 40-50 cm → ruko, kantor</li>
-                        <li>Diameter 60-80 cm → gedung bertingkat</li>
-                    </ul>
-                </div>
+            <h3>Bore Pile Manual</h3>
+            <div class="table-responsive">
+                <table class="price-table">
+                    <caption>Tabel harga bore pile manual per meter</caption>
+                    <thead><tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr></thead>
+                    <tbody>
+                        <tr><td>20 cm</td><td><strong>70.000</strong></td><td>6 meter</td><td>Area sangat sempit</td></tr>
+                        <tr><td>25 cm</td><td><strong>75.000</strong></td><td>6 meter</td><td>Gang kecil</td></tr>
+                        <tr><td>30 cm</td><td><strong>85.000</strong></td><td>6 meter</td><td>Rumah 1-2 lantai (tanah padat)</td></tr>
+                        <tr><td>40 cm</td><td><strong>100.000</strong></td><td>6 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class="illustration-row illustration-bg">
-                <div class="illustration-img">
-                    <img src="imgs/porto-kali-biru.jpg" alt="Mini crane alat pengeboran bore pile milik Agung Perkasa sedang beroperasi" loading="lazy" width="400" height="250">
-                    <div class="caption">Mini crane - alat pengeboran bore pile kami</div>
-                </div>
-                <div class="illustration-text">
-                    <p><strong>Mini crane</strong> adalah alat utama kami untuk bore pile mesin. Keunggulannya:</p>
-                    <ul>
-                        <li>Mobilitas tinggi - bisa masuk area perumahan padat</li>
-                        <li>Getaran minimal - aman untuk bangunan sekitar</li>
-                        <li>Kedalaman hingga 20 meter - solusi untuk tanah lunak</li>
-                        <li>Efisiensi waktu - 1-4 titik per hari tergantung kedalaman</li>
-                    </ul>
-                </div>
-            </div>
-
-            <section aria-labelledby="extra-cost-heading">
-                <h2 id="extra-cost-heading" style="color: var(--primary-color); margin: 25px 0 10px;">Biaya Tambahan yang Perlu Diperhatikan</h2>
-                <div class="info-grid">
-                    <div class="info-card"><h3>Mobilisasi Alat</h3><p>Mesin: Rp3-5jt (Jabodetabek) | Manual: Rp1-2jt</p></div>
-                    <div class="info-card"><h3>Minimal Order</h3><p>Bore pile mesin: 200m | Manual: 100m, di bawah itu bisa menghubungi admin kami</p></div>
-                    <div class="info-card"><h3>Sedot Lumpur</h3><p>Tergantung volume (Rp800-1.200/rit)</p></div>
-                    <div class="info-card"><h3>Data Sondir</h3><p>Wajib ada karena sangat penting untuk menentukan kedalaman yang tepat</p></div>
-                </div>
-            </section>
-
-            <div class="illustration-row" style="flex-direction: row-reverse;">
-                <div class="illustration-img">
-                    <img src="imgs/porto-pekerjaan.jpg" alt="Proses perakitan besi tulangan untuk cage bore pile sebelum dimasukkan ke lubang" loading="lazy" width="400" height="250">
-                    <div class="caption">Perakitan besi tulangan sebelum dicor</div>
-                </div>
-                <div class="illustration-text">
-                    <p>Setelah tanah dibor, lubang diisi dengan <strong>besi tulangan</strong> (standar SNI) kemudian dicor dengan <strong>beton K-300 hingga K-400</strong>.</p>
-                    <p><strong>Spesifikasi teknis:</strong></p>
-                    <ul>
-                        <li>Besi tulangan: D13mm - D19mm (SNI)</li>
-                        <li>Sengkang: D8mm - D10mm jarak 15-20cm</li>
-                        <li>Beton: site mix atau ready mix K-300 s/d K-400</li>
-                    </ul>
-                </div>
-            </div>
-
-            <section aria-labelledby="example-heading">
-                <h2 id="example-heading" style="color: var(--primary-color); margin: 25px 0 10px;">Contoh Hitungan Proyek Nyata</h2>
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>Bore Pile Mesin</h3>
-                        <p><strong>Proyek:</strong> Rumah 2 lantai, Bekasi<br>
-                        <strong>Spesifikasi:</strong> Dia. 40cm, kedalaman 12m, 16 titik<br>
-                        <strong>Biaya:</strong> 12m × Rp135.000 × 16 = <strong>Rp25.920.000</strong><br>
-                        + mobilisasi Rp3jt = <strong>Rp28.920.000</strong><br>
-                        <strong>Waktu:</strong> 7 hari kerja</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>Bore Pile Manual</h3>
-                        <p><strong>Proyek:</strong> Rumah 1 lantai, Jakarta<br>
-                        <strong>Spesifikasi:</strong> Dia. 30cm, kedalaman 4m, 12 titik<br>
-                        <strong>Biaya:</strong> 4m × Rp85.000 × 12 = <strong>Rp4.080.000</strong><br>
-                        + mobilisasi Rp1,5jt = <strong>Rp5.580.000</strong><br>
-                        <strong>Waktu:</strong> 5 hari kerja</p>
-                    </div>
-                </div>
-            </section>
-
-            <div style="background: #e8f5e9; padding: 1rem; border-radius: 12px; text-align: center; margin: 1rem 0;">
-                <div style="font-size: 2rem; color: var(--primary-color);" aria-hidden="true">🛡️</div>
-                <p style="margin: 0.5rem 0 0;"><strong>Komitmen & Garansi Mutu</strong><br>Kami memberikan garansi penuh atas kualitas dalam pengerjaan proyek. Kami menjamin kualitas terbaik karena didukung oleh tim ahli kami yang sangat berpengalaman membuat pondasi dalam (khususnya bore pile)</p>
-            </div>
-
-            <!-- FAQ SECTION -->
-            <section aria-labelledby="faq-heading">
-                <h2 id="faq-heading" style="color: var(--primary-color); margin: 25px 0 10px;">Pertanyaan yang Sering Diajukan</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">Apa perbedaan bore pile mesin dan manual? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-                        <div class="faq-answer"><p>Bore pile mesin pakai mini crane, kedalaman hingga 20m, biaya lebih tinggi. Bore pile manual pakai tenaga manusia, kedalaman 6m, lebih murah untuk proyek kecil dan area sempit.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">Metode mana yang cocok untuk proyek rumah saya? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-                        <div class="faq-answer"><p>Jika ingin membuat rumah 2 lantai ke atas atau tanah bekas rawa kami sarankan menggunakan bore pile mesin. Jika hanya rumah 1 lantai, area sempit, budget terbatas bisa menggunakan bore pile manual.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">Berapa minimal order? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-                        <div class="faq-answer"><p>Bore pile mesin 200 meter. Bore pile manual 100 meter. Bisa tanyakan lebih lanjut ke admin kami.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">Bisa pakai material sendiri? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-                        <div class="faq-answer"><p>Sangat bisa. Jadi harga di atas untuk jasa bor saja. Anda bisa beli material sendiri sesuai kebutuhan pondasi Anda.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">Apa yang mempengaruhi harga bore pile? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-                        <div class="faq-answer"><p>Diameter, kedalaman pengeboran, kondisi tanah, jarak lokasi proyek dari gudang kami, volume pekerjaan, dan tingkat kesulitan proyek.</p></div>
-                    </div>
-                </div>
-            </section>
-
-            <script>
-                document.querySelectorAll('.faq-question').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const expanded = btn.getAttribute('aria-expanded') === 'true' ? false : true;
-                        btn.setAttribute('aria-expanded', expanded);
-                        btn.classList.toggle('active');
-                        btn.nextElementSibling.classList.toggle('show');
-                    });
-                });
-                
-                // Mobile menu toggle - Perbaikan ARIA
-                const mobileMenu = document.getElementById('mobile-menu');
-                const navMenu = document.querySelector('.nav-menu');
-                if (mobileMenu) {
-                    mobileMenu.addEventListener('click', () => {
-                        const expanded = navMenu.classList.contains('active');
-                        navMenu.classList.toggle('active');
-                        mobileMenu.setAttribute('aria-expanded', !expanded);
-                    });
-                }
-            </script>
-            
-            <div class="text-center mt-2" style="padding: 1.5rem; background: var(--primary-color); border-radius: 12px; color: white;">
+            <div class="text-center mt-2" style="padding: 1.5rem; background: #1a3a6e; border-radius: 12px; color: white;">
                 <h3 style="color: white; margin-bottom: 0.5rem;">Butuh bore pile untuk proyek Anda?</h3>
                 <p style="color: white; margin-bottom: 1rem;">Dapatkan penawaran resmi dan konsultasi gratis dari tim teknis kami</p>
                 <a href="https://wa.me/6282233569632" class="btn-wa-konsultasi" aria-label="Konsultasi gratis melalui WhatsApp">Konsultasi Gratis</a>
             </div>
         </div>
     </main>
-
-    <!-- AREA LAYANAN SECTION (di luar main) -->
-    <div style="max-width: 980px; margin: 0 auto; padding: 0 20px;">
-        <h2 style="color: var(--primary-color); margin: 25px 0 10px;">Cakupan Area Layanan Kami</h2>
-        <p>Agung Perkasa Borepile melayani proyek konstruksi di wilayah Jabodetabek berikut ini.</p>
-        <div class="area-grid-detail">
-            <div class="area-box"><h3>Jakarta Pusat</h3><div class="area-tags"><span>Tanah Abang</span><span>Menteng</span><span>Senen</span><span>Cempaka Putih</span><span>Kemayoran</span><span>Gambir</span><span>Sawah Besar</span><span>Johar Baru</span></div></div>
-            <div class="area-box"><h3>Jakarta Barat</h3><div class="area-tags"><span>Grogol Petamburan</span><span>Kembangan</span><span>Kalideres</span><span>Cengkareng</span><span>Taman Sari</span><span>Kebon Jeruk</span><span>Tambora</span><span>Palmerah</span></div></div>
-            <div class="area-box"><h3>Jakarta Selatan</h3><div class="area-tags"><span>Kebayoran Baru</span><span>Kebayoran Lama</span><span>Pesanggrahan</span><span>Cilandak</span><span>Pasar Minggu</span><span>Jagakarsa</span><span>Mampang Prapatan</span><span>Tebet</span></div></div>
-            <div class="area-box"><h3>Jakarta Timur</h3><div class="area-tags"><span>Pulo Gadung</span><span>Jatinegara</span><span>Duren Sawit</span><span>Kramat Jati</span><span>Makasar</span><span>Cakung</span><span>Cipayung</span><span>Ciracas</span></div></div>
-            <div class="area-box"><h3>Jakarta Utara</h3><div class="area-tags"><span>Tanjung Priok</span><span>Koja</span><span>Cilincing</span><span>Kelapa Gading</span><span>Pademangan</span><span>Penjaringan</span><span>Sunter</span></div></div>
-            <div class="area-box"><h3>Sekitarnya</h3><div class="area-tags"><span>Bekasi</span><span>Bogor</span><span>Depok</span><span>Tangerang</span><span>Tangerang Selatan</span><span>Cibubur</span><span>Cikarang</span><span>Karawang</span></div></div>
-        </div>
-    </div>
-
-    <div style="max-width: 980px; margin: 2rem auto 0; padding: 0 20px; text-align: center;">
-        <div style="background: #f5f7fa; border-radius: 20px; padding: 1.2rem;">
-            <h3 style="color: var(--primary-color); margin: 0.5rem 0;">Agung Perkasa Borepile</h3>
-            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
-                Jl. Sunter Muara II, RT.17/RW.05, Sunter Agung, Kec. Tj. Priok,<br>
-                Jakarta Utara, DKI Jakarta | kode pos 14350
-            </p>
-            <a href="https://maps.google.com/?q=Agung+Perkasa+Bore+Pile" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               style="display: inline-block; background: var(--primary-color); color: white; padding: 8px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 0.5rem;">
-                Lihat Lokasi di Google Maps
-            </a>
-        </div>
-    </div>
-
-    <div style="background: #f5f7fa; padding: 1rem; border-radius: 12px; margin: 2rem auto; max-width: 980px;">
-        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-            <img src="imgs/logo-agung-perkasa-transparan.png" alt="Logo Agung Perkasa Borepile" style="width: 60px; height: 60px; border-radius: 12px; object-fit: contain;" loading="lazy" width="60" height="60">
-            <div>
-                <h4 style="margin: 0; color: var(--primary-color);">Dipublikasikan oleh Agung Perkasa Borepile</h4>
-                <p style="margin: 5px 0 0; font-size: 0.85rem;">Spesialis pondasi borepile dengan pengalaman lebih dari 10 tahun di Jakarta. Data harga dan estimasi waktu di atas merupakan akumulasi dari semua proyek nyata yang telah kami kerjakan para client perorangan maupun kontraktor.</p>
-            </div>
-        </div>
-    </div>
 
     <footer class="footer">
         <div class="container">
@@ -1223,106 +965,25 @@
             else scrollTop.classList.remove('active');
         });
         scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    </script>
 
-    <!-- BREADCRUMB SCHEMA (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Beranda",
-                "item": "https://agungperkasaborepile.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Harga Bore Pile Jakarta 2026",
-                "item": "https://agungperkasaborepile.com/harga-bore-pile-2026.html"
-            }
-        ]
-    }
-    </script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                const expanded = mobileMenu.getAttribute('aria-expanded') === 'true' ? false : true;
+                navMenu.classList.toggle('active');
+                mobileMenu.setAttribute('aria-expanded', expanded);
+            });
+        }
 
-    <!-- LOCALBUSINESS SCHEMA -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Agung Perkasa Borepile",
-        "image": "https://agungperkasaborepile.com/imgs/logo-agung-perkasa-transparan.png",
-        "description": "Jasa bore pile Jakarta terpercaya dengan pengalaman lebih dari 10 tahun. Harga bore pile 2026 mulai Rp120.000/m. Kalkulator estimasi biaya interaktif.",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Jl. Sunter Muara II, RT.17/RW.05, Sunter Agung",
-            "addressLocality": "Jakarta Utara",
-            "addressRegion": "DKI Jakarta",
-            "postalCode": "14350",
-            "addressCountry": "ID"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "-6.1493743",
-            "longitude": "106.8534975"
-        },
-        "url": "https://agungperkasaborepile.com/",
-        "telephone": "+6282233569632",
-        "priceRange": "Rp120.000 - Rp350.000",
-        "openingHours": "Mo-Su 07:00-23:00"
-    }
-    </script>
-
-    <!-- FAQ SCHEMA -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Apa perbedaan bore pile mesin dan manual?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Bore pile mesin pakai mini crane, kedalaman hingga 20 meter, biaya lebih tinggi. Bore pile manual pakai tenaga manusia, kedalaman 6 meter, lebih ekonomis untuk proyek kecil dan area sempit."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Metode mana yang cocok untuk proyek rumah saya?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Jika ingin membuat rumah 2 lantai ke atas atau tanah bekas rawa kami sarankan menggunakan bore pile mesin. Jika hanya rumah 1 lantai, area sempit, budget terbatas bisa menggunakan bore pile manual."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Berapa minimal order untuk jasa bore pile?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Bore pile mesin minimal 200 meter. Bore pile manual minimal 100 meter. Bisa tanyakan lebih lanjut ke admin kami untuk volume di bawah ketentuan."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Bisa pakai material sendiri untuk bore pile?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Sangat bisa. Jadi harga di atas untuk jasa bor saja. Anda bisa beli material sendiri sesuai kebutuhan pondasi Anda."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Apa yang mempengaruhi harga bore pile?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Diameter, kedalaman pengeboran, kondisi tanah, jarak lokasi proyek dari gudang kami (mobilisasi), volume pekerjaan, dan tingkat kesulitan proyek."
-                }
-            }
-        ]
-    }
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true' ? false : true;
+                btn.setAttribute('aria-expanded', expanded);
+                btn.classList.toggle('active');
+                btn.nextElementSibling.classList.toggle('show');
+            });
+        });
     </script>
 </body>
 </html>
