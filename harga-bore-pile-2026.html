@@ -161,9 +161,6 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            background: transparent;
-            border: none;
-            padding: 10px;
         }
         
         .menu-toggle .bar {
@@ -576,26 +573,6 @@
         .text-center { text-align: center; }
         .mt-2 { margin-top: 2rem; }
         
-        /* PERBAIKAN KONTRAST UNTUK AKSESIBILITAS */
-        .btn-wa, .btn-wa-konsultasi {
-            background: #1e7b34;
-            color: #ffffff;
-            font-weight: bold;
-        }
-        .btn-wa:hover, .btn-wa-konsultasi:hover {
-            background: #166329;
-        }
-        .btn-primary, .method-btn.active {
-            background: #d35400;
-            color: #ffffff;
-        }
-        .price-hint, .calculator-note {
-            color: #555555;
-        }
-        .info-card p, .info-card h3 {
-            color: #222222;
-        }
-        
         @media (max-width: 768px) {
             .method-selector { flex-direction: column; }
             .whatsapp-float { width: 50px; height: 50px; font-size: 1.5rem; }
@@ -631,18 +608,6 @@
             outline: 3px solid var(--secondary-color);
             outline-offset: 2px;
         }
-        
-        /* Perbaikan kontras untuk teks */
-        .breadcrumb a, .blog-back-link {
-            color: #0d3b6e;
-        }
-        .update-badge {
-            background: #2e7d32;
-            color: #ffffff;
-        }
-        .update-badge i {
-            color: #ffcc00;
-        }
     </style>
 </head>
 <body>
@@ -653,19 +618,18 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6GBTKJB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <!-- NAVBAR - Perbaikan ARIA: HAPUS aria-label dan aria-expanded dari div, pindahkan ke button -->
+    <!-- NAVBAR -->
     <nav class="navbar" aria-label="Navigasi utama">
         <div class="container">
             <a href="index.html" class="logo" aria-label="Agung Perkasa Borepile - Beranda">
                 <img src="imgs/logo-agung-perkasa-transparan.png" alt="Logo Agung Perkasa Borepile" loading="lazy" width="45" height="45">
                 <span>Agung Perkasa <br>Borepile</span>
             </a>
-            <!-- PERBAIKAN ARIA: Ganti div dengan button untuk menu toggle -->
-            <button class="menu-toggle" id="mobile-menu" aria-label="Menu navigasi" aria-expanded="false" aria-haspopup="true">
+            <div class="menu-toggle" id="mobile-menu" aria-label="Menu navigasi" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </button>
+            </div>
             <ul class="nav-menu" role="list">
                 <li role="listitem"><a href="index.html">Beranda</a></li>
                 <li role="listitem"><a href="index.html#services">Layanan</a></li>
@@ -933,11 +897,11 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>30 cm</strong></strong></td><td><strong>120.000</strong></strong></td><td>20 meter</strong></strong></td><td>Rumah 1-2 lantai</strong></strong></td></tr>
-                            <tr><td>40 cm</strong></strong></td><td><strong>135.000</strong></strong></td><td>20 meter</strong></strong></td><td>Ruko, kantor</strong></strong></td></tr>
-                            <tr><td>50 cm</strong></strong></td><td><strong>190.000</strong></strong></td><td>20 meter</strong></strong></td><td>Gudang, pabrik kecil</strong></strong></td></tr>
-                            <tr><td>60 cm</strong></strong></td><td><strong>250.000</strong></strong></td><td>15 meter</strong></strong></td><td>Hotel 3-4 lantai</strong></strong></td></tr>
-                            <tr><td>80 cm</strong></strong></td><td><strong>350.000</strong></strong></td><td>10 meter</strong></strong></td><td>Gedung 5-8 lantai</strong></strong></td></tr>
+                            <tr><td>30 cm</td><td><strong>120.000</strong></td><td>20 meter</td><td>Rumah 1-2 lantai</td></tr>
+                            <tr><td>40 cm</td><td><strong>135.000</strong></td><td>20 meter</td><td>Ruko, kantor</td></tr>
+                            <tr><td>50 cm</td><td><strong>190.000</strong></td><td>20 meter</td><td>Gudang, pabrik kecil</td></tr>
+                            <tr><td>60 cm</td><td><strong>250.000</strong></td><td>15 meter</td><td>Hotel 3-4 lantai</td></tr>
+                            <tr><td>80 cm</td><td><strong>350.000</strong></td><td>10 meter</td><td>Gedung 5-8 lantai</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -950,10 +914,10 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>20 cm</strong></strong></td><td><strong>70.000</strong></strong></td><td>6 meter</strong></strong></td><td>Area sangat sempit</strong></strong></td></tr>
-                            <tr><td>25 cm</strong></strong></td><td><strong>75.000</strong></strong></td><td>6 meter</strong></strong></td><td>Gang kecil</strong></strong></td></tr>
-                            <tr><td>30 cm</strong></strong></td><td><strong>85.000</strong></strong></td><td>6 meter</strong></strong></td><td>Rumah 1-2 lantai (tanah padat)</strong></strong></td></tr>
-                            <tr><td>40 cm</strong></strong></td><td><strong>100.000</strong></strong></td><td>6 meter</strong></strong></td><td>Rumah 2 lantai (tanah padat)</strong></strong></td></tr>
+                            <tr><td>20 cm</td><td><strong>70.000</strong></td><td>6 meter</td><td>Area sangat sempit</td></tr>
+                            <tr><td>25 cm</td><td><strong>75.000</strong></td><td>6 meter</td><td>Gang kecil</td></tr>
+                            <tr><td>30 cm</td><td><strong>85.000</strong></td><td>6 meter</td><td>Rumah 1-2 lantai (tanah padat)</td></tr>
+                            <tr><td>40 cm</td><td><strong>100.000</strong></td><td>6 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1117,7 +1081,7 @@
                     });
                 });
                 
-                // Mobile menu toggle - Perbaikan ARIA
+                // Mobile menu toggle
                 const mobileMenu = document.getElementById('mobile-menu');
                 const navMenu = document.querySelector('.nav-menu');
                 if (mobileMenu) {
