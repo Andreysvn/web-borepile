@@ -44,7 +44,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Harga Bore Pile Diameter 30cm Jakarta Terbaru 2026">
-    <meta name="twitter:description" content="Harga bore pile diameter 30cm Jakarta 2026. Kalkulator estimasi biaya untuk mesin & manual.">
+    <meta name="twitter:description" content="Kalkulator estimasi biaya bore pile diameter 30cm Jakarta 2026.">
     <meta name="twitter:image" content="https://agungperkasaborepile.com/imgs/logo-agung-perkasa.webp">
     
     <!-- Geo Tags -->
@@ -92,7 +92,6 @@
             padding: 0 20px;
         }
         
-        /* NAVBAR */
         .navbar {
             background: var(--primary-color);
             padding: 15px 0;
@@ -159,21 +158,24 @@
         
         .menu-toggle {
             display: none;
-            flex-direction: column;
+            background: transparent;
+            border: none;
             cursor: pointer;
+            padding: 10px;
         }
         
         .menu-toggle .bar {
             width: 25px;
             height: 3px;
             background: white;
-            margin: 3px 0;
+            margin: 4px 0;
             transition: 0.3s;
+            display: block;
         }
         
         @media (max-width: 768px) {
             .menu-toggle {
-                display: flex;
+                display: block;
             }
             .nav-menu {
                 position: fixed;
@@ -186,6 +188,7 @@
                 transition: 0.3s;
                 padding: 20px 0;
                 gap: 15px;
+                z-index: 999;
             }
             .nav-menu.active {
                 left: 0;
@@ -223,18 +226,17 @@
             display: inline-block;
         }
         
-        /* BADGE DIAMETER */
         .diameter-badge {
             display: inline-block;
-            background: var(--secondary-color);
-            color: white;
+            background: #d35400;
+            color: #ffffff;
             padding: 5px 15px;
             border-radius: 30px;
             font-size: 0.8rem;
             margin-bottom: 15px;
+            font-weight: 600;
         }
         
-        /* KALKULATOR */
         .calculator-box {
             background: linear-gradient(135deg, #f5f7fa 0%, #e8edf5 100%);
             border-radius: 20px;
@@ -301,7 +303,7 @@
         }
         .calculator-result .detail-price {
             font-size: 0.8rem;
-            color: #666;
+            color: #555;
             margin-top: 0.3rem;
         }
         .calculator-result .estimation-time {
@@ -312,7 +314,7 @@
             font-size: 0.85rem;
         }
         .btn-wa {
-            background: #25D366;
+            background: #1e7b34;
             width: 100%;
             padding: 12px;
             font-size: 1rem;
@@ -324,14 +326,18 @@
             cursor: pointer;
             transition: var(--transition);
         }
-        .btn-wa:hover { background: #128C7E; }
+        .btn-wa:hover { background: #166329; }
         .calculator-note {
             font-size: 0.7rem;
-            color: #888;
+            color: #555;
             margin-top: 0.8rem;
             text-align: center;
         }
-        .price-hint { font-size: 0.7rem; color: #888; margin-top: 0.2rem; }
+        .price-hint { 
+            font-size: 0.7rem; 
+            color: #555; 
+            margin-top: 0.2rem; 
+        }
         
         @media (min-width: 768px) {
             .calculator-box { padding: 1.8rem; }
@@ -352,6 +358,7 @@
             border-left: 4px solid var(--primary-color);
         }
         .info-card h3 { color: var(--primary-color); margin-bottom: 0.3rem; font-size: 1rem; }
+        .info-card p { color: #222; }
         
         .illustration-row {
             display: flex;
@@ -412,8 +419,8 @@
             padding: 0 1.2rem;
         }
         .faq-answer.show { max-height: 300px; padding: 0 1.2rem 1rem 1.2rem; }
+        .faq-answer p { color: #333; }
         
-        /* TABEL HARGA */
         .table-responsive {
             overflow-x: auto;
             margin: 1rem 0;
@@ -441,7 +448,6 @@
         .price-table tr:nth-child(even) { background: #f9f9f9; }
         .price-table tr:hover { background: #f0f7ff; }
         
-        /* AREA LAYANAN DETAIL PER KECAMATAN */
         .area-grid-detail {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -520,30 +526,30 @@
             right: 30px;
             width: 60px;
             height: 60px;
-            background: #25D366;
+            background: #1e7b34;
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
-            box-shadow: 0 5px 25px rgba(7,94,84,0.4);
+            box-shadow: 0 5px 25px rgba(30,123,52,0.4);
             z-index: 100;
             transition: var(--transition);
             text-decoration: none;
         }
-        .whatsapp-float:hover { transform: scale(1.1); color: white; background: #128C7E; }
+        .whatsapp-float:hover { transform: scale(1.1); color: white; background: #166329; }
         
         .btn-wa-konsultasi {
             display: inline-block;
-            background: #25D366;
+            background: #1e7b34;
             color: white;
             padding: 10px 25px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
         }
-        .btn-wa-konsultasi:hover { background: #128C7E; }
+        .btn-wa-konsultasi:hover { background: #166329; }
         
         .scroll-top {
             position: fixed;
@@ -576,7 +582,6 @@
             .scroll-top { width: 40px; height: 40px; bottom: 80px; }
         }
         
-        /* Skip to main content link */
         .skip-link {
             position: absolute;
             top: -40px;
@@ -589,7 +594,6 @@
         }
         .skip-link:focus { top: 0; }
         
-        /* Focus style */
         :focus {
             outline: 3px solid var(--secondary-color);
             outline-offset: 2px;
@@ -598,25 +602,21 @@
 </head>
 
 <body>
-    <!-- Skip to main content -->
     <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
     
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6GBTKJB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     
-    <!-- NAVBAR -->
     <nav class="navbar" aria-label="Navigasi utama">
         <div class="container">
             <a href="index.html" class="logo" aria-label="Agung Perkasa Borepile - Beranda">
                 <img src="imgs/logo-agung-perkasa-transparan.png" alt="Logo Agung Perkasa Borepile" loading="lazy" width="45" height="45">
                 <span>Agung Perkasa <br>Borepile</span>
             </a>
-            <div class="menu-toggle" id="mobile-menu" aria-label="Menu navigasi" aria-expanded="false">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Menu navigasi" aria-expanded="false" aria-haspopup="true">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
             <ul class="nav-menu" role="list">
                 <li role="listitem"><a href="index.html">Beranda</a></li>
                 <li role="listitem"><a href="index.html#services">Layanan</a></li>
@@ -628,7 +628,6 @@
         </div>
     </nav>
 
-    <!-- MAIN CONTENT - LANDMARK UTAMA -->
     <main id="main-content">
         <div class="blog-container">
             <nav class="breadcrumb" aria-label="Breadcrumb navigasi">
@@ -657,7 +656,6 @@
                 Kalkulator ini dibuat untuk menghitung estimasi <strong>total biaya</strong> jasa borepile dari harga diameter 30cm (mesin & manual), bisa mengatur harga sendiri sesuai keinginan. Dibuat oleh tim Agung Perkasa Borepile dari data proyek nyata yang kami kerjakan di lapangan.
             </p>
 
-            <!-- KALKULATOR SECTION -->
             <section aria-labelledby="calculator-heading">
                 <div class="calculator-box">
                     <h2 id="calculator-heading">Kalkulator Estimasi Biaya Bore Pile</h2>
@@ -718,7 +716,7 @@
                         Konsultasikan ke WhatsApp
                     </button>
                     <div class="calculator-note">
-                        *Estimasi untuk jasa bor saja (belum termasuk material beton & besi). Minimal order: mesin 200m, manual 100m, di bawah itu bisa hubungi penawaran dari kami.
+                        *Estimasi untuk jasa bor saja (belum termasuk material beton & besi). Minimal order: mesin 200m, manual 100m.
                     </div>
                 </div>
             </section>
@@ -863,9 +861,8 @@
                 updateDiameterOptions();
             </script>
 
-            <!-- TABLE SECTION -->
-            <section aria-labelledby="price-table-heading">
-                <h2 id="price-table-heading" style="color: var(--primary-color); margin: 30px 0 10px;">Tabel Harga Bore Pile Jakarta 2026 (Jasa Bor Saja)</h2>
+            <section aria-labelledby="table-heading">
+                <h2 id="table-heading" style="color: var(--primary-color); margin: 30px 0 10px;">Tabel Harga Bore Pile Jakarta 2026 (Jasa Bor Saja)</h2>
                 <p>Berikut <strong>harga JASA PENGEBORAN SAJA</strong> (belum termasuk material beton & besi) untuk wilayah Jakarta dan sekitarnya.</p>
 
                 <h3>Bore Pile Mesin (Mini Crane)</h3>
@@ -877,15 +874,15 @@
                         </thead>
                         <tbody>
                             <tr style="background:#fff3e0;">
-                                <td><strong>30 cm</strong></strong></td>
-                                <td><strong>120.000</strong></strong></strong></td>
-                                <td><strong>20 meter</strong></strong></strong></td>
-                                <td><strong>Rumah 1-2 lantai</strong></strong></strong></td>
+                                <td><strong>30 cm</strong></td>
+                                <td><strong>120.000</strong></td>
+                                <td><strong>20 meter</strong></td>
+                                <td><strong>Rumah 1-2 lantai</strong></td>
                             </tr>
-                            <tr><td>40 cm</td><td>135.000</td><td>20 meter</td><td>Ruko, kantor</td></tr>
-                            <tr style="background:#f9f9f9;"><td>50 cm</td><td>190.000</td><td>20 meter</td><td>Gudang, pabrik kecil</td></tr>
-                            <tr><td>60 cm</td><td>250.000</td><td>15 meter</td><td>Hotel 3-4 lantai</td></tr>
-                            <tr style="background:#f9f9f9;"><td>80 cm</td><td>350.000</td><td>10 meter</td><td>Gedung 5-8 lantai</td></tr>
+                            <tr><td>40 cm</strong></strong></td><td>135.000</strong></strong></td><td>20 meter</strong></strong></td><td>Ruko, kantor</strong></strong></tr>
+                            <tr style="background:#f9f9f9;"><td>50 cm</strong></strong></td><td>190.000</strong></strong></td><td>20 meter</strong></strong></td><td>Gudang, pabrik kecil</strong></strong></tr>
+                            <tr><td>60 cm</strong></strong></td><td>250.000</strong></strong></td><td>15 meter</strong></strong></td><td>Hotel 3-4 lantai</strong></strong></tr>
+                            <tr style="background:#f9f9f9;"><td>80 cm</strong></strong></td><td>350.000</strong></strong></td><td>10 meter</strong></strong></td><td>Gedung 5-8 lantai</strong></strong></tr>
                         </tbody>
                     </table>
                 </div>
@@ -899,14 +896,14 @@
                         </thead>
                         <tbody>
                             <tr style="background:#fff3e0;">
-                                <td><strong>30 cm</strong></strong></strong></td>
-                                <td><strong>85.000</strong></strong></strong></td>
-                                <td><strong>6 meter</strong></strong></strong></td>
-                                <td><strong>Rumah 1-2 lantai (tanah padat)</strong></strong></strong></td>
+                                <td><strong>30 cm</strong></td>
+                                <td><strong>85.000</strong></td>
+                                <td><strong>6 meter</strong></td>
+                                <td><strong>Rumah 1-2 lantai (tanah padat)</strong></td>
                             </tr>
-                            <tr><td>20 cm</td><td>70.000</td><td>6 meter</td><td>Area sangat sempit</td></tr>
-                            <tr style="background:#f9f9f9;"><td>25 cm</td><td>75.000</td><td>6 meter</td><td>Gang kecil</td></tr>
-                            <tr><td>40 cm</td><td>100.000</td><td>6 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
+                            <tr><td>20 cm</strong></strong></td><td>70.000</strong></strong></td><td>6 meter</strong></strong></td><td>Area sangat sempit</strong></strong></tr>
+                            <tr style="background:#f9f9f9;"><td>25 cm</strong></strong></td><td>75.000</strong></strong></td><td>6 meter</strong></strong></td><td>Gang kecil</strong></strong></tr>
+                            <tr><td>40 cm</strong></strong></td><td>100.000</strong></strong></td><td>6 meter</strong></strong></td><td>Rumah 2 lantai (tanah padat)</strong></strong></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1010,7 +1007,6 @@
                 <p style="margin: 0.5rem 0 0;"><strong>Komitmen & Garansi Mutu</strong><br>Kami memberikan garansi penuh atas kualitas dalam pengerjaan proyek. Kami menjamin kualitas terbaik karena didukung oleh tim ahli kami yang sangat berpengalaman membuat pondasi dalam (khususnya bore pile)</p>
             </div>
 
-            <!-- FAQ SECTION -->
             <section aria-labelledby="faq-heading">
                 <h2 id="faq-heading" style="color: var(--primary-color); margin: 25px 0 10px;">Pertanyaan yang Sering Diajukan (Diameter 30cm)</h2>
                 <div class="faq-container">
@@ -1075,7 +1071,6 @@
         </div>
     </main>
 
-    <!-- AREA LAYANAN SECTION -->
     <div style="max-width: 980px; margin: 0 auto; padding: 0 20px;">
         <h2 style="color: var(--primary-color); margin: 25px 0 10px;">Cakupan Area Layanan Kami</h2>
         <p>Agung Perkasa Borepile melayani proyek konstruksi di wilayah Jabodetabek berikut ini.</p>
@@ -1163,7 +1158,6 @@
         scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
 
-    <!-- BREADCRUMB SCHEMA (JSON-LD) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -1185,7 +1179,6 @@
     }
     </script>
 
-    <!-- LOCALBUSINESS SCHEMA -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -1213,7 +1206,6 @@
     }
     </script>
 
-    <!-- FAQ SCHEMA -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
