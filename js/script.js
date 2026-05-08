@@ -1,15 +1,9 @@
-function ready(callback) {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', callback);
-    } else {
-        callback();
-    }
-}
+// ==================== SCRIPT LENGKAP UNTUK AGUNG PERKASA BOREPILE ====================
 
-ready(function() {
-    <script>
-// ==================== MOBILE MENU TOGGLE ====================
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Script berjalan!');
+    
+    // ==================== MOBILE MENU TOGGLE ====================
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -25,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Tutup menu saat klik link
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
@@ -35,52 +28,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Navbar scroll effect
-    const initNavbar = () => {
-        const navbar = document.querySelector('.navbar');
-        if (!navbar) return;
-
-        const currentScroll = Math.max(window.pageYOffset || 0, document.documentElement.scrollTop || 0);
-
-        if (document.body.classList.contains('home')) {
-            if (currentScroll <= 120) {
-                navbar.classList.remove('solid');
+    // ==================== NAVBAR SCROLL EFFECT ====================
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        const initNavbar = () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+            
+            if (document.body.classList.contains('home')) {
+                if (currentScroll <= 120) {
+                    navbar.classList.remove('solid');
+                } else {
+                    navbar.classList.add('solid');
+                }
             } else {
-                navbar.classList.add('solid');
+                if (currentScroll <= 120) {
+                    navbar.classList.remove('scrolled');
+                } else {
+                    navbar.classList.add('scrolled');
+                }
             }
-        } else {
-            if (currentScroll <= 120) {
-                navbar.classList.remove('scrolled');
-            } else {
-                navbar.classList.add('scrolled');
-            }
-        }
-    };
-
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        const currentScroll = Math.max(window.pageYOffset || 0, document.documentElement.scrollTop || 0);
-
-        if (!navbar) return;
-
-        if (document.body.classList.contains('home')) {
-            if (currentScroll <= 120) {
-                navbar.classList.remove('solid');
-            } else {
-                navbar.classList.add('solid');
-            }
-        } else {
-            if (currentScroll <= 120) {
-                navbar.classList.remove('scrolled');
-            } else {
-                navbar.classList.add('scrolled');
-            }
-        }
-    }, { passive: true });
-
-    initNavbar();
-    window.addEventListener('load', initNavbar);
-
+        };
+        
+        window.addEventListener('scroll', initNavbar, { passive: true });
+        initNavbar();
+    }
+    
     // ==================== FAQ ACCORDION ====================
     const faqButtons = document.querySelectorAll('.faq-question');
     
@@ -92,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const answer = this.nextElementSibling;
                 const isActive = this.classList.contains('active');
                 
-                // Tutup semua FAQ lain
                 faqButtons.forEach(btn => {
                     btn.classList.remove('active');
                     if (btn.nextElementSibling) {
@@ -101,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                // Buka yang diklik jika belum aktif
                 if (!isActive) {
                     this.classList.add('active');
                     if (answer) {
@@ -111,10 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+    } else {
+        console.log('FAQ tidak ditemukan');
     }
-});
     
-    // Scroll to Top Button
+    // ==================== SCROLL TO TOP BUTTON ====================
     const scrollTopBtn = document.getElementById('scrollTop');
     if (scrollTopBtn) {
         window.addEventListener('scroll', function() {
@@ -126,50 +97,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         scrollTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
     
-    // Smooth scrolling for anchor links
+    // ==================== SMOOTH SCROLLING FOR ANCHOR LINKS ====================
     let cachedNavbarHeight = null;
     
     const getNavbarHeight = () => {
         if (cachedNavbarHeight !== null) return cachedNavbarHeight;
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            cachedNavbarHeight = navbar.offsetHeight;
+        const navbarEl = document.querySelector('.navbar');
+        if (navbarEl) {
+            cachedNavbarHeight = navbarEl.offsetHeight;
         }
         return cachedNavbarHeight || 90;
     };
     
     window.addEventListener('resize', () => {
         cachedNavbarHeight = null;
-    }, { passive: true });
+    });
     
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                e.preventDefault();
                 const navbarHeight = getNavbarHeight();
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
                 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
         });
     });
     
-    // Highlight active navigation link
+    // ==================== HIGHLIGHT ACTIVE NAVIGATION LINK ====================
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-menu a');
     
@@ -187,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(updateSectionCache, 250);
-    }, { passive: true });
+    });
     
     function highlightNav() {
         let current = '';
@@ -195,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         for (let i = 0; i < sectionCache.length; i++) {
             const section = sectionCache[i];
-            if (scrollPosition >= section.top - section.height / 3) {
+            if (section && scrollPosition >= section.top - section.height / 3) {
                 current = section.id;
             }
         }
@@ -213,14 +177,14 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', highlightNav, { passive: true });
     highlightNav();
     
-    // Load hero video
+    // ==================== LOAD HERO VIDEO ====================
     const loadHeroVideo = () => {
         const heroBackground = document.querySelector('.video-background');
         if (!heroBackground) return;
-
+        
         const videoSrc = heroBackground.dataset.videoSrc;
         if (!videoSrc) return;
-
+        
         if (window.innerWidth >= 992) {
             const video = document.createElement('video');
             video.setAttribute('autoplay', '');
@@ -229,32 +193,32 @@ document.addEventListener('DOMContentLoaded', function() {
             video.setAttribute('playsinline', '');
             video.setAttribute('preload', 'metadata');
             video.className = 'hero-video';
-
+            
             const source = document.createElement('source');
             source.src = videoSrc;
             source.type = 'video/mp4';
             video.appendChild(source);
-
+            
             heroBackground.insertBefore(video, heroBackground.firstChild);
         }
     };
-
+    
     loadHeroVideo();
-
-    // Newsletter Form
+    
+    // ==================== NEWSLETTER FORM ====================
     const newsletterForm = document.getElementById('newsletterForm');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const email = document.getElementById('newsletter-email').value || '';
+            const email = document.getElementById('newsletter-email')?.value || '';
             
             if (!email) {
                 alert('Mohon isi email Anda terlebih dahulu');
                 return;
             }
             
-            const whatsappMessage = `Halo, saya ingin mulai layanan. Email saya: ${email}`;
+            const whatsappMessage = `Halo, saya dari website ingin meminta informasi penawaran harga. Email saya: ${email}`;
             const encodedMessage = encodeURIComponent(whatsappMessage);
             const whatsappNumber = '6285814173761';
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -268,8 +232,8 @@ document.addEventListener('DOMContentLoaded', function() {
             newsletterForm.reset();
         });
     }
-
-    // Contact Form
+    
+    // ==================== CONTACT FORM ====================
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -299,8 +263,8 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
         });
     }
-
-    // Video fallback for mobile
+    
+    // ==================== VIDEO FALLBACK FOR MOBILE ====================
     const bgVideo = document.getElementById('bg-video');
     const videoFallback = document.querySelector('.video-fallback');
     
@@ -318,8 +282,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-
-    // Service Card Interactions
+    
+    // ==================== SERVICE CARD INTERACTIONS ====================
     const serviceCards = document.querySelectorAll('.service-card');
     const featureToggleBtns = document.querySelectorAll('.features-toggle-btn');
     const compareServicesBtn = document.getElementById('compareServicesBtn');
@@ -341,7 +305,6 @@ document.addEventListener('DOMContentLoaded', function() {
     featureToggleBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const featuresContent = this.nextElementSibling;
-            const isOpen = this.classList.contains('active');
             
             featureToggleBtns.forEach(b => {
                 if (b !== btn) {
@@ -423,4 +386,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     setViewportHeight();
     window.addEventListener('resize', setViewportHeight);
+    
+    console.log('Semua script berjalan dengan baik!');
 });
