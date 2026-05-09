@@ -14,7 +14,7 @@
 - [Ukuran Pondasi Bore Pile](https://agungperkasaborepile.com/ukuran-pondasi-bore-pile.html): Standar diameter dan kedalaman bore pile
 
 ## Panduan & Pengetahuan
-- [Bore Pile Adalah](https://agungperkasaborepile.com/blog-bore-pile-adalah.html): Pengertian lengkap tentang pondasi bore pile
+- [Bore Pile Adalah](https://agungperkasaborepile.com/bore-pile-adalah.html): Pengertian lengkap tentang pondasi bore pile
 - [Proses Bore Pile](https://agungperkasaborepile.com/proses-bore-pile.html): Tahapan pelaksanaan pemasangan bore pile dari pengeboran hingga pengecoran
 - [Pahami Bore Pile](https://agungperkasaborepile.com/pahami-bore-pile.html): Informasi komprehensif seputar bore pile
 - [Perencanaan Bore Pile](https://agungperkasaborepile.com/perencanaan-borepile.html): Cara merencanakan pondasi bore pile yang benar
@@ -30,8 +30,8 @@
 
 ## Blog & Artikel
 - [Semua Artikel](https://agungperkasaborepile.com/artikel.html): Kumpulan artikel lengkap seputar bore pile
-- [Bore Pile Machine](https://agungperkasaborepile.com/blog-bore-pile-machine.html): Informasi alat berat untuk pemasangan bore pile
-- [Bore Pile Manual](https://agungperkasaborepile.com/blog-bore-pile-manual.html): Penjelasan metode bore pile secara manual
+- [Bore Pile Machine](https://agungperkasaborepile.com/bore-pile-machine.html): Informasi alat berat untuk pemasangan bore pile
+- [Bore Pile Manual](https://agungperkasaborepile.com/bore-pile-manual.html): Penjelasan metode bore pile secara manual
 
 ## Galeri
 - [Galeri Proyek](https://agungperkasaborepile.com/gallery.html): Dokumentasi proyek bore pile yang telah dikerjakan
