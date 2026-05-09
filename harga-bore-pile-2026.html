@@ -80,7 +80,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background: var(--white);
@@ -536,6 +536,33 @@
         .footer-col li { margin-bottom: 8px; }
         .footer-col a { color: rgba(255,255,255,0.8); text-decoration: underline; }
         .footer-col a:hover { color: #f39c12; }
+        
+        /* SOCIAL MEDIA LINKS - TAMBAHAN BARU */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
         .footer-bottom {
             background: rgba(0,0,0,0.2);
             padding: 20px;
@@ -611,7 +638,7 @@
             }
         }
         
-        /* Skip to main content link untuk aksesibilitas */
+        /* Skip to main content link */
         .skip-link {
             position: absolute;
             top: -40px;
@@ -626,34 +653,34 @@
             top: 0;
         }
         
-        /* Fokus style untuk aksesibilitas keyboard */
+        /* Fokus style */
         :focus {
             outline: 3px solid #d35400;
             outline-offset: 2px;
         }
         
-        /* PERBAIKAN: link distinguishable */
-        a:not(.btn-nav):not(.btn-wa-konsultasi):not(.whatsapp-float) {
+        /* Link distinguishable */
+        a:not(.btn-nav):not(.btn-wa-konsultasi):not(.whatsapp-float):not(.social-links a) {
             text-decoration: underline;
+        }
+        
+        /* Social links tidak perlu underline */
+        .social-links a {
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <!-- Skip to main content link -->
     <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
     
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6GBTKJB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     
-    <!-- NAVBAR - Perbaikan ARIA -->
     <nav class="navbar" aria-label="Navigasi utama">
         <div class="container">
             <a href="index.html" class="logo" aria-label="Agung Perkasa Borepile - Beranda">
                 <img src="imgs/logo-agung-perkasa-transparan.png" alt="Logo Agung Perkasa Borepile" loading="lazy" width="45" height="45">
                 <span>Agung Perkasa <br>Borepile</span>
             </a>
-            <!-- PERBAIKAN ARIA: button untuk menu toggle -->
             <button class="menu-toggle" id="mobile-menu" aria-label="Menu navigasi" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -670,7 +697,6 @@
         </div>
     </nav>
 
-    <!-- MAIN CONTENT - LANDMARK UTAMA -->
     <main id="main-content">
         <div class="blog-container">
             <nav class="breadcrumb" aria-label="Breadcrumb navigasi">
@@ -696,7 +722,6 @@
                 Estimasi bisa kami pastikan cukup akurat karena kami menggunakan data aktual dari proyek-proyek yang sudah kami kerjakan di Jakarta dan sekitarnya.
             </p>
 
-            <!-- KALKULATOR SECTION -->
             <section aria-labelledby="calculator-heading">
                 <div class="calculator-box">
                     <h2 id="calculator-heading">Kalkulator Estimasi Biaya Bore Pile</h2>
@@ -913,7 +938,6 @@
                 updateDiameterOptions();
             </script>
 
-            <!-- TABLE SECTION -->
             <section aria-labelledby="table-heading">
                 <h2 id="table-heading" style="color: var(--primary-color); margin: 30px 0 10px;">Tabel Harga Bore Pile Jakarta 2026 (Jasa Bor Saja)</h2>
                 <p>Berikut <strong>harga JASA PENGEBORAN SAJA</strong> (belum termasuk material beton & besi), untuk wilayah Jakarta dan sekitarnya.</p>
@@ -926,11 +950,11 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>30 cm</td><td><strong>120.000</strong></td><td>20 meter</td><td>Rumah 1-2 lantai</td></tr>
+                            <tr><td style="background:#fff3e0;">30 cm</td><td style="background:#fff3e0;"><strong>120.000</strong></td><td style="background:#fff3e0;">20 meter</td><td style="background:#fff3e0;">Rumah 1-2 lantai</td></tr>
                             <tr><td>40 cm</td><td><strong>135.000</strong></td><td>20 meter</td><td>Ruko, kantor</td></tr>
-                            <tr><td>50 cm</td><td><strong>190.000</strong></td><td>20 meter</td><td>Gudang, pabrik kecil</td></tr>
+                            <tr><td style="background:#f9f9f9;">50 cm</td><td style="background:#f9f9f9;"><strong>190.000</strong></td><td style="background:#f9f9f9;">20 meter</td><td style="background:#f9f9f9;">Gudang, pabrik kecil</td></tr>
                             <tr><td>60 cm</td><td><strong>250.000</strong></td><td>15 meter</td><td>Hotel 3-4 lantai</td></tr>
-                            <tr><td>80 cm</td><td><strong>350.000</strong></td><td>10 meter</td><td>Gedung 5-8 lantai</td></tr>
+                            <tr><td style="background:#f9f9f9;">80 cm</td><td style="background:#f9f9f9;"><strong>350.000</strong></td><td style="background:#f9f9f9;">10 meter</td><td style="background:#f9f9f9;">Gedung 5-8 lantai</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -943,9 +967,9 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>20 cm</td><td><strong>70.000</strong></td><td>6 meter</td><td>Area sangat sempit</td></tr>
+                            <tr><td style="background:#fff3e0;">20 cm</td><td style="background:#fff3e0;"><strong>70.000</strong></td><td style="background:#fff3e0;">6 meter</td><td style="background:#fff3e0;">Area sangat sempit</td></tr>
                             <tr><td>25 cm</td><td><strong>75.000</strong></td><td>6 meter</td><td>Gang kecil</td></tr>
-                            <tr><td>30 cm</td><td><strong>85.000</strong></td><td>6 meter</td><td>Rumah 1-2 lantai (tanah padat)</td></tr>
+                            <tr><td style="background:#f9f9f9;">30 cm</td><td style="background:#f9f9f9;"><strong>85.000</strong></td><td style="background:#f9f9f9;">6 meter</td><td style="background:#f9f9f9;">Rumah 1-2 lantai (tanah padat)</td></tr>
                             <tr><td>40 cm</td><td><strong>100.000</strong></td><td>6 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
                         </tbody>
                     </table>
@@ -1006,7 +1030,7 @@
 
             <div class="illustration-row illustration-bg">
                 <div class="illustration-img">
-                    <img src="imgs/porto-kali-biru.jpg" alt="Mini crane alat pengeboran bore pile milik Agung Perkasa sedang beroperasi" loading="lazy" width="400" height="250">
+                    <img src="imgs/borepile-mesin-biru.jpg" alt="Mini crane alat pengeboran bore pile milik Agung Perkasa sedang beroperasi" loading="lazy" width="400" height="250">
                     <div class="caption">Mini crane - alat pengeboran bore pile kami</div>
                 </div>
                 <div class="illustration-text">
@@ -1032,7 +1056,7 @@
 
             <div class="illustration-row" style="flex-direction: row-reverse;">
                 <div class="illustration-img">
-                    <img src="imgs/porto-pekerjaan.jpg" alt="Proses perakitan besi tulangan untuk cage bore pile sebelum dimasukkan ke lubang" loading="lazy" width="400" height="250">
+                    <img src="imgs/perakitan-besi-tulangan.jpg" alt="Proses perakitan besi tulangan untuk cage bore pile sebelum dimasukkan ke lubang" loading="lazy" width="400" height="250">
                     <div class="caption">Perakitan besi tulangan sebelum dicor</div>
                 </div>
                 <div class="illustration-text">
@@ -1073,7 +1097,6 @@
                 <p style="margin: 0.5rem 0 0;"><strong>Komitmen & Garansi Mutu</strong><br>Kami memberikan garansi penuh atas kualitas dalam pengerjaan proyek. Kami menjamin kualitas terbaik karena didukung oleh tim ahli kami yang sangat berpengalaman membuat pondasi dalam (khususnya bore pile)</p>
             </div>
 
-            <!-- FAQ SECTION -->
             <section aria-labelledby="faq-heading">
                 <h2 id="faq-heading" style="color: var(--primary-color); margin: 25px 0 10px;">Pertanyaan yang Sering Diajukan</h2>
                 <div class="faq-container">
@@ -1110,7 +1133,6 @@
                     });
                 });
                 
-                // Mobile menu toggle
                 const mobileMenu = document.getElementById('mobile-menu');
                 const navMenu = document.querySelector('.nav-menu');
                 if (mobileMenu) {
@@ -1130,7 +1152,6 @@
         </div>
     </main>
 
-    <!-- AREA LAYANAN SECTION -->
     <div style="max-width: 980px; margin: 0 auto; padding: 0 20px;">
         <h2 style="color: var(--primary-color); margin: 25px 0 10px;">Cakupan Area Layanan Kami</h2>
         <p>Agung Perkasa Borepile melayani proyek konstruksi di wilayah Jabodetabek berikut ini.</p>
@@ -1176,6 +1197,16 @@
                 <div class="footer-col">
                     <h3>Agung Perkasa Borepile</h3>
                     <p>Spesialis pondasi borepile mesin & manual dengan pengalaman lebih dari 10 tahun di Jakarta dan sekitarnya.</p>
+                    <!-- SOCIAL MEDIA LINKS - TELAH DITAMBAHKAN -->
+                    <div class="social-links">
+                        <a href="https://facebook.com/profile.php?id=61563968365179" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://instagram.com/agungperkasaborepile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <!-- LinkedIn dan YouTube belum punya akun, jadi sementara tidak ditampilkan -->
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h3>Layanan</h3>
@@ -1218,7 +1249,7 @@
         scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
 
-    <!-- BREADCRUMB SCHEMA (JSON-LD) -->
+    <!-- BREADCRUMB SCHEMA -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",

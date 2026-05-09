@@ -227,7 +227,6 @@
             display: inline-block;
         }
         
-        /* PERBAIKAN KONTRAST - WARNA LEBIH GELAP */
         .diameter-badge {
             display: inline-block;
             background: #b84300;
@@ -318,7 +317,6 @@
             font-size: 0.85rem;
             color: #1a3a6e;
         }
-        /* PERBAIKAN KONTRAST TOMBOL WA - WARNA LEBIH GELAP */
         .btn-wa {
             background: #1a7a3a;
             width: 100%;
@@ -340,7 +338,6 @@
             margin-top: 0.8rem;
             text-align: center;
         }
-        /* PERBAIKAN KONTRAST PRICE HINT */
         .price-hint { 
             font-size: 0.7rem; 
             color: #555; 
@@ -490,6 +487,32 @@
             color: #222;
         }
         
+        /* SOCIAL MEDIA LINKS */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
         .footer {
             background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             color: white;
@@ -529,7 +552,6 @@
             font-size: 0.8rem;
         }
         
-        /* PERBAIKAN KONTRAST TOMBOL WHATSAPP FLOAT */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -550,7 +572,6 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); color: white; background: #0f5a2a; }
         
-        /* PERBAIKAN KONTRAST TOMBOL KONSULTASI */
         .btn-wa-konsultasi {
             display: inline-block;
             background: #1a7a3a;
@@ -890,10 +911,10 @@
                                 <td><strong>20 meter</strong></td>
                                 <td><strong>Rumah 1-2 lantai</strong></td>
                             </tr>
-                            <tr><td>40 cm</strong></strong></td><td>135.000</strong></strong></td><td>20 meter</strong></strong></td><td>Ruko, kantor</strong></strong></td></tr>
-                            <tr style="background:#f9f9f9;"><td>50 cm</strong></strong></td><td>190.000</strong></strong></td><td>20 meter</strong></strong></td><td>Gudang, pabrik kecil</strong></strong></tr>
-                            <tr><td>60 cm</strong></strong></td><td>250.000</strong></strong></td><td>15 meter</strong></strong></td><td>Hotel 3-4 lantai</strong></strong></tr>
-                            <tr style="background:#f9f9f9;"><td>80 cm</strong></strong></td><td>350.000</strong></strong></td><td>10 meter</strong></strong></td><td>Gedung 5-8 lantai</strong></strong></tr>
+                            <tr><td>40 cm</td><td>135.000</td><td>20 meter</td><td>Ruko, kantor</td></tr>
+                            <tr style="background:#f9f9f9;"><td>50 cm</td><td>190.000</td><td>20 meter</td><td>Gudang, pabrik kecil</td></tr>
+                            <tr><td>60 cm</td><td>250.000</td><td>15 meter</td><td>Hotel 3-4 lantai</td></tr>
+                            <tr style="background:#f9f9f9;"><td>80 cm</td><td>350.000</td><td>10 meter</td><td>Gedung 5-8 lantai</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -906,15 +927,15 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>20 cm</strong></strong></td><td>70.000</strong></strong></td><td>6 meter</strong></strong></td><td>Area sangat sempit</strong></strong></tr>
-                            <tr style="background:#f9f9f9;"><td>25 cm</strong></strong></td><td>75.000</strong></strong></td><td>6 meter</strong></strong></td><td>Gang kecil</strong></strong></tr>
-                                 <tr style="background:#fff3e0;">
-                                <td><strong>30 cm</strong></td>
-                                <td><strong>85.000</strong></td>
-                                <td><strong>6 meter</strong></td>
-                                <td><strong>Rumah 1-2 lantai (tanah padat)</strong></td>
+                            <tr><td>20 cm</td><td>70.000</td><td>6 meter</td><td>Area sangat sempit</td></tr>
+                            <tr style="background:#f9f9f9;"><td>25 cm</td><td>75.000</td><td>6 meter</td><td>Gang kecil</td></tr>
+                            <tr style="background:#fff3e0;">
+                                <td><strong>30 cm</strong></strong></strong></td>
+                                <td><strong>85.000</strong></strong></strong></td>
+                                <td><strong>6 meter</strong></strong></strong></td>
+                                <td><strong>Rumah 1-2 lantai (tanah padat)</strong></strong></strong></td>
                             </tr>
-                            <tr><td>40 cm</strong></strong></td><td>100.000</strong></strong></td><td>6 meter</strong></strong></td><td>Rumah 2 lantai (tanah padat)</strong></strong></td></tr>
+                            <tr><td>40 cm</td><td>100.000</td><td>6 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -926,15 +947,15 @@
                     <div class="caption">Proses bore pile dengan mini crane untuk rumah pribadi di PIK</div>
                 </div>
                 <div class="illustration-text">
-                    <p style="color: #333;"><strong>Bore Pile Mesin (Mini Crane):</strong> Kedalaman hingga 20 meter, lebih kuat, cocok untuk bangunan besar dan tanah lunak.</p>
-                    <p style="color: #333;"><strong>Bore Pile Manual:</strong> Kedalaman hingga 6 meter, lebih ekonomis, cocok untuk area sempit dan bangunan kecil.</p>
-                    <p style="color: #333;">Konsultasikan dengan kami untuk menentukan metode terbaik sesuai kondisi tanah dan beban bangunan Anda.</p>
+                    <p><strong>Bore Pile Mesin (Mini Crane):</strong> Kedalaman hingga 20 meter, lebih kuat, cocok untuk bangunan besar dan tanah lunak.</p>
+                    <p><strong>Bore Pile Manual:</strong> Kedalaman hingga 6 meter, lebih ekonomis, cocok untuk area sempit dan bangunan kecil.</p>
+                    <p>Konsultasikan dengan kami untuk menentukan metode terbaik sesuai kondisi tanah dan beban bangunan Anda.</p>
                 </div>
             </div>
 
             <section aria-labelledby="comparison-heading">
                 <h2 id="comparison-heading" style="color: var(--primary-color); margin: 30px 0 10px;">Perbandingan Diameter 30cm vs 40cm vs 50cm untuk Rumah Jakarta</h2>
-                <p style="color: #333;">Diameter 30cm adalah yang paling ekonomis untuk rumah 1-2 lantai. Berikut perbandingan dengan diameter yang lebih besar:</p>
+                <p>Diameter 30cm adalah yang paling ekonomis untuk rumah 1-2 lantai. Berikut perbandingan dengan diameter yang lebih besar:</p>
                 <div class="table-responsive">
                     <table class="price-table">
                         <caption style="text-align: left; margin-bottom: 5px; font-size: 0.8rem;">Perbandingan daya dukung dan harga antar diameter bore pile</caption>
@@ -942,13 +963,13 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Daya Dukung</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr style="background:#fff3e0;"><td><strong>30 cm</strong></td><td><strong>120.000</strong></td><td><strong>15-25 ton</strong></td><td><strong>Rumah 1-2 lantai</strong></td></tr>
-                            <tr><td>40 cm</strong></strong></td><td>135.000</strong></strong></td><td>25-40 ton</strong></strong></td><td>Ruko, kantor 2-3 lantai</strong></strong></td></tr>
-                            <tr style="background:#f9f9f9;"><td>50 cm</strong></strong></td><td>190.000</strong></strong></td><td>40-60 ton</strong></strong></td><td>Gudang, pabrik kecil</strong></strong></td></tr>
+                            <tr style="background:#fff3e0;"><td><strong>30 cm</strong></strong></strong></td><td><strong>120.000</strong></strong></strong></td><td><strong>15-25 ton</strong></strong></strong></td><td><strong>Rumah 1-2 lantai</strong></strong></strong></td></tr>
+                            <tr><td>40 cm</td><td>135.000</td><td>25-40 ton</td><td>Ruko, kantor 2-3 lantai</td></tr>
+                            <tr style="background:#f9f9f9;"><td>50 cm</td><td>190.000</td><td>40-60 ton</td><td>Gudang, pabrik kecil</td></tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="price-hint" style="text-align: left; color: #555;">Daya dukung di atas adalah estimasi untuk kedalaman 10-12 meter di tanah keras Jakarta.</p>
+                <p class="price-hint" style="text-align: left;">Daya dukung di atas adalah estimasi untuk kedalaman 10-12 meter di tanah keras Jakarta.</p>
             </section>
 
             <section aria-labelledby="advantages-heading">
@@ -969,14 +990,14 @@
                         <div class="caption">Bore pile diameter 30cm untuk rumah tinggal</div>
                     </div>
                     <div class="illustration-text">
-                        <p style="color: #333;"><strong>Daya dukung bore pile diameter 30cm</strong> bervariasi tergantung kedalaman dan kondisi tanah:</p>
-                        <ul style="color: #333; margin-left: 20px;">
+                        <p><strong>Daya dukung bore pile diameter 30cm</strong> bervariasi tergantung kedalaman dan kondisi tanah:</p>
+                        <ul style="margin-left: 20px;">
                             <li>Kedalaman 6 meter: mampu menahan beban <strong>10-15 ton</strong></li>
                             <li>Kedalaman 10 meter: mampu menahan beban <strong>15-25 ton</strong></li>
                             <li>Kedalaman 15 meter: mampu menahan beban <strong>25-35 ton</strong></li>
                             <li>Kedalaman 20 meter: mampu menahan beban <strong>35-50 ton</strong></li>
                         </ul>
-                        <p style="color: #333;">Untuk rumah 2 lantai standar, kedalaman 8-12 meter sudah cukup.</p>
+                        <p>Untuk rumah 2 lantai standar, kedalaman 8-12 meter sudah cukup.</p>
                     </div>
                 </div>
             </section>
@@ -987,7 +1008,7 @@
                     <div class="info-card"><h3>Mobilisasi Alat</h3><p>Mesin: Rp3-5jt (Jabodetabek) | Manual: Rp1-2jt</p></div>
                     <div class="info-card"><h3>Minimal Order</h3><p>Bore pile mesin: 200m | Manual: 100m, di bawah itu bisa menghubungi admin kami</p></div>
                     <div class="info-card"><h3>Sedot Lumpur</h3><p>Tergantung volume (Rp800-1.200/rit)</p></div>
-                    <div class="info-card"><h3>Data Sondir</h3><p>Wajib ada karena sangat penting untuk menentukan kedalaman pondasi yang tepat </p></div>
+                    <div class="info-card"><h3>Data Sondir</h3><p>Wajib ada karena sangat penting untuk menentukan kedalaman pondasi yang tepat</p></div>
                 </div>
             </section>
 
@@ -1127,6 +1148,15 @@
                 <div class="footer-col">
                     <h3>Agung Perkasa Borepile</h3>
                     <p>Spesialis pondasi borepile diameter 30cm untuk rumah tinggal di Jakarta dan sekitarnya. Kontraktor borepile terpercaya dengan pengalaman lebih dari 10 tahun.</p>
+                    <!-- SOCIAL MEDIA ICONS - TELAH DITAMBAHKAN -->
+                    <div class="social-links">
+                        <a href="https://facebook.com/profile.php?id=61563968365179" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/agungperkasaborepile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h3>Layanan</h3>
@@ -1154,10 +1184,10 @@
     </footer>
 
     <a href="https://wa.me/6282233569632" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat konsultasi melalui WhatsApp">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <i class="fab fa-whatsapp"></i>
     </a>
     <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        <i class="fas fa-arrow-up"></i>
     </button>
 
     <script>
