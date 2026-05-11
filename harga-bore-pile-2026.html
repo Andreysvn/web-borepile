@@ -13,10 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="theme-color" content="#1a3a6e">
     
-    <title>Harga & Kalkulator Bore Pile Jakarta 2026 | Agung Perkasa</title>
+    <title>Kalkulator Harga Bore Pile Jabodetabek 2026 | Agung Perkasa</title>
     
-    <meta name="description" content="Harga bore pile Terbaru 2026. Kalkulator bore pile mesin & manual. Konsultasi gratis WA.">
-    <meta name="keywords" content="harga bore pile jakarta, harga borepile 2026, harga bore pile terbaru, harga bore pile manual, biaya bore pile per meter, jasa bore pile jabodetabek, alat bore pile">
+    <meta name="description" content="Kalkulator harga bore pile 2026. Hitung estimasi biaya bore pile mesin & manual. Konsultasi gratis untuk Jabodetabek & seluruh Pulau Jawa.">
     <meta name="author" content="Agung Perkasa Borepile">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="QjaIirR3-qW7bARIyez5S0_WPeMjPJSqn6tnK44ZYMo">
@@ -52,7 +51,7 @@
     <meta name="twitter:image" content="https://agungperkasaborepile.com/imgs/logo-agung-perkasa.webp">
     
     <!-- Geo Tags -->
-    <meta name="geo.region" content="ID-JK">
+    <meta name="geo.region" content="ID">
     <meta name="geo.placename" content="Jakarta">
     
     <!-- Preconnect & DNS Prefetch -->
@@ -694,6 +693,191 @@
         .social-links a {
             text-decoration: none;
         }
+
+        /* ===== BLOG SECTION STYLES ===== */
+.blog {
+  padding: 60px 0;
+  background-color: var(--light-gray, #f8f9fa);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  color: var(--primary-color, #1a3a6e);
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary-color, #e67e22), var(--accent-color, #3498db));
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: var(--text-light, #6c757d);
+  font-size: clamp(0.85rem, 3vw, 1rem);
+}
+
+/* Blog Grid - Responsive */
+.blog-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+/* Project / Blog Card */
+.project-card {
+  background: var(--white, #fff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.project-card:hover img {
+  transform: scale(1.03);
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--primary-color, #1a3a6e);
+  line-height: 1.4;
+}
+
+.project-info p {
+  font-size: 0.85rem;
+  color: var(--text-light, #6c757d);
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Button within card */
+.project-info .btn,
+.project-info .btn-primary {
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--secondary-color, #e67e22);
+  color: white;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.project-info .btn-primary:hover {
+  background: #d35400;
+  transform: translateY(-2px);
+}
+
+/* CTA Button (Lihat Semua Artikel) */
+.portfolio-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.portfolio-cta .btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--primary-color, #1a3a6e);
+  color: white;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.portfolio-cta .btn-primary:hover {
+  background: var(--secondary-color, #e67e22);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE (MOBILE FRIENDLY) ===== */
+@media (max-width: 768px) {
+  .blog {
+    padding: 40px 0;
+  }
+  
+  .blog-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .project-card img {
+    height: 160px;
+  }
+  
+  .project-info {
+    padding: 15px;
+  }
+  
+  .project-info h3 {
+    font-size: 1rem;
+  }
+  
+  .section-subtitle {
+    margin-bottom: 30px;
+    padding: 0 15px;
+  }
+  
+  .portfolio-cta .btn-primary {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== PERFORMANCE OPTIMIZATION ===== */
+/* Lazy loading images */
+.project-card img {
+  loading: lazy;
+}
+
+/* Reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card img,
+  .project-info .btn-primary {
+    transition: none;
+  }
+  
+  .project-card:hover {
+    transform: none;
+  }
+}
     </style>
 </head>
 <body>
@@ -703,7 +887,7 @@
     
     <nav class="navbar" aria-label="Navigasi utama">
         <div class="container">
-            <a href="index.html" class="logo" aria-label="Agung Perkasa Borepile - Beranda">
+            <a href="/" class="logo" aria-label="Agung Perkasa Borepile - Beranda">
                 <img src="imgs/logo-agung-perkasa-transparan.png" alt="Logo Agung Perkasa Borepile" loading="lazy" width="45" height="45">
                 <span>Agung Perkasa <br>Borepile</span>
             </a>
@@ -713,11 +897,11 @@
                 <span class="bar"></span>
             </button>
             <ul class="nav-menu" role="list">
-                <li role="listitem"><a href="index.html">Beranda</a></li>
-                <li role="listitem"><a href="index.html#services">Layanan</a></li>
-                <li role="listitem"><a href="index.html#blog">Artikel</a></li>
-                <li role="listitem"><a href="index.html#about">Tentang Kami</a></li>
-                <li role="listitem"><a href="proses-jasa.html#faq">FAQ</a></li>
+                <li role="listitem"><a href="/">Beranda</a></li>
+                <li role="listitem"><a href="/#services">Layanan</a></li>
+                <li role="listitem"><a href="artikel.html">Artikel</a></li>
+                <li role="listitem"><a href="/#about">Tentang Kami</a></li>
+                <li role="listitem"><a href="/#faq">FAQ</a></li>
                 <li role="listitem"><a href="gallery.html" class="btn-nav">Galeri</a></li>
             </ul>
         </div>
@@ -726,20 +910,20 @@
     <main id="main-content">
         <div class="blog-container">
             <nav class="breadcrumb" aria-label="Breadcrumb navigasi">
-                <a href="index.html">Beranda</a>
+                <a href="/">Beranda</a>
                 <span class="separator">/</span>
                 <span class="current" aria-current="page">Harga Bore Pile Jakarta 2026</span>
             </nav>
             
-            <h1 style="color: var(--primary-color); font-size: 1.8rem; margin-bottom: 15px;">Harga Bore Pile Terbaru 2026: Kalkulator bore pile (Mesin & Manual)</h1>
+            <h1 style="color: var(--primary-color); font-size: 1.8rem; margin-bottom: 15px;">Harga Bore Pile Jabodetabek 2026: Kalkulator bore pile (Mesin & Manual)</h1>
             <div style="margin-bottom: 20px; color: var(--text-light); font-size: 0.85rem;">
                 <span>Mei 2026</span> |
                 <span>Tim Agung Perkasa</span> |
-                <span>Melayani Jakarta & Sekitarnya</span>
+                <span>Melayani Jabodetabek & seluruh Pulau Jawa</span>
             </div>
 
             <div class="update-badge">
-                Update harga bore pile terbaru Mei 2026 untuk wilayah Jabodetabek
+                Update harga bore pile terbaru Mei 2026 untuk wilayah Jabodetabek & Pulau Jawa
             </div>
 
             <p style="background: #f0f7ff; padding: 1rem; border-left: 5px solid var(--primary-color); border-radius: 8px; margin-bottom: 1.5rem;">
@@ -814,7 +998,7 @@
 
             <script>
                 const hargaMesin = { 30: 120000, 40: 135000, 50: 190000, 60: 250000, 80: 350000 };
-                const hargaManual = { 20: 70000, 25: 75000, 30: 85000, 40: 100000 };
+                const hargaManual = { 20: 70000, 25: 75000, 30: 80000, 40: 100000 };
                 
                 let currentMethod = 'mesin';
                 let currentDiameter = 40;
@@ -994,10 +1178,10 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td style="background:#fff3e0;">20 cm</td><td style="background:#fff3e0;"><strong>70.000</strong></td><td style="background:#fff3e0;">6 meter</td><td style="background:#fff3e0;">Area sangat sempit</td></tr>
-                            <tr><td>25 cm</td><td><strong>75.000</strong></td><td>6 meter</td><td>Gang kecil</td></tr>
-                            <tr><td style="background:#f9f9f9;">30 cm</td><td style="background:#f9f9f9;"><strong>85.000</strong></td><td style="background:#f9f9f9;">6 meter</td><td style="background:#f9f9f9;">Rumah 1-2 lantai (tanah padat)</td></tr>
-                            <tr><td>40 cm</td><td><strong>100.000</strong></td><td>6 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
+                            <tr><td style="background:#fff3e0;">20 cm</td><td style="background:#fff3e0;"><strong>70.000</strong></td><td style="background:#fff3e0;">10 meter</td><td style="background:#fff3e0;">Area sangat sempit</td></tr>
+                            <tr><td>25 cm</td><td><strong>75.000</strong></td><td>10 meter</td><td>Gang kecil</td></tr>
+                            <tr><td style="background:#f9f9f9;">30 cm</td><td style="background:#f9f9f9;"><strong>80.000</strong></td><td style="background:#f9f9f9;">10 meter</td><td style="background:#f9f9f9;">Rumah 1-2 lantai (tanah padat)</td></tr>
+                            <tr><td>40 cm</td><td><strong>100.000</strong></td><td>10 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1158,6 +1342,19 @@
         </div>
     </main>
 
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">Artikel Blog</h2>
+            <p class="section-subtitle">Insight pondasi dan konstruksi untuk membantu keputusan proyek Anda.</p>
+            <div class="blog-grid projects-grid">
+                <div class="project-card"><img src="imgs/borepile-dekat-dinding.jpg" alt="Borepile vs Strauss Pile" loading="lazy"><div class="project-info"><h3>Borepile vs Strauss Pile</h3><p>Perbandingan lengkap agar Anda dapat memilih jenis pondasi terbaik.</p><a href="bore-pile-vs-strauss.html" class="btn btn-primary">Baca Artikel →</a></div></div>
+                <div class="project-card"><img src="imgs/hasil-lubang-borepile.jpg" alt="Pondasi Hemat Biaya" loading="lazy"><div class="project-info"><h3>Biaya pondasi agar Hemat Biaya</h3><p>Strategi menghemat biaya pondasi tanpa mengorbankan kekuatan dan kualitas.</p><a href="hemat-biaya-pondasi.html" class="btn btn-primary">Baca Artikel →</a></div></div>
+                <div class="project-card"><img src="imgs/borepile-lokasi-sulit.jpg" alt="Pondasi Area Terbatas" loading="lazy"><div class="project-info"><h3>Lokasi pondasi Area Terbatas?</h3><p>Panduan memilih teknik pondasi untuk lokasi sempit dan proyek padat.</p><a href="pondasi-area-terbatas.html" class="btn btn-primary">Baca Artikel →</a></div></div>
+            </div>
+            <div class="portfolio-cta"><a href="artikel.html" class="btn-primary">Lihat Semua Artikel</a></div>
+        </div>
+    </section>
+
     <div style="max-width: 980px; margin: 0 auto; padding: 0 20px;">
         <h2 style="color: var(--primary-color); margin: 25px 0 10px;">Cakupan Area Layanan Kami</h2>
         <p>Agung Perkasa Borepile melayani proyek konstruksi di wilayah Jabodetabek berikut ini.</p>
@@ -1170,6 +1367,18 @@
             <div class="area-box"><h3>Sekitarnya</h3><div class="area-tags"><span>Bekasi</span><span>Bogor</span><span>Depok</span><span>Tangerang</span><span>Tangerang Selatan</span><span>Cibubur</span><span>Cikarang</span><span>Karawang</span></div></div>
         </div>
     </div>
+
+    <div style="margin-top: 30px; padding: 15px; background: #f5f7fa; border-radius: 12px; text-align: center;">
+                <p style="margin: 0;"><strong>Baca juga harga bore pile:</strong><br>
+                <a href="bore-pile-bekasi.html">Bekasi</a> | 
+                <a href="bore-pile-tangerang.html">Tangerang</a> | 
+                <a href="bore-pile-depok.html">Depok</a> | 
+                <a href="bore-pile-bogor.html">Bogor</a> |
+                <a href="bore-pile-jakarta.html">Jakarta</a>
+                </p>
+            </div>
+        </div>
+    </main>
 
     <div style="max-width: 980px; margin: 2rem auto 0; padding: 0 20px; text-align: center;">
         <div style="background: #f5f7fa; border-radius: 20px; padding: 1.2rem;">
@@ -1215,9 +1424,10 @@
                 <div class="footer-col">
                     <h3>Layanan</h3>
                     <ul>
-                        <li><a href="index.html">Jasa Borepile Mesin</a></li>
-                        <li><a href="index.html">Jasa Borepile Manual</a></li>
-                        <li><a href="index.html#contact">Konsultasi Pondasi</a></li>
+                        <li><a href="harga-bore-pile-2026.html">Jasa Borepile Mesin</a></li>
+                        <li><a href="harga-bore-pile-30cm.html">Jasa Borepile Manual</a></li>
+                        <li><a href="/#contact">Konsultasi Pondasi</a></li>
+                        <li><a href="/#about">Tentang Kami</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
