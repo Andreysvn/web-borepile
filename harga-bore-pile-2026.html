@@ -968,7 +968,7 @@
                         <div class="calculator-form-group">
                             <label for="depthInput">Kedalaman (meter)</label>
                             <input type="text" id="depthInput" inputmode="numeric" placeholder="Contoh: 12" value="12" aria-describedby="depthHint">
-                            <div id="depthHint" class="price-hint">Maksimal kedalaman 20 meter (bore pile mesin)</div>
+                            <div id="depthHint" class="price-hint">Maksimal kedalaman 30 meter (bore pile mesin)</div>
                         </div>
                         
                         <div class="calculator-form-group">
@@ -1019,7 +1019,7 @@
                 function updateDiameterOptions() {
                     if (currentMethod === 'mesin') {
                         diameterSelect.innerHTML = `<option value="30">30 cm</option><option value="40" selected>40 cm</option><option value="50">50 cm</option><option value="60">60 cm</option><option value="80">80 cm</option>`;
-                        depthHint.innerHTML = 'Maksimal kedalaman 20 meter (bore pile mesin)';
+                        depthHint.innerHTML = 'Maksimal kedalaman 30 meter (bore pile mesin)';
                         currentDiameter = 40;
                         diameterSelect.value = '40';
                         if (priceInput.value === '') {
@@ -1027,7 +1027,7 @@
                         }
                     } else {
                         diameterSelect.innerHTML = `<option value="20">20 cm</option><option value="25">25 cm</option><option value="30">30 cm</option><option value="40" selected>40 cm</option>`;
-                        depthHint.innerHTML = 'Maksimal kedalaman 6 meter (bore pile manual)';
+                        depthHint.innerHTML = 'Maksimal kedalaman 10 meter (bore pile manual)';
                         currentDiameter = 40;
                         diameterSelect.value = '40';
                         if (priceInput.value === '') {
@@ -1083,13 +1083,13 @@
                     
                     let depthForCalc = depth;
                     let warningMsg = '';
-                    if (currentMethod === 'mesin' && depthForCalc > 20) {
-                        depthForCalc = 20;
-                        warningMsg = ' (dibatasi 20m maksimal)';
+                    if (currentMethod === 'mesin' && depthForCalc > 30) {
+                        depthForCalc = 30;
+                        warningMsg = ' (dibatasi 30m maksimal)';
                     }
-                    if (currentMethod === 'manual' && depthForCalc > 6) {
-                        depthForCalc = 6;
-                        warningMsg = ' (dibatasi 6m maksimal)';
+                    if (currentMethod === 'manual' && depthForCalc > 10) {
+                        depthForCalc = 10;
+                        warningMsg = ' (dibatasi 10m maksimal)';
                     }
                     
                     const points = parseInt(pointsInput.value);
@@ -1151,7 +1151,7 @@
             <!-- TABLE SECTION -->
             <section aria-labelledby="table-heading">
                 <h2 id="table-heading" style="color: var(--primary-color); margin: 30px 0 10px;">Tabel Harga Bore Pile Jakarta 2026 (Jasa Bor Saja)</h2>
-                <p>Berikut <strong>harga JASA PENGEBORAN SAJA</strong> (belum termasuk material beton & besi), untuk wilayah Jakarta dan sekitarnya.</p>
+                <p>Berikut <strong>harga JASA PENGEBORAN SAJA</strong> (belum termasuk material beton & besi) untuk wilayah Jakarta dan sekitarnya. Kedalaman pengeboran bergantung pada diameter dan kondisi lapisan tanah, di lapangan kami pernah tembus hingga kedalaman 25-30meter, pastikan cek sondir tanah dahulu agar mengetahui kedalaman yang tepat untuk pengeboran hingga mencapai tanah keras. </p>
 
                 <h3>Bore Pile Mesin (Mini Crane)</h3>
                 <div class="table-responsive">
@@ -1161,11 +1161,11 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td style="background:#fff3e0;">30 cm</td><td style="background:#fff3e0;"><strong>120.000</strong></td><td style="background:#fff3e0;">20 meter</td><td style="background:#fff3e0;">Rumah 1-2 lantai</td></tr>
-                            <tr><td>40 cm</td><td><strong>135.000</strong></td><td>20 meter</td><td>Ruko, kantor</td></tr>
-                            <tr><td style="background:#f9f9f9;">50 cm</td><td style="background:#f9f9f9;"><strong>190.000</strong></td><td style="background:#f9f9f9;">20 meter</td><td style="background:#f9f9f9;">Gudang, pabrik kecil</td></tr>
-                            <tr><td>60 cm</td><td><strong>250.000</strong></td><td>15 meter</td><td>Hotel 3-4 lantai</td></tr>
-                            <tr><td style="background:#f9f9f9;">80 cm</td><td style="background:#f9f9f9;"><strong>350.000</strong></td><td style="background:#f9f9f9;">10 meter</td><td style="background:#f9f9f9;">Gedung 5-8 lantai</td></tr>
+                            <tr><td style="background:#fff3e0;">30 cm</td><td style="background:#fff3e0;"><strong>120.000</strong></td><td style="background:#fff3e0;">30 meter</td><td style="background:#fff3e0;">Rumah 1-2 lantai</td></tr>
+                            <tr><td>40 cm</td><td><strong>135.000</strong></td><td>30 meter</td><td>Ruko, kantor</td></tr>
+                            <tr><td style="background:#f9f9f9;">50 cm</td><td style="background:#f9f9f9;"><strong>190.000</strong></td><td style="background:#f9f9f9;">30 meter</td><td style="background:#f9f9f9;">Gudang, pabrik kecil</td></tr>
+                            <tr><td>60 cm</td><td><strong>250.000</strong></td><td>30 meter</td><td>Hotel 3-4 lantai</td></tr>
+                            <tr><td style="background:#f9f9f9;">80 cm</td><td style="background:#f9f9f9;"><strong>350.000</strong></td><td style="background:#f9f9f9;">30 meter</td><td style="background:#f9f9f9;">Gedung 5-8 lantai</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1193,15 +1193,14 @@
                     <div class="caption">Proses pengecoran bore pile</div>
                 </div>
                 <div class="illustration-text">
-                    <p><strong>Bore Pile Mesin (Mini Crane):</strong> Kedalaman hingga 20 meter, lebih kuat, cocok untuk bangunan besar dan tanah lunak.</p>
-                    <p><strong>Bore Pile Manual:</strong> Kedalaman hingga 6 meter, lebih ekonomis, cocok untuk area sempit dan bangunan kecil.</p>
-                    <p>Konsultasikan dengan tim Ahli kami untuk menentukan metode terbaik sesuai kondisi tanah dan beban bangunan Anda.</p>
+                    <p><strong>Bore Pile Mesin (Mini Crane):</strong> Kedalaman pengeboran hingga 30 meter. <strong>Metode pengerjaan ada 2 yaitu bor basah (wash boring)</strong> membutuhkan pasokan air, gunanya untuk mengangkat tanah hasil pengeboran ke atas permukaan tanah menggunakan alat sedot lumpur, kekurangannya adalah masalah kebersihan, yaitu lokasi pengeboran menjadi kotor karena lumpur, maka dari itu juga membutuhkan alat sedot lumpur dari kami (belum termasuk jasa pengeboran), karena lebih kuat mencapai lapisan tanah yang dalam, cocok untuk bangunan besar dan tanah lunak. Dan <strong>metode yang kedua adalah bor kering (dry boring)</strong> metode ini tidak menggunakan air, cairan, atau lumpur bentonite, melainkan mengangkat tanah secara mekanis menggunakan mata bor berbentuk ulir, kekurangannya adalah kedalaman pengeboran yang lebih terbatas/dangkal karena tanah keras, maka dari itu lebih baik digunakan pada tanah yang stabil, keras, atau tanah lempung dan lanau. </p>
+                    <p><strong>Bore Pile Manual:</strong> Kedalaman hingga 10 meter, lebih ekonomis, cocok untuk area sempit atau terbatas dan bangunan kecil, karena pengeboran dilakukan menggunakan tenaga manusia, maka pengeboran hanya bisa mencapai kedalaman yang lebih dangkal (sekitar 6-10m).</p>
+                    <p>Konsultasikan dengan kami untuk menentukan metode terbaik sesuai kondisi tanah dan beban bangunan Anda.</p>
                 </div>
             </div>
 
             <section aria-labelledby="factors-heading">
                 <h2 id="factors-heading" style="color: var(--primary-color); margin: 30px 0 10px;">Hal yang Mempengaruhi Harga Bore Pile Jakarta</h2>
-                <p>Harga bore pile tidak sama untuk setiap proyek. Berikut 6 faktor utama yang menyebabkan perbedaan biaya:</p>
 
                 <div class="illustration-row">
                     <div class="illustration-img">
@@ -1209,10 +1208,12 @@
                         <div class="caption">Proses pengeboran bore pile mini crane</div>
                     </div>
                     <div class="illustration-text">
-                        <p>Pengeboran bore pile menggunakan <strong>mini crane</strong> yang mampu menembus tanah lunak hingga kedalaman <strong>20 meter</strong>. Setelah lubang selesai, dirakit rangka besi dan dimasukkan besi tulangan tersebut kemudian dicor beton.</p>
+                        <p>Pengeboran bore pile menggunakan <strong>mini crane</strong> yang mampu menembus tanah lunak hingga kedalaman <strong>30 meter</strong>. Setelah lubang selesai, dirakit rangka besi dan dimasukkan besi tulangan tersebut kemudian dicor beton.</p>
                         <p>Metode ini menghasilkan sedikit getaran sehingga aman untuk bangunan di sekitarnya, berbeda dengan tiang pancang yang menghasilkan getaran yang lebih besar karena beton langsung dipalu ke dalam tanah.</p>
                     </div>
                 </div>
+
+                <p>Harga bore pile tidak sama untuk setiap proyek. Berikut 6 faktor utama yang menyebabkan perbedaan biaya:</p>
 
                 <div class="info-grid">
                     <div class="info-card"><h3>Diameter & Kedalaman</h3><p>Semakin besar diameter dan semakin dalam pengeboran, maka biaya per meter semakin tinggi.</p></div>
@@ -1287,7 +1288,7 @@
                     <div class="info-card">
                         <h3>Bore Pile Mesin</h3>
                         <p><strong>Proyek:</strong> Rumah 2 lantai, Bekasi<br>
-                        <strong>Spesifikasi:</strong> Dia. 40cm, kedalaman 12m, 16 titik<br>
+                        <strong>Spesifikasi:</strong> Ø40cm, kedalaman 12m, 16 titik<br>
                         <strong>Biaya:</strong> 12m × Rp135.000 × 16 = <strong>Rp25.920.000</strong><br>
                         + mobilisasi Rp3jt = <strong>Rp28.920.000</strong><br>
                         <strong>Waktu:</strong> 7 hari kerja</p>
@@ -1295,8 +1296,8 @@
                     <div class="info-card">
                         <h3>Bore Pile Manual</h3>
                         <p><strong>Proyek:</strong> Rumah 1 lantai, Jakarta<br>
-                        <strong>Spesifikasi:</strong> Dia. 30cm, kedalaman 4m, 12 titik<br>
-                        <strong>Biaya:</strong> 4m × Rp85.000 × 12 = <strong>Rp4.080.000</strong><br>
+                        <strong>Spesifikasi:</strong> Ø30cm, kedalaman 4m, 12 titik<br>
+                        <strong>Biaya:</strong> 4m × Rp80.000 × 12 = <strong>Rp3.840.000</strong><br>
                         + mobilisasi Rp1,5jt = <strong>Rp5.580.000</strong><br>
                         <strong>Waktu:</strong> 5 hari kerja</p>
                     </div>
@@ -1313,7 +1314,7 @@
                 <div class="faq-container">
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">Apa perbedaan bore pile mesin dan manual? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-                        <div class="faq-answer"><p>Bore pile mesin pakai mini crane, kedalaman hingga 20m, biaya lebih tinggi. Bore pile manual pakai tenaga manusia, kedalaman 6m, lebih murah untuk proyek kecil dan area sempit.</p></div>
+                        <div class="faq-answer"><p>Bore pile mesin pakai mini crane, kedalaman hingga 30m, biaya lebih tinggi. Bore pile manual pakai tenaga manusia, kedalaman 10m, lebih murah untuk proyek kecil dan area sempit.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">Metode mana yang cocok untuk proyek rumah saya? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
@@ -1343,17 +1344,56 @@
     </main>
 
     <section class="blog" id="blog">
-        <div class="container">
-            <h2 class="section-title">Artikel Blog</h2>
-            <p class="section-subtitle">Insight pondasi dan konstruksi untuk membantu keputusan proyek Anda.</p>
-            <div class="blog-grid projects-grid">
-                <div class="project-card"><img src="imgs/borepile-dekat-dinding.jpg" alt="Borepile vs Strauss Pile" loading="lazy"><div class="project-info"><h3>Borepile vs Strauss Pile</h3><p>Perbandingan lengkap agar Anda dapat memilih jenis pondasi terbaik.</p><a href="bore-pile-vs-strauss.html" class="btn btn-primary">Baca Artikel →</a></div></div>
-                <div class="project-card"><img src="imgs/hasil-lubang-borepile.jpg" alt="Pondasi Hemat Biaya" loading="lazy"><div class="project-info"><h3>Biaya pondasi agar Hemat Biaya</h3><p>Strategi menghemat biaya pondasi tanpa mengorbankan kekuatan dan kualitas.</p><a href="hemat-biaya-pondasi.html" class="btn btn-primary">Baca Artikel →</a></div></div>
-                <div class="project-card"><img src="imgs/borepile-lokasi-sulit.jpg" alt="Pondasi Area Terbatas" loading="lazy"><div class="project-info"><h3>Lokasi pondasi Area Terbatas?</h3><p>Panduan memilih teknik pondasi untuk lokasi sempit dan proyek padat.</p><a href="pondasi-area-terbatas.html" class="btn btn-primary">Baca Artikel →</a></div></div>
+    <div class="container">
+        <h2 class="section-title">Artikel Blog</h2>
+        <p class="section-subtitle">Insight pondasi dan konstruksi untuk membantu keputusan proyek Anda.</p>
+        <div class="blog-grid projects-grid">
+            
+            <div class="project-card">
+                <img src="imgs/borepile-dekat-dinding.jpg" 
+                     alt="Borepile vs Strauss Pile" 
+                     loading="lazy" 
+                     width="400" 
+                     height="250">
+                <div class="project-info">
+                    <h3>Borepile vs Strauss Pile</h3>
+                    <p>Perbandingan lengkap agar Anda dapat memilih jenis pondasi terbaik.</p>
+                    <a href="bore-pile-vs-strauss.html" class="btn btn-primary">Baca Artikel →</a>
+                </div>
             </div>
-            <div class="portfolio-cta"><a href="artikel.html" class="btn-primary">Lihat Semua Artikel</a></div>
+            
+            <div class="project-card">
+                <img src="imgs/hasil-lubang-borepile.jpg" 
+                     alt="Hasil pekerjaan bore pile" 
+                     loading="lazy" 
+                     width="400" 
+                     height="250">
+                <div class="project-info">
+                    <h3>Harga Bore Pile Diameter 30cm</h3>
+                    <p>Lihat harga terbaru 2026 untuk bore pile diameter 30cm.</p>
+                    <a href="harga-bore-pile-30cm.html" class="btn btn-primary">Baca Artikel →</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="imgs/borepile-dan-truk-molen.jpg" 
+                     alt="Proses pengerjaan Bore Pile di JABODETABEK" 
+                     loading="lazy" 
+                     width="400" 
+                     height="250">
+                <div class="project-info">
+                    <h3>Harga Bore Pile Jakarta 2026</h3>
+                    <p>Informasi terkini tentang harga bore pile di wilayah Jakarta untuk tahun 2026.</p>
+                    <a href="bore-pile-jakarta.html" class="btn btn-primary">Baca Artikel →</a>
+                </div>
+            </div>
+            
         </div>
-    </section>
+        <div class="portfolio-cta">
+            <a href="artikel.html" class="btn-primary">Lihat Semua Artikel</a>
+        </div>
+    </div>
+</section>
 
     <div style="max-width: 980px; margin: 0 auto; padding: 0 20px;">
         <h2 style="color: var(--primary-color); margin: 25px 0 10px;">Cakupan Area Layanan Kami</h2>
@@ -1527,7 +1567,7 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {"@type": "Question", "name": "Apa perbedaan bore pile mesin dan manual?", "acceptedAnswer": {"@type": "Answer", "text": "Bore pile mesin pakai mini crane, kedalaman hingga 20 meter, biaya lebih tinggi. Bore pile manual pakai tenaga manusia, kedalaman 6 meter, lebih ekonomis untuk proyek kecil dan area sempit."}},
+            {"@type": "Question", "name": "Apa perbedaan bore pile mesin dan manual?", "acceptedAnswer": {"@type": "Answer", "text": "Bore pile mesin pakai mini crane, kedalaman hingga 30 meter, biaya lebih tinggi. Bore pile manual pakai tenaga manusia, kedalaman 10 meter, lebih ekonomis untuk proyek kecil dan area sempit."}},
             {"@type": "Question", "name": "Metode mana yang cocok untuk proyek rumah saya?", "acceptedAnswer": {"@type": "Answer", "text": "Jika ingin membuat rumah 2 lantai ke atas atau tanah bekas rawa kami sarankan menggunakan bore pile mesin. Jika hanya rumah 1 lantai, area sempit, budget terbatas bisa menggunakan bore pile manual."}},
             {"@type": "Question", "name": "Berapa minimal order untuk jasa bore pile?", "acceptedAnswer": {"@type": "Answer", "text": "Bore pile mesin minimal 200 meter. Bore pile manual minimal 100 meter."}},
             {"@type": "Question", "name": "Bisa pakai material sendiri untuk bore pile?", "acceptedAnswer": {"@type": "Answer", "text": "Sangat bisa. Jadi harga di atas untuk jasa bor saja."}},

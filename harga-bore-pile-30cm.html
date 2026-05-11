@@ -629,6 +629,192 @@
             outline: 3px solid var(--secondary-color);
             outline-offset: 2px;
         }
+
+               /* ===== BLOG SECTION STYLES ===== */
+.blog {
+  padding: 60px 0;
+  background-color: var(--light-gray, #f8f9fa);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  color: var(--primary-color, #1a3a6e);
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary-color, #e67e22), var(--accent-color, #3498db));
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: var(--text-light, #6c757d);
+  font-size: clamp(0.85rem, 3vw, 1rem);
+}
+
+/* Blog Grid - Responsive */
+.blog-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+/* Project / Blog Card */
+.project-card {
+  background: var(--white, #fff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.project-card:hover img {
+  transform: scale(1.03);
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--primary-color, #1a3a6e);
+  line-height: 1.4;
+}
+
+.project-info p {
+  font-size: 0.85rem;
+  color: var(--text-light, #6c757d);
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Button within card */
+.project-info .btn,
+.project-info .btn-primary {
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--secondary-color, #e67e22);
+  color: white;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.project-info .btn-primary:hover {
+  background: #d35400;
+  transform: translateY(-2px);
+}
+
+/* CTA Button (Lihat Semua Artikel) */
+.portfolio-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.portfolio-cta .btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--primary-color, #1a3a6e);
+  color: white;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.portfolio-cta .btn-primary:hover {
+  background: var(--secondary-color, #e67e22);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE (MOBILE FRIENDLY) ===== */
+@media (max-width: 768px) {
+  .blog {
+    padding: 40px 0;
+  }
+  
+  .blog-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .project-card img {
+    height: 160px;
+  }
+  
+  .project-info {
+    padding: 15px;
+  }
+  
+  .project-info h3 {
+    font-size: 1rem;
+  }
+  
+  .section-subtitle {
+    margin-bottom: 30px;
+    padding: 0 15px;
+  }
+  
+  .portfolio-cta .btn-primary {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== PERFORMANCE OPTIMIZATION ===== */
+/* Lazy loading images */
+.project-card img {
+  loading: lazy;
+}
+
+/* Reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card img,
+  .project-info .btn-primary {
+    transition: none;
+  }
+  
+  .project-card:hover {
+    transform: none;
+  }
+} 
+
     </style>
 </head>
 
@@ -639,7 +825,7 @@
     
     <nav class="navbar" aria-label="Navigasi utama">
         <div class="container">
-            <a href="beranda.html" class="logo" aria-label="Agung Perkasa Borepile - Beranda">
+            <a href="/" class="logo" aria-label="Agung Perkasa Borepile - Beranda">
                 <img src="imgs/logo-agung-perkasa-transparan.png" alt="Logo Agung Perkasa Borepile" loading="lazy" width="45" height="45">
                 <span>Agung Perkasa <br>Borepile</span>
             </a>
@@ -649,11 +835,11 @@
                 <span class="bar"></span>
             </button>
             <ul class="nav-menu" role="list">
-                <li role="listitem"><a href="beranda.html">Beranda</a></li>
-                <li role="listitem"><a href="beranda.html#services">Layanan</a></li>
-                <li role="listitem"><a href="beranda.html#blog">Artikel</a></li>
-                <li role="listitem"><a href="beranda.html#about">Tentang Kami</a></li>
-                <li role="listitem"><a href="faq.html#faq">FAQ</a></li>
+                <li role="listitem"><a href="/">Beranda</a></li>
+                <li role="listitem"><a href="/#services">Layanan</a></li>
+                <li role="listitem"><a href="/#blog">Artikel</a></li>
+                <li role="listitem"><a href="/#about">Tentang Kami</a></li>
+                <li role="listitem"><a href="/faq.html#faq">FAQ</a></li>
                 <li role="listitem"><a href="gallery.html" class="btn-nav">Galeri</a></li>
             </ul>
         </div>
@@ -662,7 +848,7 @@
     <main id="main-content">
         <div class="blog-container">
             <nav class="breadcrumb" aria-label="Breadcrumb navigasi">
-                <a href="index.html">Beranda</a>
+                <a href="/">Beranda</a>
                 <span class="separator">/</span>
                 <span class="current" aria-current="page">Harga Bore Pile Diameter 30cm</span>
             </nav>
@@ -724,7 +910,7 @@
                         <div class="calculator-form-group">
                             <label for="depthInput">Kedalaman (meter)</label>
                             <input type="text" id="depthInput" inputmode="numeric" placeholder="Contoh: 12" value="12" aria-describedby="depthHint">
-                            <div id="depthHint" class="price-hint">Maksimal kedalaman 20 meter (bore pile mesin)</div>
+                            <div id="depthHint" class="price-hint">Maksimal kedalaman 30 meter (bore pile mesin)</div>
                         </div>
                         
                         <div class="calculator-form-group">
@@ -754,7 +940,7 @@
 
             <script>
                 const hargaMesin = { 30: 120000, 40: 135000, 50: 190000, 60: 250000, 80: 350000 };
-                const hargaManual = { 20: 70000, 25: 75000, 30: 85000, 40: 100000 };
+                const hargaManual = { 20: 70000, 25: 75000, 30: 80000, 40: 100000 };
                 
                 let currentMethod = 'mesin';
                 let currentDiameter = 30;
@@ -774,9 +960,9 @@
                 
                 function updateDiameterOptions() {
                     if (currentMethod === 'mesin') {
-                        depthHint.innerHTML = 'Maksimal kedalaman 20 meter (bore pile mesin)';
+                        depthHint.innerHTML = 'Maksimal kedalaman 30 meter (bore pile mesin)';
                     } else {
-                        depthHint.innerHTML = 'Maksimal kedalaman 6 meter (bore pile manual)';
+                        depthHint.innerHTML = 'Maksimal kedalaman 10 meter (bore pile manual)';
                     }
                     updateCalculator();
                 }
@@ -827,13 +1013,13 @@
                     
                     let depthForCalc = depth;
                     let warningMsg = '';
-                    if (currentMethod === 'mesin' && depthForCalc > 20) {
-                        depthForCalc = 20;
-                        warningMsg = ' (dibatasi 20m maksimal)';
+                    if (currentMethod === 'mesin' && depthForCalc > 30) {
+                        depthForCalc = 30;
+                        warningMsg = ' (dibatasi 30m maksimal)';
                     }
-                    if (currentMethod === 'manual' && depthForCalc > 6) {
-                        depthForCalc = 6;
-                        warningMsg = ' (dibatasi 6m maksimal)';
+                    if (currentMethod === 'manual' && depthForCalc > 10) {
+                        depthForCalc = 10;
+                        warningMsg = ' (dibatasi 10m maksimal)';
                     }
                     
                     const points = parseInt(pointsInput.value);
@@ -894,7 +1080,7 @@
 
             <section aria-labelledby="table-heading">
                 <h2 id="table-heading" style="color: var(--primary-color); margin: 30px 0 10px;">Tabel Harga Bore Pile Jakarta 2026 (Jasa Bor Saja)</h2>
-                <p style="color: #333;">Berikut <strong>harga JASA PENGEBORAN SAJA</strong> (belum termasuk material beton & besi) untuk wilayah Jakarta dan sekitarnya.</p>
+                <p style="color: #333;">Berikut <strong>harga JASA PENGEBORAN SAJA</strong> (belum termasuk material beton & besi) untuk wilayah Jakarta dan sekitarnya. Kedalaman pengeboran bergantung pada diameter dan kondisi lapisan tanah, di lapangan kami pernah tembus hingga kedalaman 25-30meter, pastikan cek sondir dulu agar mengetahui kedalaman yang tepat untuk pengeboran hingga mencapai tanah keras. </p>
 
                 <h3 style="color: #1a3a6e;">Bore Pile Mesin (Mini Crane)</h3>
                 <div class="table-responsive">
@@ -907,13 +1093,13 @@
                             <tr style="background:#fff3e0;">
                                 <td><strong>30 cm</strong></td>
                                 <td><strong>120.000</strong></td>
-                                <td><strong>20 meter</strong></td>
+                                <td><strong>30 meter</strong></td>
                                 <td><strong>Rumah 1-2 lantai</strong></td>
                             </tr>
-                            <tr><td>40 cm</td><td>135.000</td><td>20 meter</td><td>Ruko, kantor</td></tr>
-                            <tr style="background:#f9f9f9;"><td>50 cm</td><td>190.000</td><td>20 meter</td><td>Gudang, pabrik kecil</td></tr>
-                            <tr><td>60 cm</td><td>250.000</td><td>15 meter</td><td>Hotel 3-4 lantai</td></tr>
-                            <tr style="background:#f9f9f9;"><td>80 cm</td><td>350.000</td><td>10 meter</td><td>Gedung 5-8 lantai</td></tr>
+                            <tr><td>40 cm</td><td>135.000</td><td>30 meter</td><td>Ruko, kantor</td></tr>
+                            <tr style="background:#f9f9f9;"><td>50 cm</td><td>190.000</td><td>30 meter</td><td>Gudang, pabrik kecil</td></tr>
+                            <tr><td>60 cm</td><td>Hubungi Kami</td><td>30 meter</td><td>Hotel 3-4 lantai</td></tr>
+                            <tr style="background:#f9f9f9;"><td>80 cm</td><td>Hubungi Kami</td><td>30 meter</td><td>Gedung 5-8 lantai</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -926,15 +1112,15 @@
                             <tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>20 cm</td><td>70.000</td><td>6 meter</td><td>Area sangat sempit</td></tr>
-                            <tr style="background:#f9f9f9;"><td>25 cm</td><td>75.000</td><td>6 meter</td><td>Gang kecil</td></tr>
+                            <tr><td>20 cm</td><td>70.000</td><td>10 meter</td><td>Area sangat sempit</td></tr>
+                            <tr style="background:#f9f9f9;"><td>25 cm</td><td>75.000</td><td>10 meter</td><td>Gang kecil</td></tr>
                             <tr style="background:#fff3e0;">
                                 <td><strong>30 cm</strong></strong></strong></td>
-                                <td><strong>85.000</strong></strong></strong></td>
-                                <td><strong>6 meter</strong></strong></strong></td>
+                                <td><strong>80.000</strong></strong></strong></td>
+                                <td><strong>10 meter</strong></strong></strong></td>
                                 <td><strong>Rumah 1-2 lantai (tanah padat)</strong></strong></strong></td>
                             </tr>
-                            <tr><td>40 cm</td><td>100.000</td><td>6 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
+                            <tr><td>40 cm</td><td>100.000</td><td>10 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -946,8 +1132,8 @@
                     <div class="caption">Proses bore pile dengan mini crane untuk rumah pribadi di PIK</div>
                 </div>
                 <div class="illustration-text">
-                    <p><strong>Bore Pile Mesin (Mini Crane):</strong> Kedalaman hingga 20 meter, lebih kuat, cocok untuk bangunan besar dan tanah lunak.</p>
-                    <p><strong>Bore Pile Manual:</strong> Kedalaman hingga 6 meter, lebih ekonomis, cocok untuk area sempit dan bangunan kecil.</p>
+                    <p><strong>Bore Pile Mesin (Mini Crane):</strong> Kedalaman pengeboran hingga 30 meter karena lebih kuat mencapai lapisan tanah yang dalam, cocok untuk bangunan besar dan tanah lunak.</p>
+                    <p><strong>Bore Pile Manual:</strong> Kedalaman hingga 10 meter, lebih ekonomis, cocok untuk area sempit atau terbatas dan bangunan kecil.</p>
                     <p>Konsultasikan dengan kami untuk menentukan metode terbaik sesuai kondisi tanah dan beban bangunan Anda.</p>
                 </div>
             </div>
@@ -1010,7 +1196,7 @@
                 <div class="info-grid">
                     <div class="info-card"><h3>Mobilisasi Alat</h3><p>Mesin: Rp3-5jt (Jabodetabek) | Manual: Rp1-2jt</p></div>
                     <div class="info-card"><h3>Minimal Order</h3><p>Bore pile mesin: 200m | Manual: 100m, di bawah itu bisa menghubungi admin kami</p></div>
-                    <div class="info-card"><h3>Sedot Lumpur</h3><p>Tergantung volume (Rp800-1.200/rit)</p></div>
+                    <div class="info-card"><h3>Sedot Lumpur</h3><p>Tergantung volume, biasanya (Rp800.000 - Rp1.200.000/rit)</p></div>
                     <div class="info-card"><h3>Data Sondir</h3><p>Wajib ada karena sangat penting untuk menentukan kedalaman pondasi yang tepat</p></div>
                 </div>
             </section>
@@ -1021,7 +1207,7 @@
                     <div class="info-card">
                         <h3>Bore Pile Mesin 30cm</h3>
                         <p><strong>Proyek:</strong> Rumah 2 lantai, Bekasi<br>
-                        <strong>Spesifikasi:</strong> D30cm, kedalaman 12m, 16 titik<br>
+                        <strong>Spesifikasi:</strong> Ø30cm, kedalaman 12m, 16 titik<br>
                         <strong>Biaya:</strong> 12m × Rp120.000 × 16 = <strong>Rp23.040.000</strong><br>
                         + mobilisasi Rp3jt = <strong>Rp26.040.000</strong><br>
                         <strong>Waktu:</strong> 7 hari kerja</p>
@@ -1029,9 +1215,9 @@
                     <div class="info-card">
                         <h3>Bore Pile Manual 30cm</h3>
                         <p><strong>Proyek:</strong> Rumah 1 lantai, Jakarta<br>
-                        <strong>Spesifikasi:</strong> D30cm, kedalaman 5m, 12 titik<br>
-                        <strong>Biaya:</strong> 5m × Rp85.000 × 12 = <strong>Rp5.100.000</strong><br>
-                        + mobilisasi Rp1,5jt = <strong>Rp6.600.000</strong><br>
+                        <strong>Spesifikasi:</strong> Ø30cm, kedalaman 5m, 12 titik<br>
+                        <strong>Biaya:</strong> 5m × Rp80.000 × 12 = <strong>Rp4.800.000</strong><br>
+                        + mobilisasi Rp1,5jt = <strong>Rp6.300.000</strong><br>
                         <strong>Waktu:</strong> 5 hari kerja</p>
                     </div>
                 </div>
@@ -1064,12 +1250,12 @@
                 <div class="faq-container">
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">Apakah bore pile diameter 30cm cukup kuat untuk rumah 2 lantai? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-                        <div class="faq-answer"><p><strong>Cukup.</strong> Dengan kedalaman 8-12 meter, diameter 30cm mampu menahan beban rumah 2 lantai dengan aman. Pastikan data sondir tanah sudah dicek.</p></div>
+                        <div class="faq-answer"><p><strong>Cukup.</strong> Dengan kedalaman 8-12 meter, diameter 30cm mampu menahan beban rumah 2 lantai dengan aman. Pastikan data sondir tanah sudah dicek dan ditentukan kedalaman yang tepat..</p></div>
                     </div>
                     
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">Berapa standar harga jasa bor diameter 30cm? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-                        <div class="faq-answer"><p>Standar harga jasa bor diameter 30cm: <strong>mesin Rp120.000/m, manual Rp85.000/m</strong> (tergantung lokasi dan volume).</p></div>
+                        <div class="faq-answer"><p>Standar harga jasa bor diameter 30cm: <strong>mesin Rp120.000/m, manual Rp80.000/m</strong> untuk jasa pengeboran, perakitan besi tulangan, dan pengecoran beton (harga disamping belum termasuk harga material), material bisa beli sendiri dan diberikan kepada kami untuk dikerjakan.</p></div>
                     </div>
                     
                     <div class="faq-item">
@@ -1122,6 +1308,58 @@
             </div>
         </div>
     </main>
+
+    <section class="blog" id="blog">
+    <div class="container">
+        <h2 class="section-title">Artikel Blog</h2>
+        <p class="section-subtitle">Insight pondasi dan konstruksi untuk membantu keputusan proyek Anda.</p>
+        <div class="blog-grid projects-grid">
+            
+            <div class="project-card">
+                <img src="imgs/borepile-dekat-dinding.jpg" 
+                     alt="Harga Bore pile 2026" 
+                     loading="lazy" 
+                     width="400" 
+                     height="250">
+                <div class="project-info">
+                    <h3>Harga Bore pile 2026</h3>
+                    <p>Lihat harga terbaru untuk semua diameter bore pile terbaru 2026 .</p>
+                    <a href="harga-bore-pile-2026.html" class="btn btn-primary">Baca Artikel →</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="imgs/borepile-gedung-universitas.jpg" 
+                     alt="Perbandingan Bore Pile dan Strauss Pile" 
+                     loading="lazy" 
+                     width="400" 
+                     height="250">
+                <div class="project-info">
+                    <h3>Perbedaan Bore Pile dan Strauss Pile</h3>
+                    <p>Perbandingan lengkap agar Anda dapat memilih jenis pondasi yang tepat.</p>
+                    <a href="bore-pile-vs-strauss.html" class="btn btn-primary">Baca Artikel →</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="imgs/borepile-dekat-gedung.jpg" 
+                     alt="Proses pengerjaan Bore Pile" 
+                     loading="lazy" 
+                     width="400" 
+                     height="250">
+                <div class="project-info">
+                    <h3>Proses Pengerjaan Bore Pile</h3>
+                    <p>Penjelasan lengkap tentang langkah-langkah pengerjaan bore pile.</p>
+                    <a href="proses-bore-pile.html" class="btn btn-primary">Baca Artikel →</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="portfolio-cta">
+            <a href="artikel.html" class="btn-primary">Lihat Semua Artikel</a>
+        </div>
+    </div>
+</section>
 
     <div style="max-width: 980px; margin: 0 auto; padding: 0 20px;">
         <h2 style="color: var(--primary-color); margin: 25px 0 10px;">Cakupan Area Layanan Kami</h2>
@@ -1181,9 +1419,10 @@
                 <div class="footer-col">
                     <h3>Layanan</h3>
                     <ul>
-                        <li><a href="index.html">Jasa Borepile 30cm</a></li>
-                        <li><a href="index.html">Jasa Borepile Manual</a></li>
-                        <li><a href="index.html#contact">Konsultasi Pondasi</a></li>
+                        <li><a href="harga-bore-pile-2026.html">Harga Borepile Diameter 30cm</a></li>
+                        <li><a href="harga-bore-pile-30cm.html">Jasa Borepile Manual</a></li>
+                        <li><a href="/#contact">Konsultasi Pondasi</a></li>
+                        <li><a href="/#about">Tentang Kami</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1285,7 +1524,7 @@
                 "name": "Berapa standar harga jasa bor diameter 30cm?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Standar harga jasa bor diameter 30cm: mesin Rp120.000/m, manual Rp85.000/m (tergantung lokasi dan volume pekerjaan)."
+                    "text": "Standar harga jasa bor diameter 30cm: mesin Rp120.000/m, manual Rp80.000/m (tergantung lokasi dan volume pekerjaan)."
                 }
             },
             {
