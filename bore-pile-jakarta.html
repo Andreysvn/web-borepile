@@ -60,6 +60,13 @@
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="F3ndI7tGSH1XWvznEXqZgQ" defer></script>
     
     <style>
+        /* ========== FONT DISPLAY SWAP UNTUK PERFORMANCE ========== */
+        @font-face {
+            font-family: 'FontAwesome';
+            font-display: swap;
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
+        }
+        
         /* ========== STYLE ========== */
         :root {
             --primary-color: #1a3a6e;
@@ -67,6 +74,8 @@
             --dark-color: #2c3e50;
             --text-color: #333;
             --white: #fff;
+            --light-gray: #f8f9fa;
+            --text-light: #6c757d;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -166,7 +175,14 @@
         /* ILLUSTRATION ROW */
         .illustration-row { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0; align-items: center; }
         .illustration-img { flex: 1; min-width: 200px; text-align: center; }
-        .illustration-img img { width: 100%; max-width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .illustration-img img { 
+            width: 100%; 
+            max-width: 400px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            aspect-ratio: 400 / 250;
+            object-fit: cover;
+        }
         .illustration-img .caption { font-size: 0.7rem; color: #555; margin-top: 0.3rem; }
         .illustration-text { flex: 1.5; }
         
@@ -237,190 +253,146 @@
         a:not(.btn-nav):not(.btn-wa-konsultasi):not(.whatsapp-float) { text-decoration: underline; }
 
         /* ===== BLOG SECTION STYLES ===== */
-.blog {
-  padding: 60px 0;
-  background-color: var(--light-gray, #f8f9fa);
-}
-
-.section-title {
-  font-size: clamp(1.6rem, 5vw, 2.2rem);
-  color: var(--primary-color, #1a3a6e);
-  text-align: center;
-  margin-bottom: 15px;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--secondary-color, #e67e22), var(--accent-color, #3498db));
-  border-radius: 2px;
-}
-
-.section-subtitle {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  color: var(--text-light, #6c757d);
-  font-size: clamp(0.85rem, 3vw, 1rem);
-}
-
-/* Blog Grid - Responsive */
-.blog-grid,
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin: 30px 0;
-}
-
-/* Project / Blog Card */
-.project-card {
-  background: var(--white, #fff);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-}
-
-.project-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-  display: block;
-}
-
-.project-card:hover img {
-  transform: scale(1.03);
-}
-
-.project-info {
-  padding: 20px;
-}
-
-.project-info h3 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: var(--primary-color, #1a3a6e);
-  line-height: 1.4;
-}
-
-.project-info p {
-  font-size: 0.85rem;
-  color: var(--text-light, #6c757d);
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
-
-/* Button within card */
-.project-info .btn,
-.project-info .btn-primary {
-  display: inline-block;
-  padding: 8px 18px;
-  background: var(--secondary-color, #e67e22);
-  color: white;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.project-info .btn-primary:hover {
-  background: #d35400;
-  transform: translateY(-2px);
-}
-
-/* CTA Button (Lihat Semua Artikel) */
-.portfolio-cta {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.portfolio-cta .btn-primary {
-  display: inline-block;
-  padding: 12px 30px;
-  background: var(--primary-color, #1a3a6e);
-  color: white;
-  border-radius: 40px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.portfolio-cta .btn-primary:hover {
-  background: var(--secondary-color, #e67e22);
-  transform: translateY(-2px);
-}
-
-/* ===== RESPONSIVE (MOBILE FRIENDLY) ===== */
-@media (max-width: 768px) {
-  .blog {
-    padding: 40px 0;
-  }
-  
-  .blog-grid,
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .project-card img {
-    height: 160px;
-  }
-  
-  .project-info {
-    padding: 15px;
-  }
-  
-  .project-info h3 {
-    font-size: 1rem;
-  }
-  
-  .section-subtitle {
-    margin-bottom: 30px;
-    padding: 0 15px;
-  }
-  
-  .portfolio-cta .btn-primary {
-    padding: 10px 24px;
-    font-size: 0.9rem;
-  }
-}
-
-/* ===== PERFORMANCE OPTIMIZATION ===== */
-/* Lazy loading images */
-.project-card img {
-  loading: lazy;
-}
-
-/* Reduce motion if user prefers */
-@media (prefers-reduced-motion: reduce) {
-  .project-card,
-  .project-card img,
-  .project-info .btn-primary {
-    transition: none;
-  }
-  
-  .project-card:hover {
-    transform: none;
-  }
-}
-
+        .blog {
+            padding: 60px 0;
+            background-color: var(--light-gray, #f8f9fa);
+        }
+        
+        .section-title {
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            color: var(--primary-color, #1a3a6e);
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-color, #e67e22), #3498db);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-light, #6c757d);
+            font-size: clamp(0.85rem, 3vw, 1rem);
+        }
+        
+        .blog-grid,
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .project-card {
+            background: var(--white, #fff);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            display: block;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.03);
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color, #1a3a6e);
+            line-height: 1.4;
+        }
+        
+        .project-info p {
+            font-size: 0.85rem;
+            color: var(--text-light, #6c757d);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .project-info .btn,
+        .project-info .btn-primary {
+            display: inline-block;
+            padding: 8px 18px;
+            background: var(--secondary-color, #e67e22);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .project-info .btn-primary:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+        }
+        
+        .portfolio-cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .portfolio-cta .btn-primary {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-color, #1a3a6e);
+            color: white;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .portfolio-cta .btn-primary:hover {
+            background: var(--secondary-color, #e67e22);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .blog { padding: 40px 0; }
+            .blog-grid, .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+            .project-card img { height: 160px; }
+            .project-info { padding: 15px; }
+            .project-info h3 { font-size: 1rem; }
+            .section-subtitle { margin-bottom: 30px; padding: 0 15px; }
+            .portfolio-cta .btn-primary { padding: 10px 24px; font-size: 0.9rem; }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .project-card, .project-card img, .project-info .btn-primary { transition: none; }
+            .project-card:hover { transform: none; }
+        }
     </style>
 </head>
 <body>
@@ -431,7 +403,7 @@
     <nav class="navbar" aria-label="Navigasi utama">
         <div class="container">
             <a href="/" class="logo" aria-label="Agung Perkasa Borepile - Beranda">
-                <img src="imgs/logo-agung-perkasa-transparan.png" alt="Logo Agung Perkasa Borepile" loading="lazy" width="45" height="45">
+                <img src="imgs/logo-agung-perkasa-transparan.webp" alt="Logo Agung Perkasa Borepile" width="45" height="45">
                 <span>Agung Perkasa <br>Borepile</span>
             </a>
             <button class="menu-toggle" id="mobile-menu" aria-label="Menu navigasi" aria-expanded="false">
@@ -471,10 +443,10 @@
                 Harga terbaru Mei 2026 | Konsultasi gratis
             </div>
 
-            <!-- LEAD SINGKAT + GAMBAR -->
+            <!-- LEAD SINGKAT + GAMBAR (LCP - tanpa lazy load) -->
             <div class="illustration-row">
                 <div class="illustration-img">
-                    <img src="imgs/borepile-mesin-biru.jpg" alt="Proses pengeboran bore pile menggunakan mesin mini crane warna biru di Jakarta" width="400" height="250" loading="lazy">
+                    <img src="imgs/borepile-mesin-biru.jpg" alt="Proses pengeboran bore pile menggunakan mesin mini crane di Jakarta" width="400" height="250" fetchpriority="high">
                     <div class="caption">Proses pengeboran bore pile dengan mini crane di Jakarta</div>
                 </div>
                 <div class="illustration-text">
@@ -627,11 +599,11 @@
                     <table class="price-table">
                         <thead><tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr></thead>
                         <tbody>
-                            <tr style="background:#fff3e0;"><td><strong>30 cm</strong></td><td><strong>120.000</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#fff3e0;">30 meter</td> <td style="background:#fff3e0;">Rumah 1-2 lantai</td> </tr>
-                            <tr><td style="background:#f9f9f9;">40 cm</td> <td style="background:#f9f9f9;">135.000</td> <td style="background:#f9f9f9;">30 meter</td> <td style="background:#f9f9f9;">Ruko, kantor</td> </tr>
-                            <tr><td>50 cm</td> <td>190.000</td> <td>30 meter</td> <td>Gudang, pabrik kecil</td> </tr>
-                            <tr style="background:#f9f9f9;"> <td>60 cm</td> <td>250.000</td> <td>30 meter</td> <td>Hotel 3-4 lantai</td> </tr>
-                            <tr><td>80 cm</td> <td>350.000</td> <td>30 meter</td> <td>Gedung 5-8 lantai</td> </tr>
+                            <tr style="background:#fff3e0;"><td><strong>30 cm</strong></td><td><strong>120.000</strong></td><td>30 meter</td><td>Rumah 1-2 lantai</td></tr>
+                            <tr><td>40 cm</td><td>135.000</td><td>30 meter</td><td>Ruko, kantor</td></tr>
+                            <tr style="background:#f9f9f9;"><td>50 cm</td><td>190.000</td><td>30 meter</td><td>Gudang, pabrik kecil</td></tr>
+                            <tr><td>60 cm</td><td>250.000</td><td>30 meter</td><td>Hotel 3-4 lantai</td></tr>
+                            <tr style="background:#f9f9f9;"><td>80 cm</td><td>350.000</td><td>30 meter</td><td>Gedung 5-8 lantai</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -644,10 +616,10 @@
                     <table class="price-table">
                         <thead><tr><th>Diameter</th><th>Harga (Rp/m)</th><th>Kedalaman Maks</th><th>Cocok Untuk</th></tr></thead>
                         <tbody>
-                            <tr style="background:#fff3e0;"><td>20 cm</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#fff3e0;"><strong>70.000</strong></td> <td style="background:#fff3e0;">10 meter</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#fff3e0;">Area sangat sempit</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> </tr>
-                            <tr><td style="background:#f9f9f9;">25 cm</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#f9f9f9;">75.000</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#f9f9f9;">10 meter</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#f9f9f9;">Gang kecil</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> </tr>
-                            <tr style="background:#fff3e0;"> <td><strong>30 cm</strong> </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#fff3e0;"><strong>80.000</strong> </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#fff3e0;">10 meter</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#fff3e0;">Rumah 1-2 lantai (tanah padat)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> </tr>
-                            <tr><td style="background:#f9f9f9;">40 cm</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#f9f9f9;">100.000</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#f9f9f9;">10 meter</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> <td style="background:#f9f9f9;">Rumah 2 lantai (tanah padat)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></th> </tr>
+                            <tr style="background:#fff3e0;"><td>20 cm</td><td><strong>70.000</strong></td><td>10 meter</td><td>Area sangat sempit</td></tr>
+                            <tr><td>25 cm</td><td>75.000</td><td>10 meter</td><td>Gang kecil</td></tr>
+                            <tr style="background:#f9f9f9;"><td>30 cm</td><td><strong>80.000</strong></td><td>10 meter</td><td>Rumah 1-2 lantai (tanah padat)</td></tr>
+                            <tr><td>40 cm</td><td>100.000</td><td>10 meter</td><td>Rumah 2 lantai (tanah padat)</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -658,7 +630,7 @@
                 <h2 style="color: var(--primary-color); margin: 25px 0 10px;">Biaya Tambahan di Jakarta</h2>
                 <div class="info-grid">
                     <div class="info-card"><h3>🚛 Mobilisasi Alat</h3><p>Mesin mini crane: Rp2-3jt | Manual: Rp1jt</p></div>
-                    <div class="info-card"><h3> Minimal Order</h3><p>Mesin: 200 meter | Manual: 100 meter, di bawah itu bisa hubungi kami untuk mendapatkan penawaran harga</p></div>
+                    <div class="info-card"><h3> Minimal Order</h3><p>Mesin: 200 meter | Manual: 100 meter, di bawah itu bisa hubungi kami</p></div>
                     <div class="info-card"><h3> Sedot Lumpur</h3><p>Rp800.000 - Rp1.200.000/rit (tergantung volume)</p></div>
                     <div class="info-card"><h3>📊 Data Sondir</h3><p>Sangat wajib untuk menentukan kedalaman tepat</p></div>
                 </div>
@@ -673,7 +645,7 @@
                 <div class="illustration-text">
                     <h3 style="color: var(--primary-color);">Tips memilih diameter:</h3>
                     <ul>
-                        <li><strong>30 cm</strong> → rumah 1-2 lantai (paling banyak dipilih kontraktor/teknik sipil)</li>
+                        <li><strong>30 cm</strong> → rumah 1-2 lantai (paling banyak dipilih)</li>
                         <li><strong>40-50 cm</strong> → ruko, kantor, gudang, rumah sakit</li>
                         <li><strong>60-80 cm</strong> → hotel, gedung bertingkat</li>
                     </ul>
@@ -705,14 +677,14 @@
 
             <div class="illustration-row" style="flex-direction: row-reverse;">
                 <div class="illustration-img">
-                    <img src="imgs/borepile-meruya-jakarta.jpg" alt="Hasil bore pile di Meruya, Jakarta Barat" width="400" height="250" loading="lazy">
+                    <img src="imgs/borepile-meruya-jakarta.webp" alt="Hasil bore pile di Meruya, Jakarta Barat" width="400" height="250" loading="lazy">
                     <div class="caption">Bore Pile di Meruya, Jakarta Barat</div>
                 </div>
                 <div class="illustration-text">
 
             <p>Butuh harga khusus untuk diameter 30cm? 
-   <a href="harga-bore-pile-30cm.html">Lihat detail harga bore pile diameter 30cm →</a>
-</p>
+            <a href="harga-bore-pile-30cm.html">Lihat detail harga bore pile diameter 30cm →</a>
+            </p>
 
             <!-- DAFTAR KECAMATAN JAKARTA (SEO LOKAL) -->
             <section>
@@ -732,66 +704,49 @@
                 <h2 style="color: var(--primary-color); margin: 30px 0 10px;">Pertanyaan Umum Seputar Bore Pile Jakarta</h2>
                 <div class="faq-container">
                     <div class="faq-item"><button class="faq-question">Apakah bore pile aman untuk tanah rawa atau bekas sawah di Jakarta? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Sangat aman. Bore pile justru direkomendasikan untuk tanah lunak seperti di Jakarta Utara, Cengkareng, dan Pondok Gede. Mini crane kami bisa menembus tanah rawa hingga kedalaman 30 meter sampai mencapai tanah keras.</p></div></div>
-                    <div class="faq-item"><button class="faq-question">Berapa lama waktu pengerjaan bore pile untuk rumah di Jakarta? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Untuk 16 titik diameter 30cm kedalaman 12m, estimasi 5-7 hari kerja. Kalkulator di atas bisa memberi estimasi lebih akurat berdasarkan diameter, kedalaman, dan jumlah titik yang Anda masukkan.</p></div></div>
-                    <div class="faq-item"><button class="faq-question">Apakah melayani proyek di apartemen atau area padat? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Ya. Mini crane kami bisa masuk area perumahan padat agar pengeboran dilakukan dengan getaran minimal, sehingga aman untuk bangunan sekitar.</p></div></div>
-                    <div class="faq-item"><button class="faq-question">Berapa biaya mobilisasi ke Jakarta? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Mesin sekitar Rp2-3 juta, manual Rp1 juta tergantung lokasi proyek Anda berada di mana (karena biaya ditentukan berdasarkan jarak dari gudang kami)</p></div></div>
-                    <div class="faq-item"><button class="faq-question">Apakah wajib ada data sondir untuk proyek di Jakarta? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Sangat wajib. Data sondir menentukan kedalaman bore pile yang tepat sesuai kondisi tanah Jakarta yang umumnya lunak, terutama di area Jakarta Utara, Cengkareng, dan Pondok Gede.</p></div></div>
-                    <div class="faq-item"><button class="faq-question">Bisa pakai material sendiri (besi & beton)? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Bisa. Harga di atas untuk jasa pengeboran saja (sudah termasuk perakitan besi & pengecoran beton). Kami menerima material dari klien dengan spesifikasi SNI untuk besi dan K-300 hingga K-400 untuk beton.</p></div></div>
+                    <div class="faq-item"><button class="faq-question">Berapa lama waktu pengerjaan bore pile untuk rumah di Jakarta? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Untuk 16 titik diameter 30cm kedalaman 12m, estimasi 5-7 hari kerja. Kalkulator di atas bisa memberi estimasi lebih akurat.</p></div></div>
+                    <div class="faq-item"><button class="faq-question">Apakah melayani proyek di apartemen atau area padat? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Ya. Mini crane kami bisa masuk area perumahan padat dengan getaran minimal, aman untuk bangunan sekitar.</p></div></div>
+                    <div class="faq-item"><button class="faq-question">Berapa biaya mobilisasi ke Jakarta? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Mesin sekitar Rp2-3 juta, manual Rp1 juta tergantung lokasi proyek (berdasarkan jarak dari gudang kami).</p></div></div>
+                    <div class="faq-item"><button class="faq-question">Apakah wajib ada data sondir untuk proyek di Jakarta? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Sangat wajib. Data sondir menentukan kedalaman bore pile yang tepat sesuai kondisi tanah Jakarta yang umumnya lunak.</p></div></div>
+                    <div class="faq-item"><button class="faq-question">Bisa pakai material sendiri (besi & beton)? <i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Bisa. Harga di atas untuk jasa pengeboran saja (sudah termasuk perakitan besi & pengecoran beton).</p></div></div>
                 </div>
             </section>
 
             <section class="blog" id="blog">
-    <div class="container">
-        <h2 class="section-title">Artikel Blog</h2>
-        <p class="section-subtitle">Insight pondasi dan konstruksi untuk membantu keputusan proyek Anda.</p>
-        <div class="blog-grid projects-grid">
-            
-            <div class="project-card">
-                <img src="imgs/borepile-dekat-dinding.jpg" 
-                     alt="Borepile vs Strauss Pile" 
-                     loading="lazy" 
-                     width="400" 
-                     height="250">
-                <div class="project-info">
-                    <h3>Borepile vs Strauss Pile</h3>
-                    <p>Perbandingan lengkap agar Anda dapat memilih jenis pondasi terbaik.</p>
-                    <a href="bore-pile-vs-strauss.html" class="btn btn-primary">Baca Artikel →</a>
+                <div class="container">
+                    <h2 class="section-title">Artikel Blog</h2>
+                    <p class="section-subtitle">Insight pondasi dan konstruksi untuk membantu keputusan proyek Anda.</p>
+                    <div class="blog-grid projects-grid">
+                        <div class="project-card">
+                            <img src="imgs/borepile-dekat-dinding.jpg" alt="Borepile vs Strauss Pile" loading="lazy" width="400" height="250">
+                            <div class="project-info">
+                                <h3>Borepile vs Strauss Pile</h3>
+                                <p>Perbandingan lengkap agar Anda dapat memilih jenis pondasi terbaik.</p>
+                                <a href="bore-pile-vs-strauss.html" class="btn btn-primary">Baca Artikel →</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="imgs/hasil-lubang-borepile.jpg" alt="Hasil pekerjaan bore pile" loading="lazy" width="400" height="250">
+                            <div class="project-info">
+                                <h3>Harga Bore Pile Diameter 30cm</h3>
+                                <p>Lihat harga terbaru 2026 untuk bore pile diameter 30cm.</p>
+                                <a href="harga-bore-pile-30cm.html" class="btn btn-primary">Baca Artikel →</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="imgs/borepile-dan-truk-molen.jpg" alt="Proses pengerjaan Bore Pile di JABODETABEK" loading="lazy" width="400" height="250">
+                            <div class="project-info">
+                                <h3>Harga Bore Pile Jakarta 2026</h3>
+                                <p>Informasi terkini tentang harga bore pile di wilayah Jakarta untuk tahun 2026.</p>
+                                <a href="bore-pile-jakarta.html" class="btn btn-primary">Baca Artikel →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-cta">
+                        <a href="artikel.html" class="btn-primary">Lihat Semua Artikel</a>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="project-card">
-                <img src="imgs/hasil-lubang-borepile.jpg" 
-                     alt="Hasil pekerjaan bore pile" 
-                     loading="lazy" 
-                     width="400" 
-                     height="250">
-                <div class="project-info">
-                    <h3>Harga Bore Pile Diameter 30cm</h3>
-                    <p>Lihat harga terbaru 2026 untuk bore pile diameter 30cm.</p>
-                    <a href="harga-bore-pile-30cm.html" class="btn btn-primary">Baca Artikel →</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <img src="imgs/borepile-dan-truk-molen.jpg" 
-                     alt="Proses pengerjaan Bore Pile di JABODETABEK" 
-                     loading="lazy" 
-                     width="400" 
-                     height="250">
-                <div class="project-info">
-                    <h3>Harga Bore Pile Jakarta 2026</h3>
-                    <p>Informasi terkini tentang harga bore pile di wilayah Jakarta untuk tahun 2026.</p>
-                    <a href="bore-pile-jakarta.html" class="btn btn-primary">Baca Artikel →</a>
-                </div>
-            </div>
-
-            <div style="max-width: 980px; margin: 2rem auto 0; padding: 0 20px; text-align: center;">
-                <div style="background: #f5f7fa; border-radius: 20px; padding: 1.2rem;">
-                    <h3 style="color: var(--primary-color); margin: 0.5rem 0;">Agung Perkasa Borepile</h3>
-                    <p style="margin: 0.5rem 0; font-size: 0.85rem;">Jl. Sunter Muara II, RT.17/RW.05, Sunter Agung, Kec. Tj. Priok,<br>Jakarta Utara, DKI Jakarta | kode pos 14350</p>
-                    <a href="https://maps.google.com/?q=Agung+Perkasa+Bore+Pile" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: var(--primary-color); color: white; padding: 8px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 0.5rem;">Lihat Lokasi di Google Maps</a>
-                </div>
-            </div>
+            </section>
 
             <!-- CTA & TAUTAN KE KOTA LAIN -->
             <div class="text-center mt-2" style="padding: 1.5rem; background: var(--primary-color); border-radius: 12px; color: white;">
@@ -811,6 +766,32 @@
             </div>
         </div>
     </main>
+
+    <div style="max-width: 980px; margin: 2rem auto 0; padding: 0 20px; text-align: center;">
+        <div style="background: #f5f7fa; border-radius: 20px; padding: 1.2rem;">
+            <h3 style="color: var(--primary-color); margin: 0.5rem 0;">Agung Perkasa Borepile</h3>
+            <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+                Jl. Sunter Muara II, RT.17/RW.05, Sunter Agung, Kec. Tj. Priok,<br>
+                Jakarta Utara, DKI Jakarta | kode pos 14350
+            </p>
+            <a href="https://maps.google.com/?q=Agung+Perkasa+Bore+Pile" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="display: inline-block; background: var(--primary-color); color: white; padding: 8px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 0.5rem;">
+                Lihat Lokasi di Google Maps
+            </a>
+        </div>
+    </div>
+
+    <div style="background: #f5f7fa; padding: 1rem; border-radius: 12px; margin: 2rem auto; max-width: 980px;">
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <img src="imgs/logo-agung-perkasa-transparan.webp" alt="Logo Agung Perkasa Borepile" style="width: 60px; height: 60px; border-radius: 12px; object-fit: contain;" loading="lazy" width="60" height="60">
+            <div>
+                <h4 style="margin: 0; color: var(--primary-color);">Dipublikasikan oleh Agung Perkasa Borepile</h4>
+                <p style="margin: 5px 0 0; font-size: 0.85rem;">Spesialis pondasi borepile dengan pengalaman lebih dari 10 tahun di Jakarta.</p>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -894,10 +875,10 @@
         "@type": "FAQPage",
         "mainEntity": [
             {"@type": "Question", "name": "Apakah bore pile aman untuk tanah rawa atau bekas sawah di Jakarta?", "acceptedAnswer": {"@type": "Answer", "text": "Sangat aman. Bore pile justru direkomendasikan untuk tanah lunak khas Jakarta Utara, Cengkareng, dan Pondok Gede. Mini crane kami bisa menembus tanah rawa hingga kedalaman 30 meter hingga mencapai tanah keras."}},
-            {"@type": "Question", "name": "Berapa lama waktu pengerjaan bore pile untuk rumah di Jakarta?", "acceptedAnswer": {"@type": "Answer", "text": "Untuk 16 titik diameter 30cm kedalaman 12m, estimasi 5-7 hari kerja. Kalkulator di atas bisa memberi estimasi lebih akurat berdasarkan diameter, kedalaman, dan jumlah titik yang Anda masukkan."}},
+            {"@type": "Question", "name": "Berapa lama waktu pengerjaan bore pile untuk rumah di Jakarta?", "acceptedAnswer": {"@type": "Answer", "text": "Untuk 16 titik diameter 30cm kedalaman 12m, estimasi 5-7 hari kerja. Kalkulator di atas bisa memberi estimasi lebih akurat."}},
             {"@type": "Question", "name": "Apakah melayani proyek di apartemen atau area padat?", "acceptedAnswer": {"@type": "Answer", "text": "Ya. Mini crane kami bisa masuk area perumahan padat dengan getaran minimal, aman untuk bangunan sekitar."}},
             {"@type": "Question", "name": "Berapa biaya mobilisasi ke Jakarta?", "acceptedAnswer": {"@type": "Answer", "text": "Mesin Rp3-5 juta, manual Rp1-2 juta tergantung lokasi. Untuk area Jakarta Pusat biasanya lebih murah."}},
-            {"@type": "Question", "name": "Apakah wajib ada data sondir untuk proyek di Jakarta?", "acceptedAnswer": {"@type": "Answer", "text": "Sangat wajib. Data sondir menentukan kedalaman bore pile yang tepat sesuai kondisi tanah Jakarta yang umumnya lunak, terutama di area Jakarta Utara, Cengkareng, dan Pondok Gede."}},
+            {"@type": "Question", "name": "Apakah wajib ada data sondir untuk proyek di Jakarta?", "acceptedAnswer": {"@type": "Answer", "text": "Sangat wajib. Data sondir menentukan kedalaman bore pile yang tepat sesuai kondisi tanah Jakarta yang umumnya lunak."}},
             {"@type": "Question", "name": "Bisa pakai material sendiri (besi & beton)?", "acceptedAnswer": {"@type": "Answer", "text": "Bisa. Harga di atas untuk jasa bor saja. Kami terima material dari klien dengan spesifikasi SNI untuk besi dan K-300 hingga K-400 untuk beton."}}
         ]
     }
