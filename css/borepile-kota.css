@@ -222,3 +222,9 @@ p, li, .blog-container p, .info-card p {
 .calculator-note {
     color: #2c3e50;
 }
+
+.btn-wa {
+    background-color: #25D366 !important;
+    color: #000000 !important;  /* ganti teks jadi hitam */
+    font-weight: 700 !important;
+}
