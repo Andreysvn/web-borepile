@@ -190,3 +190,35 @@ a:not(.btn-nav):not(.btn-wa-konsultasi):not(.whatsapp-float) { text-decoration: 
     font-display: swap;
     src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
 }
+
+/* PERBAIKAN KONTRAST - Tambahkan ini */
+.section-subtitle {
+    color: #3d3d3d !important;
+}
+
+p, li, .blog-container p, .info-card p {
+    color: #1a1a1a;
+}
+
+.btn-nav, 
+.btn-primary,
+.method-btn.active {
+    color: #ffffff !important;
+    background-color: #c0392b !important;
+}
+
+.btn-wa-konsultasi {
+    color: #ffffff !important;
+    background-color: #1e7b34 !important;
+}
+
+.whatsapp-float {
+    background-color: #1e7b34 !important;
+}
+
+.update-badge + div p,
+.breadcrumb .current,
+.price-hint,
+.calculator-note {
+    color: #2c3e50;
+}
