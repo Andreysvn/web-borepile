@@ -228,3 +228,26 @@ p, li, .blog-container p, .info-card p {
     color: #000000 !important;  /* ganti teks jadi hitam */
     font-weight: 700 !important;
 }
+
+
+
+/* Floating WhatsApp - Tetap Hijau Terang */
+.whatsapp-float {
+    background-color: #25D366 !important;
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+}
+
+/* Tombol WA di CTA */
+.btn-wa, .btn-wa-konsultasi {
+    background-color: #25D366 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2) !important;
+}
+
+/* Hover effect biar makin jelas */
+.btn-wa:hover, .btn-wa-konsultasi:hover, .whatsapp-float:hover {
+    background-color: #128C7E !important; /* gelap dikit saat dihover */
+    color: #ffffff !important;
+}
