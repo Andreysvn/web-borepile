@@ -191,29 +191,13 @@ a:not(.btn-nav):not(.btn-wa-konsultasi):not(.whatsapp-float) { text-decoration: 
     src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
 }
 
-/* PERBAIKAN KONTRAST - Tambahkan ini */
+/* PERBAIKAN KONTRAST - Teks */
 .section-subtitle {
     color: #3d3d3d !important;
 }
 
 p, li, .blog-container p, .info-card p {
     color: #1a1a1a;
-}
-
-.btn-nav, 
-.btn-primary,
-.method-btn.active {
-    color: #ffffff !important;
-    background-color: #c0392b !important;
-}
-
-.btn-wa-konsultasi {
-    color: #ffffff !important;
-    background-color: #1e7b34 !important;
-}
-
-.whatsapp-float {
-    background-color: #1e7b34 !important;
 }
 
 .update-badge + div p,
@@ -223,31 +207,33 @@ p, li, .blog-container p, .info-card p {
     color: #2c3e50;
 }
 
-.btn-wa {
-    background-color: #25D366 !important;
-    color: #000000 !important;  /* ganti teks jadi hitam */
-    font-weight: 700 !important;
+/* TOMBOL NAV & METHOD */
+.btn-nav, 
+.btn-primary,
+.method-btn.active {
+    color: #ffffff !important;
+    background-color: #c0392b !important;
 }
 
-
-
-/* Floating WhatsApp - Tetap Hijau Terang */
+/* TOMBOL WHATSAPP - HIJAU TERANG TAPI LOLOS KONTRAK */
+.btn-wa,
+.btn-wa-konsultasi {
+    background-color: #25D366 !important;
+    color: #1a1a1a !important;  /* Teks hitam agar kontras */
+    font-weight: 700 !important;
+    border: none !important;
+}
+/* FLOATING WHATSAPP - Hijau terang dengan teks PUTIH (kayak tadi) */
 .whatsapp-float {
     background-color: #25D366 !important;
     color: #ffffff !important;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
 }
 
-/* Tombol WA di CTA */
-.btn-wa, .btn-wa-konsultasi {
-    background-color: #25D366 !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.2) !important;
-}
-
-/* Hover effect biar makin jelas */
-.btn-wa:hover, .btn-wa-konsultasi:hover, .whatsapp-float:hover {
-    background-color: #128C7E !important; /* gelap dikit saat dihover */
+/* EFEK HOVER - Jadi hijau gelap */
+.btn-wa:hover,
+.btn-wa-konsultasi:hover,
+.whatsapp-float:hover {
+    background-color: #128C7E !important;
     color: #ffffff !important;
 }
