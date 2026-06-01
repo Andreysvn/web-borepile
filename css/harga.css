@@ -1092,3 +1092,16 @@ p, li, .blog-container p, .info-card p {
         align-items: flex-start;
     }
 }
+
+/* Artikel section - hilangkan semua garis bawah yang tidak perlu */
+.articles-section a,
+.articles-section .article-link,
+.articles-section .article-read-more,
+.articles-section .btn-articles-all {
+    text-decoration: none !important;
+}
+
+/* Hanya untuk hover biar tetap ada efek */
+.articles-section .article-read-more:hover {
+    text-decoration: underline !important;
+}
