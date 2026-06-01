@@ -2457,7 +2457,7 @@ ul {
 
 .gallery-articles-section .section-title {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: #0d2b52;
     margin-bottom: 10px;
     position: relative;
     display: inline-block;
@@ -2472,7 +2472,7 @@ ul {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: var(--secondary-color);
+    background: #1a3a6e;
     border-radius: 2px;
 }
 
@@ -2531,17 +2531,19 @@ ul {
     transform: scale(1.05);
 }
 
+/* ARTICLE CATEGORY - FIX CONTRAST (warna biru tua) */
 .article-category {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: var(--secondary-color);
-    color: white;
+    background: #1a3a6e;
+    color: #ffffff;
     padding: 5px 12px;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     z-index: 2;
+    letter-spacing: 0.3px;
 }
 
 /* Article Content */
@@ -2549,6 +2551,7 @@ ul {
     padding: 20px;
 }
 
+/* ARTICLE TITLE - FIX CONTRAST */
 .article-content h3 {
     font-size: 1.1rem;
     line-height: 1.4;
@@ -2559,9 +2562,10 @@ ul {
 }
 
 .article-card:hover .article-content h3 {
-    color: var(--secondary-color);
+    color: #1a3a6e;
 }
 
+/* ARTICLE EXCERPT - FIX CONTRAST */
 .article-excerpt {
     font-size: 0.85rem;
     color: #444444;
@@ -2577,9 +2581,10 @@ ul {
     flex-wrap: wrap;
     gap: 10px;
     padding-top: 10px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #e0e0e0;
 }
 
+/* ARTICLE DATE - FIX CONTRAST */
 .article-date {
     font-size: 0.7rem;
     color: #555555;
@@ -2592,10 +2597,11 @@ ul {
     color: #555555;
 }
 
+/* ARTICLE READ MORE - FIX CONTRAST (warna biru tua) */
 .article-read-more {
     font-size: 0.75rem;
     font-weight: 700;
-    color: #d35400;
+    color: #1a3a6e;
     transition: transform 0.3s ease;
     display: inline-flex;
     align-items: center;
@@ -2604,9 +2610,10 @@ ul {
 
 .article-card:hover .article-read-more {
     transform: translateX(5px);
+    color: #0d2b52;
 }
 
-/* Articles CTA Button */
+/* Articles CTA Button - FIX CONTRAST */
 .articles-cta {
     text-align: center;
     margin-top: 20px;
@@ -2617,7 +2624,7 @@ ul {
     align-items: center;
     gap: 10px;
     background: #0d2b52;
-    color: white;
+    color: #ffffff;
     padding: 12px 30px;
     border-radius: 40px;
     text-decoration: none;
