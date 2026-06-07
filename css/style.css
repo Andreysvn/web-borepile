@@ -2752,3 +2752,139 @@ ul {
 .home .header {
     margin-top: 0;
 }
+
+/* ==============================================================
+   SECTION AREA LAYANAN (SUDAH RESPONSIF & MOBILE FRIENDLY)
+   ============================================================== */
+
+/* Reset & Container Utama */
+.service-areas {
+    padding: 4rem 0;
+    background-color: #fafafa;
+}
+
+.service-areas h2 {
+    text-align: center;
+    color: #1a3a6e;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+}
+
+/* Layout Grid untuk Kartu Provinsi (Tablet/Laptop) */
+.areas-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Default 1 kolom di HP */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Styling Kartu Wilayah */
+.area-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.area-card.full-width {
+    margin-bottom: 20px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+}
+
+.area-header {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a3a6e;
+    border-bottom: 2px solid #1a3a6e;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Pengaturan List Kota (Menggunakan Flexbox agar Responsif) */
+.area-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Jarak antar tombol di HP */
+}
+
+.area-list ul li {
+    margin: 0;
+    padding: 0;
+    flex: 1 1 calc(50% - 8px); /* Di HP otomatis membagi jadi 2 kolom rapi */
+    min-width: 120px;
+}
+
+/* 🟢 STYLE 1: KHUSUS KOTA JABODETABEK (BISA DIKLIK) */
+.area-list ul li a {
+    display: block;
+    text-align: center;
+    padding: 10px 14px;
+    background-color: #f0f4fa; /* Warna biru muda penanda bisa diklik */
+    color: #1a3a6e;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Efek Interaktif Saat Di-hover (Laptop) atau Di-tap Jari (HP) */
+.area-list ul li a:hover,
+.area-list ul li a:active {
+    background-color: #1a3a6e; /* Berubah jadi warna utama */
+    color: #ffffff; /* Tulisan jadi putih */
+    border-color: #1a3a6e;
+    transform: translateY(-2px); /* Efek tombol terangkat */
+    box-shadow: 0 4px 8px rgba(26, 58, 110, 0.15);
+}
+
+
+/* 🔴 STYLE 2: KHUSUS KOTA LUAR JABODETABEK (TEXT BIASA / BELUM BISA DIKLIK) */
+.area-card:not(.full-width) .area-list ul li {
+    display: block;
+    text-align: center;
+    padding: 10px 14px;
+    background-color: #f8fafc; /* Warna abu-abu netral penanda teks biasa */
+    color: #64748b; /* Warna teks agak pudar */
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+/* ==============================================================
+   MEDIA QUERIES (ADAPTASI LAYAR BESAR / LAPTOP & TABLET)
+   ============================================================== */
+
+@media (min-width: 768px) {
+    /* Provinsi Jawa Barat, Tengah, Timur berjejer 3 kolom di laptop */
+    .areas-container {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    
+    /* Di Layar Lebar, tombol Jabodetabek ukurannya pas mengikuti teks (tidak dipaksa 2 kolom) */
+    .area-card.full-width .area-list ul li {
+        flex: 0 1 auto;
+    }
+    
+    .area-list ul {
+        gap: 12px; /* Jarak antar tombol di laptop lebih longgar */
+    }
+
+    .area-list ul li a {
+        padding: 10px 18px;
+    }
+    
+    /* Luar Jabodetabek di laptop juga mengecil mengikuti teks */
+    .area-card:not(.full-width) .area-list ul li {
+        flex: 0 1 auto;
+    }
+}
