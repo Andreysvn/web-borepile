@@ -1059,5 +1059,171 @@ section p { margin-bottom: 1rem; }
     }
 }
 
+/* ==================== PORTOFOLIO JAKARTA - SEO OPTIMIZED ==================== */
 
+.portfolio-jakarta-section {
+    margin: 50px 0 20px;
+}
 
+.portfolio-jakarta-title {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.portfolio-jakarta-sub {
+    text-align: center;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 0.95rem;
+}
+
+.proyek-jakarta-box {
+    background: #f5f7fa;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.proyek-jakarta-heading {
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.proyek-jakarta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.proyek-jakarta-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proyek-jakarta-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.proyek-jakarta-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== CAPTION DI BAWAH FOTO ===== */
+.proyek-jakarta-caption {
+    padding: 8px 12px 12px 12px;
+    text-align: center;
+}
+
+.proyek-jakarta-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    letter-spacing: 0.3px;
+}
+
+.proyek-jakarta-detail {
+    display: block;
+    font-size: 0.6rem;
+    color: #888;
+    margin-top: 2px;
+}
+
+.proyek-jakarta-link {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.proyek-jakarta-link a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.proyek-jakarta-link a:hover {
+    text-decoration: underline;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet & HP (max 1024px) -> 2 kolom */
+@media (max-width: 1024px) {
+    .proyek-jakarta-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .proyek-jakarta-item img {
+        height: 180px;
+    }
+}
+
+/* HP (max 768px) -> 2 kolom */
+@media (max-width: 768px) {
+    .proyek-jakarta-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .proyek-jakarta-item img {
+        height: 150px;
+    }
+    
+    .portfolio-jakarta-sub {
+        font-size: 0.85rem;
+        padding: 0 10px;
+    }
+    
+    .proyek-jakarta-label {
+        font-size: 0.65rem;
+    }
+    
+    .proyek-jakarta-detail {
+        font-size: 0.55rem;
+    }
+}
+
+/* HP Kecil (max 480px) -> 1 kolom */
+@media (max-width: 480px) {
+    .proyek-jakarta-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .proyek-jakarta-item img {
+        height: 200px;
+    }
+    
+    .proyek-jakarta-box {
+        padding: 15px;
+    }
+    
+    .proyek-jakarta-link {
+        font-size: 0.8rem;
+    }
+    
+    .proyek-jakarta-label {
+        font-size: 0.7rem;
+    }
+    
+    .proyek-jakarta-detail {
+        font-size: 0.6rem;
+    }
+}
