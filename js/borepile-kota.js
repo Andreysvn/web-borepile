@@ -234,3 +234,37 @@ document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
         }
     });
 });
+
+// ============================================================
+// NAVBAR SHRINK - LEBIH SMOOTH
+// ============================================================
+
+(function() {
+    'use strict';
+    
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+    
+    let lastScrollY = 0;
+    let ticking = false;
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                const currentScrollY = window.scrollY || window.pageYOffset;
+                
+                // Smooth transition dengan easing
+                if (currentScrollY > 50 && currentScrollY > lastScrollY) {
+                    navbar.classList.add('shrink');
+                } else if (currentScrollY <= 50) {
+                    navbar.classList.remove('shrink');
+                }
+                
+                lastScrollY = currentScrollY;
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+    
+})();
