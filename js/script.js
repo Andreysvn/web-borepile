@@ -389,3 +389,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Semua script berjalan dengan baik!');
 });
+
+// ===== DROPDOWN MOBILE =====
+document.querySelectorAll('.dropdown .dropbtn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            var parent = this.closest('.dropdown');
+            parent.classList.toggle('active');
+            // Tutup dropdown lain
+            document.querySelectorAll('.dropdown').forEach(function(d) {
+                if (d !== parent) {
+                    d.classList.remove('active');
+                }
+            });
+        }
+    });
+});

@@ -1,129 +1,146 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- ===== BERANDA ===== -->
     <url>
         <loc>https://agungperkasaborepile.com/</loc>
-        <lastmod>2026-05-18</lastmod>
+        <lastmod>2026-06-17</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>1.00</priority>
+        <priority>1.0</priority>
     </url>
+
+    <!-- ===== HALAMAN JASA (LOCAL SEO) ===== -->
     <url>
-        <loc>https://agungperkasaborepile.com/artikel.html</loc>
-        <lastmod>2026-05-18</lastmod>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-jakarta.html</loc>
+        <lastmod>2026-06-17</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-bekasi.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-bintaro.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-bogor.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-bsd.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-ciputat.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-depok.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-jakarta.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
         <priority>0.95</priority>
     </url>
     <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-karawaci.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-murah.html</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-pamulang.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-cibubur.html</loc>
-        <lastmod>2026-06-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-cikarang.html</loc>
-        <lastmod>2026-06-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-tangerang.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-bekasi.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
     <url>
-        <loc>https://agungperkasaborepile.com/bore-pile-vs-strauss.html</loc>
-        <lastmod>2026-05-06</lastmod>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-tangerang.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-depok.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-bogor.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-cibubur.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-cikarang.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-bsd.html</loc>
+        <lastmod>2026-06-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://agungperkasaborepile.com/borepile-vs-tiang-pancang.html</loc>
-        <lastmod>2026-05-14</lastmod>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-bintaro.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-ciputat.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-pamulang.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/jasa/bore-pile-karawaci.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- ===== HALAMAN HARGA ===== -->
+    <url>
+        <loc>https://agungperkasaborepile.com/harga/harga-bore-pile-2026.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/harga/harga-bore-pile-30cm.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/harga/harga-bore-pile-40cm.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/harga/harga-bore-pile-50cm.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- ===== HALAMAN ARTIKEL ===== -->
+    <url>
+        <loc>https://agungperkasaborepile.com/artikel/artikel.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/artikel/bore-pile-vs-strauss.html</loc>
+        <lastmod>2026-06-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
-        <loc>https://agungperkasaborepile.com/gallery.html</loc>
-        <lastmod>2026-05-18</lastmod>
+        <loc>https://agungperkasaborepile.com/artikel/borepile-vs-tiang-pancang.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://agungperkasaborepile.com/artikel/proses-bore-pile.html</loc>
+        <lastmod>2026-06-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.70</priority>
     </url>
+
+    <!-- ===== HALAMAN GALERI ===== -->
     <url>
-        <loc>https://agungperkasaborepile.com/harga-bore-pile-2026.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
+        <loc>https://agungperkasaborepile.com/galeri/gallery.html</loc>
+        <lastmod>2026-06-17</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.60</priority>
     </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/harga-bore-pile-30cm.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.90</priority>
-    </url>
-    <url>
-        <loc>https://agungperkasaborepile.com/proses-bore-pile.html</loc>
-        <lastmod>2026-05-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.70</priority>
-    </url>
+
 </urlset>
