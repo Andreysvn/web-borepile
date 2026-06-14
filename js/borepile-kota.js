@@ -229,7 +229,7 @@ if (mobileMenu) {
 document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
     btn.addEventListener('click', function(e) {
         if(window.innerWidth <= 768) {
-            e.preventDefault();
+            // GA USAH PAKAI e.preventDefault() LAGI
             this.parentElement.classList.toggle('active');
         }
     });
