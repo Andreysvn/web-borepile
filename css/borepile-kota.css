@@ -810,16 +810,6 @@ a:not(.btn-nav):not(.btn-wa-konsultasi):not(.whatsapp-float) {
     text-decoration: none;
 }
 
-section ul,
-.project-text ul,
-.faq-answer ul {
-    margin-left: 20px !important;
-}
-
-section p {
-    margin-bottom: 1rem;
-}
-
 /* ============================================================
    SECTION TITLE
    ============================================================ */
@@ -1190,10 +1180,9 @@ section p {
 }
 
 /* ============================================================
-   EQUIPMENT GRID - ALAT YANG KAMI GUNAKAN
+   EQUIPMENT GRID
    ============================================================ */
 
-/* DESKTOP BESAR (≥1025px) - DEFAULT */
 .equip-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1289,56 +1278,7 @@ section p {
 }
 
 /* ============================================================
-   EQUIPMENT GRID SIMPLE
-   ============================================================ */
-
-.equip-grid-simple {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin: 20px 0 30px;
-}
-
-.equip-item-simple {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    text-align: center;
-    border: 1px solid #eee;
-    transition: all 0.2s;
-}
-
-.equip-item-simple:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.equip-img-simple {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    background: #f5f7fa;
-}
-
-.equip-info-simple {
-    padding: 8px 10px 12px;
-}
-
-.equip-info-simple h4 {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #1a3a6e;
-    margin: 0 0 3px 0;
-}
-
-.equip-info-simple p {
-    font-size: 0.7rem;
-    color: #666;
-    margin: 0;
-}
-
-/* ============================================================
-   PORTOFOLIO JAKARTA
+   PORTOFOLIO
    ============================================================ */
 
 .portfolio-jakarta-section {
@@ -1441,7 +1381,7 @@ section p {
 }
 
 /* ============================================================
-   MAPS SECTION
+   MAPS
    ============================================================ */
 
 .maps-container {
@@ -1487,6 +1427,15 @@ section p {
     height: 280px;
     border: 0;
     display: block;
+    pointer-events: auto !important;
+}
+
+.maps-embed-wrapper iframe:hover {
+    cursor: grab;
+}
+
+.maps-embed-wrapper iframe:active {
+    cursor: grabbing;
 }
 
 .maps-btn {
@@ -1560,25 +1509,6 @@ section p {
     color: var(--primary-color);
 }
 
-.cta-box {
-    padding: 1.5rem;
-    background: var(--primary-color);
-    border-radius: 12px;
-    color: white;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.cta-box h3 {
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-.cta-box p {
-    color: white;
-    margin-bottom: 1rem;
-}
-
 .internal-link-box {
     margin-top: 30px;
     padding: 15px;
@@ -1617,6 +1547,39 @@ section p {
 .publisher-inner p {
     margin: 5px 0 0;
     font-size: 0.85rem;
+}
+
+/* ============================================================
+   CTA BOX - WARNA PUTIH PASTI
+   ============================================================ */
+
+.cta-box {
+    padding: 1.5rem 2rem;
+    background: var(--primary-color);
+    border-radius: 12px;
+    color: #ffffff !important;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cta-box h3 {
+    color: #ffffff !important;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.cta-box p {
+    color: #ffffff !important;
+    margin-bottom: 1rem;
+}
+
+.cta-box a {
+    color: #1a1a1a !important;
+    text-decoration: none !important;
+}
+
+.cta-box a:hover {
+    color: #ffffff !important;
 }
 
 /* ============================================================
@@ -1668,12 +1631,29 @@ li,
 }
 
 /* ============================================================
+   MAPS NOTE
+   ============================================================ */
+
+.maps-note {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 6px 0 12px 0;
+    background: #f0f7ff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color, #1a3a6e);
+}
+
+.maps-note strong {
+    color: var(--primary-color, #1a3a6e);
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
 /* TABLET (max-width: 768px) */
 @media (max-width: 768px) {
-    /* NAVBAR */
     .navbar .container {
         padding: 0 12px !important;
         flex-wrap: nowrap !important;
@@ -1830,7 +1810,6 @@ li,
         transform: rotate(180deg) !important;
     }
 
-    /* LAYOUT */
     .blog-container {
         padding: 70px 20px 40px !important;
     }
@@ -1969,7 +1948,6 @@ li,
         justify-content: flex-start;
     }
 
-    /* EQUIPMENT GRID - TABLET */
     .equip-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -1996,11 +1974,6 @@ li,
 
     .equip-info p {
         font-size: 0.8rem;
-    }
-
-    .equip-grid-simple {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
     }
 
     .proyek-jakarta-grid {
@@ -2076,7 +2049,6 @@ li,
         align-items: flex-start;
     }
 
-    /* EQUIPMENT GRID - MOBILE */
     .equip-grid {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -2107,15 +2079,6 @@ li,
     .equip-tag {
         font-size: 0.7rem;
         padding: 5px 14px;
-    }
-
-    .equip-grid-simple {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .equip-img-simple {
-        height: 140px;
     }
 
     .proyek-jakarta-grid {
@@ -2224,43 +2187,4 @@ li,
         padding: 24px;
         gap: 30px;
     }
-}
-
-/* ============================================================
-   MAPS NOTE - UNTUK HALAMAN KOTA LAIN
-   ============================================================ */
-
-.maps-note {
-    font-size: 0.85rem;
-    color: #555;
-    margin: 6px 0 12px 0;
-    background: #f0f7ff;
-    padding: 10px 14px;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-color, #1a3a6e);
-}
-
-.maps-note strong {
-    color: var(--primary-color, #1a3a6e);
-}
-
-/* ============================================================
-   MAPS - BIAR BISA DIGESER & DI-ZOOM
-   ============================================================ */
-
-.maps-embed-wrapper iframe {
-    width: 100%;
-    height: 300px;
-    border: 0;
-    display: block;
-    pointer-events: auto !important; /* <- INI YANG BIKIN BISA DIGESER */
-}
-
-/* Hover biar user tau bisa interaksi */
-.maps-embed-wrapper iframe:hover {
-    cursor: grab;
-}
-
-.maps-embed-wrapper iframe:active {
-    cursor: grabbing;
 }
