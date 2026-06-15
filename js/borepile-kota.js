@@ -275,6 +275,9 @@
         if (!options.includes(currentValue) && options.length > 0) {
             diameterSelect.value = options[0];
         }
+
+        // ✅ FIX 1: Panggil hitungTotal() agar total otomatis update
+        hitungTotal();
     }
 
     function getHargaPerMeter(diameter) {
@@ -289,7 +292,7 @@
 
     function getMinimalOrder() {
         if (currentMethod === 'manual') return 100;
-        if (currentMachine === 'sany') return 1200;
+        if (currentMachine === 'sany') return 1200; // Tetap 1200m
         return 200; // mini crane & gawangan
     }
 
@@ -328,10 +331,11 @@
             alatName = 'Mini Crane';
         }
 
+        // ✅ FIX 2: Handling harga 0 → tampilkan "Hubungi Kami"
         if (hargaPerMeter === 0) {
             if (totalPrice) totalPrice.textContent = 'Hubungi Kami';
-            if (detailPrice) detailPrice.textContent = 'Untuk harga khusus silakan konsultasi';
-            if (estimationTime) estimationTime.textContent = 'Estimasi waktu: -';
+            if (detailPrice) detailPrice.textContent = '💬 Konsultasi untuk harga diameter ' + diameter + ' cm';
+            if (estimationTime) estimationTime.textContent = 'Estimasi waktu: konsultasi';
             if (orderInfo) orderInfo.textContent = 'Minimal order: ' + getMinimalOrder() + 'm (' + alatName + ')';
             return;
         }
@@ -369,9 +373,9 @@
         const minimalOrder = getMinimalOrder();
         if (orderInfo) {
             if (totalMeter < minimalOrder) {
-                orderInfo.textContent = '⚠️ Order di bawah ' + minimalOrder + 'm (' + alatName + '), hubungi admin untuk penawaran khusus';
+                orderInfo.textContent = '⚠️ Order di bawah ' + minimalOrder + 'm (' + alatName + '), hubungi admin untuk penawaran khusus atau borongan';
             } else {
-                orderInfo.textContent = '✅ Volume order: ' + totalMeter + 'm (' + alatName + ' - OK)';
+                orderInfo.textContent = '✅ Volume order: ' + totalMeter + 'm (' + alatName + ' - cukup)';
             }
         }
     }
@@ -436,12 +440,12 @@
         diameterSelect.addEventListener('change', hitungTotal);
     }
 
-    // PRICE INPUT
+    // ✅ FIX 3: PRICE INPUT - lebih rapi
     if (priceInput) {
         priceInput.addEventListener('input', function() {
-            let val = this.value.replace(/[^0-9]/g, '');
-            if (val) {
-                this.value = formatRupiah(parseInt(val));
+            const val = this.value.replace(/[^0-9]/g, '');
+            if (val && parseInt(val) > 0) {
+                this.value = 'Rp ' + parseInt(val).toLocaleString('id-ID');
             } else {
                 this.value = '';
             }

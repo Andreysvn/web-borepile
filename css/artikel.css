@@ -1,0 +1,362 @@
+/* ============================================================
+   ARTIKEL.CSS - CLEAN PROFESSIONAL
+   ============================================================ */
+
+/* --------------------------------------------
+   1. ARTICLE HEADER
+   -------------------------------------------- */
+.article-header {
+    padding: 20px 0 10px;
+}
+
+.article-header h1 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e8ecf1;
+}
+
+.article-meta i {
+    margin-right: 6px;
+    color: var(--secondary-color);
+}
+
+/* --------------------------------------------
+   2. ARTICLE CONTENT
+   -------------------------------------------- */
+.article-content {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.article-content h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 40px 0 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e8ecf1;
+}
+
+.article-content h3 {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    margin: 25px 0 12px;
+}
+
+.article-content p {
+    color: #1a1a1a;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+.article-content strong {
+    color: var(--primary-color);
+}
+
+/* --------------------------------------------
+   3. BULLET LIST - SIMPLE BULAT
+   -------------------------------------------- */
+.article-content ul {
+    margin: 15px 0 20px 0;
+    padding-left: 25px;
+    color: #1a1a1a;
+}
+
+.article-content ul li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+    padding-left: 5px;
+}
+
+.article-content ul li::marker {
+    color: #333;
+    font-size: 1rem;
+}
+
+/* --------------------------------------------
+   4. INFO BOX - SOFT BACKGROUND + BORDER KIRI
+   -------------------------------------------- */
+.article-content .info-box {
+    padding: 18px 22px;
+    border-radius: 8px;
+    margin: 25px 0;
+    border-left: 4px solid var(--secondary-color);
+    background: #f8f9fa;
+}
+
+.article-content .info-box h4 {
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.article-content .info-box ul {
+    margin: 5px 0 0 0;
+    padding-left: 20px;
+}
+
+.article-content .info-box ul li {
+    margin-bottom: 5px;
+}
+
+.article-content .info-box.warning {
+    border-left-color: #e74c3c;
+    background: #fdf2f2;
+}
+
+.article-content .info-box.warning h4 {
+    color: #c0392b;
+}
+
+/* --------------------------------------------
+   5. COMPARISON TABLE
+   -------------------------------------------- */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0 35px;
+    font-size: 0.9rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.comparison-table thead th {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 18px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.comparison-table tbody td {
+    padding: 11px 18px;
+    border-bottom: 1px solid #eee;
+    color: #222;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.comparison-table tbody tr:hover {
+    background: #f0f7ff;
+}
+
+.comparison-table tbody tr.highlight {
+    background: #fff8f0 !important;
+}
+
+.comparison-table tbody tr.highlight td {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* --------------------------------------------
+   6. BLOG IMAGES
+   -------------------------------------------- */
+.article-content figure {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.article-content .blog-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin: 0 auto;
+    display: block;
+}
+
+.article-content .blog-image-caption {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* --------------------------------------------
+   7. CTA BOX
+   -------------------------------------------- */
+.article-cta-box {
+    background: var(--primary-color);
+    color: white;
+    padding: 30px 35px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.article-cta-box h3 {
+    color: white !important;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    border-bottom: none;
+}
+
+.article-cta-box p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin-bottom: 18px;
+}
+
+.article-cta-box .btn-primary {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.article-cta-box .btn-primary:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------
+   8. AUTHOR BIO
+   -------------------------------------------- */
+.author-bio {
+    margin-top: 40px;
+    padding: 20px 24px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.author-bio strong {
+    color: var(--primary-color);
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.author-bio p {
+    font-size: 0.9rem;
+    color: #444;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* --------------------------------------------
+   9. INTERNAL LINK BOX
+   -------------------------------------------- */
+.article-top-links {
+    margin-bottom: 25px;
+    padding: 12px 18px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e8ecf1;
+}
+
+.article-top-links p {
+    margin: 0;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.article-top-links a {
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: 0 4px;
+    text-decoration: none;
+}
+
+.article-top-links a:hover {
+    color: #d35400;
+    text-decoration: underline;
+}
+
+/* --------------------------------------------
+   10. RESPONSIVE
+   -------------------------------------------- */
+@media (max-width: 768px) {
+    .article-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .article-meta {
+        gap: 12px;
+        font-size: 0.75rem;
+    }
+    
+    .article-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .article-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .comparison-table {
+        font-size: 0.75rem;
+    }
+    
+    .comparison-table thead th,
+    .comparison-table tbody td {
+        padding: 8px 10px;
+    }
+    
+    .article-cta-box {
+        padding: 22px 20px;
+    }
+    
+    .article-cta-box h3 {
+        font-size: 1.1rem;
+    }
+    
+    .article-content .info-box {
+        padding: 14px 16px;
+    }
+    
+    .author-bio {
+        padding: 16px 18px;
+    }
+    
+    .article-top-links {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .article-meta {
+        font-size: 0.65rem;
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .comparison-table {
+        font-size: 0.6rem;
+    }
+    
+    .comparison-table thead th,
+    .comparison-table tbody td {
+        padding: 5px 6px;
+    }
+}
+
