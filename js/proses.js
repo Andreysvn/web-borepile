@@ -1,18 +1,80 @@
 // ============================================================
-// PROSES.JS - KHUSUS HALAMAN PROSES JASA
+// PROSES.JS - FIX TOTAL (FAQ BUKA TUTUP)
 // ============================================================
 
 (function() {
     'use strict';
 
-    // ===== 1. NAVBAR SHRINK =====
-    const navbar = document.querySelector('.navbar');
+    console.log('🚀 Proses page script started');
+
+    // ============================================================
+    // FAQ ACCORDION - BISA BUKA & TUTUP
+    // ============================================================
+    var faqItems = document.querySelectorAll('.faq-item');
+
+    if (faqItems.length > 0) {
+        for (var i = 0; i < faqItems.length; i++) {
+            var btn = faqItems[i].querySelector('.faq-question');
+            var answer = faqItems[i].querySelector('.faq-answer');
+            
+            if (btn && answer) {
+                // Set initial state
+                if (btn.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.classList.add('show');
+                } else {
+                    answer.style.maxHeight = '0';
+                    answer.classList.remove('show');
+                }
+                
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    var currentBtn = this;
+                    var currentItem = currentBtn.closest('.faq-item');
+                    var currentAnswer = currentItem.querySelector('.faq-answer');
+                    
+                    if (!currentAnswer) return;
+                    
+                    var isOpen = currentBtn.classList.contains('active');
+                    
+                    // Tutup SEMUA
+                    document.querySelectorAll('.faq-item').forEach(function(item) {
+                        var q = item.querySelector('.faq-question');
+                        var a = item.querySelector('.faq-answer');
+                        if (a) {
+                            q.classList.remove('active');
+                            q.setAttribute('aria-expanded', 'false');
+                            a.classList.remove('show');
+                            a.style.maxHeight = '0';
+                        }
+                    });
+                    
+                    // Kalo yang diklik tadinya TUTUP, baru buka
+                    if (!isOpen) {
+                        currentBtn.classList.add('active');
+                        currentBtn.setAttribute('aria-expanded', 'true');
+                        currentAnswer.classList.add('show');
+                        currentAnswer.style.maxHeight = currentAnswer.scrollHeight + 'px';
+                    }
+                });
+            }
+        }
+        console.log('✅ FAQ registered: ' + faqItems.length + ' items');
+    } else {
+        console.log('⚠️ No .faq-item found');
+    }
+
+    // ============================================================
+    // NAVBAR SHRINK
+    // ============================================================
+    var navbar = document.querySelector('.navbar');
     if (navbar) {
-        let ticking = false;
+        var ticking = false;
         window.addEventListener('scroll', function() {
             if (!ticking) {
                 window.requestAnimationFrame(function() {
-                    const scrollY = window.scrollY || window.pageYOffset;
+                    var scrollY = window.scrollY || window.pageYOffset;
                     if (scrollY > 50) {
                         navbar.classList.add('shrink');
                     } else {
@@ -25,44 +87,46 @@
         }, { passive: true });
     }
 
-    // ===== 2. MOBILE MENU =====
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navMenu = document.querySelector('.nav-menu');
+    // ============================================================
+    // MOBILE MENU
+    // ============================================================
+    var mobileMenu = document.getElementById('mobile-menu');
+    var navMenu = document.querySelector('.nav-menu');
 
     if (mobileMenu && navMenu) {
-        const newToggle = mobileMenu.cloneNode(true);
-        mobileMenu.parentNode.replaceChild(newToggle, mobileMenu);
-        const newMenu = navMenu.cloneNode(true);
+        var newBtn = mobileMenu.cloneNode(true);
+        mobileMenu.parentNode.replaceChild(newBtn, mobileMenu);
+        var newMenu = navMenu.cloneNode(true);
         navMenu.parentNode.replaceChild(newMenu, navMenu);
 
-        const menuBtn = document.getElementById('mobile-menu');
-        const menuList = document.querySelector('.nav-menu');
+        var finalBtn = document.getElementById('mobile-menu');
+        var finalMenu = document.querySelector('.nav-menu');
 
-        if (menuBtn && menuList) {
-            menuBtn.addEventListener('click', function(e) {
+        if (finalBtn && finalMenu) {
+            finalBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
-                const isActive = menuList.classList.toggle('active');
-                menuBtn.classList.toggle('active');
-                menuBtn.setAttribute('aria-expanded', isActive);
+                var isActive = finalMenu.classList.toggle('active');
+                finalBtn.classList.toggle('active');
+                finalBtn.setAttribute('aria-expanded', isActive);
                 document.body.style.overflow = isActive ? 'hidden' : '';
             });
 
-            menuList.querySelectorAll('a').forEach(function(link) {
+            finalMenu.querySelectorAll('a').forEach(function(link) {
                 link.addEventListener('click', function() {
-                    menuList.classList.remove('active');
-                    menuBtn.classList.remove('active');
-                    menuBtn.setAttribute('aria-expanded', 'false');
+                    finalMenu.classList.remove('active');
+                    finalBtn.classList.remove('active');
+                    finalBtn.setAttribute('aria-expanded', 'false');
                     document.body.style.overflow = '';
                 });
             });
 
             document.addEventListener('click', function(e) {
-                if (menuList.classList.contains('active')) {
-                    const isInside = menuList.contains(e.target) || menuBtn.contains(e.target);
+                if (finalMenu.classList.contains('active')) {
+                    var isInside = finalMenu.contains(e.target) || finalBtn.contains(e.target);
                     if (!isInside) {
-                        menuList.classList.remove('active');
-                        menuBtn.classList.remove('active');
-                        menuBtn.setAttribute('aria-expanded', 'false');
+                        finalMenu.classList.remove('active');
+                        finalBtn.classList.remove('active');
+                        finalBtn.setAttribute('aria-expanded', 'false');
                         document.body.style.overflow = '';
                     }
                 }
@@ -70,24 +134,31 @@
         }
     }
 
-    // ===== 3. DROPDOWN MOBILE =====
+    // ============================================================
+    // DROPDOWN MOBILE
+    // ============================================================
     document.querySelectorAll('.dropdown .dropbtn').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
-                const parent = this.closest('.dropdown');
-                parent.classList.toggle('active');
-                document.querySelectorAll('.dropdown').forEach(function(d) {
-                    if (d !== parent) {
+                var parent = this.closest('.dropdown');
+                if (parent) {
+                    var isActive = parent.classList.contains('active');
+                    document.querySelectorAll('.dropdown').forEach(function(d) {
                         d.classList.remove('active');
+                    });
+                    if (!isActive) {
+                        parent.classList.add('active');
                     }
-                });
+                }
             }
         });
     });
 
-    // ===== 4. SCROLL TOP =====
-    const scrollTopBtn = document.getElementById('scrollTop');
+    // ============================================================
+    // SCROLL TOP
+    // ============================================================
+    var scrollTopBtn = document.getElementById('scrollTop');
     if (scrollTopBtn) {
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
@@ -101,47 +172,37 @@
         });
     }
 
-    // ===== 5. FAQ ACCORDION =====
-    document.querySelectorAll('.faq-question').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            requestAnimationFrame(function() {
-                const expanded = btn.getAttribute('aria-expanded') === 'true' ? false : true;
-                btn.setAttribute('aria-expanded', expanded);
-                btn.classList.toggle('active');
-                const answer = btn.nextElementSibling;
-                if (answer) {
-                    answer.classList.toggle('show');
-                }
-            });
-        });
-    });
-
-    // ===== 6. TOGGLE TECHNICAL DETAILS =====
+    // ============================================================
+    // TOGGLE TECHNICAL DETAILS
+    // ============================================================
     document.querySelectorAll('.toggle-details-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
-            const details = this.nextElementSibling;
-            const isOpen = details.style.display === 'block';
+            var details = this.nextElementSibling;
+            if (!details) return;
             
-            // Tutup semua detail lain
+            var isOpen = details.style.display === 'block';
+            
             document.querySelectorAll('.technical-details').forEach(function(d) {
                 d.style.display = 'none';
             });
             document.querySelectorAll('.toggle-details-btn').forEach(function(b) {
                 b.setAttribute('aria-expanded', 'false');
-                const icon = b.querySelector('i');
+                var icon = b.querySelector('i');
                 if (icon) icon.style.transform = 'rotate(0deg)';
             });
             
             if (!isOpen) {
                 details.style.display = 'block';
                 this.setAttribute('aria-expanded', 'true');
-                const icon = this.querySelector('i');
+                var icon = this.querySelector('i');
                 if (icon) icon.style.transform = 'rotate(180deg)';
             }
         });
     });
 
-    // ===== 7. TIMELINE LABEL INTERACTION =====
+    // ============================================================
+    // TIMELINE LABEL INTERACTION
+    // ============================================================
     document.querySelectorAll('.timeline-label').forEach(function(label) {
         label.addEventListener('click', function() {
             document.querySelectorAll('.timeline-label').forEach(function(l) {
@@ -151,25 +212,32 @@
         });
     });
 
-    console.log('Proses jasa page script berjalan!');
-})();
-
-    // ===== 8. COMPARISON ACCORDION =====
+    // ============================================================
+    // COMPARISON ACCORDION
+    // ============================================================
     document.querySelectorAll('.comparison-accordion-header').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            const parent = this.closest('.comparison-accordion');
-            const isActive = parent.classList.contains('active');
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var parent = this.closest('.comparison-accordion');
+            if (!parent) return;
             
-            // Tutup semua accordion lain
+            var isActive = parent.classList.contains('active');
+            
             document.querySelectorAll('.comparison-accordion').forEach(function(acc) {
                 acc.classList.remove('active');
-                acc.querySelector('.comparison-accordion-header').setAttribute('aria-expanded', 'false');
+                var header = acc.querySelector('.comparison-accordion-header');
+                if (header) {
+                    header.setAttribute('aria-expanded', 'false');
+                }
             });
             
-            // Buka yang diklik kalau belum aktif
             if (!isActive) {
                 parent.classList.add('active');
                 this.setAttribute('aria-expanded', 'true');
             }
         });
     });
+
+    console.log('✅ Proses page script completed!');
+
+})();
