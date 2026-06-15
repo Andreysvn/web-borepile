@@ -499,7 +499,7 @@ body {
     max-width: 400px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    aspect-ratio: 400 / 250;
+    aspect-ratio: 372 / 350;
     object-fit: cover;
 }
 
@@ -1038,7 +1038,7 @@ a:not(.btn-nav):not(.btn-wa-konsultasi):not(.whatsapp-float) {
     height: auto;
     border-radius: 12px;
     object-fit: cover;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4/3;
     display: block;
 }
 
@@ -1336,7 +1336,8 @@ a:not(.btn-nav):not(.btn-wa-konsultasi):not(.whatsapp-float) {
 
 .proyek-jakarta-item img {
     width: 100%;
-    height: 200px;
+    height: auto;                /* ← UBAH DARI 200px */
+    aspect-ratio: 372 / 350;     /* ← TAMBAHKAN INI */
     object-fit: cover;
     display: block;
 }
