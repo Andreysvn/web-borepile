@@ -212,34 +212,35 @@
         40: 135000,
         50: 190000,
         60: 0,
-        80: 0
+        80: 0,
     };
 
     const hargaManual = {
-        20: 70000,
-        25: 75000,
-        30: 80000,
-        40: 100000
+        20: 75000,
+        25: 85000,
+        30: 100000,
+        40: 120000,
     };
 
     const hargaSany = {
-        40: 400000,
-        50: 400000,
-        60: 400000,
-        80: 400000,
-        90: 400000,
-        100: 400000,
-        110: 400000
+        30: 0,
+        40: 0,
+        50: 0,
+        60: 0,
+        80: 0,
+        90: 0,
+        100: 0,
+        110: 0,
     };
 
     // ===== DIAMETER OPTIONS =====
     const diameterMesin = [30, 40, 50, 60, 80];
     const diameterManual = [20, 25, 30, 40];
-    const diameterSany = [40, 50, 60, 80, 90, 100, 110];
+    const diameterSany = [30, 40, 50, 60, 80, 90, 100, 110];
 
     // ===== STATE =====
-    let currentMethod = 'mesin';      // 'mesin' | 'manual'
-    let currentMachine = 'minicrane'; // 'minicrane' | 'gawangan' | 'sany'
+    let currentMethod = 'mesin';
+    let currentMachine = 'minicrane';
 
     // ===== FUNCTIONS =====
     function formatRupiah(angka) {
@@ -247,11 +248,57 @@
         return 'Rp ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     }
 
+    // ============================================================
+    // ===== UPDATE MACHINE OPTIONS (TAMBAH STRAUSS) =====
+    // ============================================================
+    function updateMachineOptions() {
+        if (!machineSelect) return;
+
+        const currentValue = currentMachine;
+        
+        machineSelect.innerHTML = '';
+
+        let options = [];
+        let labelText = '';
+
+        if (currentMethod === 'manual') {
+            options = [
+                { value: 'strauss', label: 'Strauss Pile (Manual)' }
+            ];
+            labelText = 'Pilih Jenis Alat';
+        } else {
+            options = [
+                { value: 'minicrane', label: 'Mini Crane' },
+                { value: 'gawangan', label: 'Gawangan' },
+                { value: 'sany', label: 'Hidrolik (SANY)' }
+            ];
+            labelText = 'Pilih Jenis Mesin';
+        }
+
+        const label = document.querySelector('#machineSelectRow label');
+        if (label) label.textContent = labelText;
+
+        options.forEach(function(opt) {
+            const option = document.createElement('option');
+            option.value = opt.value;
+            option.textContent = opt.label;
+            machineSelect.appendChild(option);
+        });
+
+        const isAvailable = options.some(function(opt) { return opt.value === currentValue; });
+        if (isAvailable) {
+            machineSelect.value = currentValue;
+        } else if (options.length > 0) {
+            machineSelect.value = options[0].value;
+            currentMachine = options[0].value;
+        }
+    }
+
     function updateDiameterOptions() {
         if (!diameterSelect) return;
 
         let options = [];
-        if (currentMethod === 'manual') {
+        if (currentMethod === 'manual' || currentMachine === 'strauss') {
             options = diameterManual;
         } else if (currentMachine === 'sany') {
             options = diameterSany;
@@ -260,28 +307,33 @@
         }
 
         const currentValue = parseInt(diameterSelect.value);
+        const currentAvailable = options.includes(currentValue);
+        
         diameterSelect.innerHTML = '';
 
         options.forEach(function(d) {
             const option = document.createElement('option');
             option.value = d;
             option.textContent = d + ' cm';
-            if (d === currentValue && options.includes(currentValue)) {
+            if (d === currentValue && currentAvailable) {
                 option.selected = true;
             }
             diameterSelect.appendChild(option);
         });
 
-        if (!options.includes(currentValue) && options.length > 0) {
+        if (!currentAvailable && options.length > 0) {
             diameterSelect.value = options[0];
         }
 
-        // ✅ FIX 1: Panggil hitungTotal() agar total otomatis update
+        if (priceInput) {
+            priceInput.value = '';
+        }
+
         hitungTotal();
     }
 
     function getHargaPerMeter(diameter) {
-        if (currentMethod === 'manual') {
+        if (currentMethod === 'manual' || currentMachine === 'strauss') {
             return hargaManual[diameter] || 0;
         } else if (currentMachine === 'sany') {
             return hargaSany[diameter] || 0;
@@ -291,14 +343,29 @@
     }
 
     function getMinimalOrder() {
-        if (currentMethod === 'manual') return 100;
-        if (currentMachine === 'sany') return 1200; // Tetap 1200m
-        return 200; // mini crane & gawangan
+        if (currentMethod === 'manual' || currentMachine === 'strauss') return 100;
+        if (currentMachine === 'sany') return 1200;
+        return 200;
     }
 
+    // ============================================================
+    // ===== KECEPATAN PER TITIK =====
+    // ============================================================
     function getKecepatanPerHari() {
-        if (currentMethod === 'manual') return { min: 2, max: 3 };
-        return { min: 2, max: 4 }; // mesin semua
+        if (currentMethod === 'manual' || currentMachine === 'strauss') {
+            return { min: 2, max: 3 };
+        }
+        if (currentMachine === 'sany') {
+            return { min: 0, max: 0 };
+        }
+        return { min: 3, max: 4 };
+    }
+
+    function getNamaAlat() {
+        if (currentMethod === 'manual' || currentMachine === 'strauss') return 'Strauss Pile (Manual)';
+        if (currentMachine === 'sany') return 'SANY Hidrolik';
+        if (currentMachine === 'gawangan') return 'Gawangan';
+        return 'Mini Crane';
     }
 
     function hitungTotal() {
@@ -309,36 +376,20 @@
         const diameter = parseInt(diameterSelect.value) || 0;
         const kedalaman = parseFloat(depthInput.value) || 0;
         const jumlahTitik = parseInt(pointsInput.value) || 0;
-        const hargaManualInput = priceInput ? priceInput.value.replace(/[^0-9]/g, '') : '';
+        const priceRaw = priceInput ? priceInput.value.replace(/[^0-9]/g, '') : '';
         
         let hargaPerMeter = 0;
 
-        if (hargaManualInput) {
-            hargaPerMeter = parseInt(hargaManualInput);
+        if (priceRaw) {
+            hargaPerMeter = parseInt(priceRaw);
         } else {
             hargaPerMeter = getHargaPerMeter(diameter);
         }
 
-        // TAMPILKAN NAMA ALAT DI ORDER INFO
-        let alatName = '';
-        if (currentMethod === 'manual') {
-            alatName = 'Strauss Pile (Manual)';
-        } else if (currentMachine === 'sany') {
-            alatName = 'SANY Hidrolik';
-        } else if (currentMachine === 'gawangan') {
-            alatName = 'Gawangan';
-        } else {
-            alatName = 'Mini Crane';
-        }
+        const alatName = getNamaAlat();
 
-        // ✅ FIX 2: Handling harga 0 → tampilkan "Hubungi Kami"
-        if (hargaPerMeter === 0) {
-            if (totalPrice) totalPrice.textContent = 'Hubungi Kami';
-            if (detailPrice) detailPrice.textContent = '💬 Konsultasi untuk harga diameter ' + diameter + ' cm';
-            if (estimationTime) estimationTime.textContent = 'Estimasi waktu: konsultasi';
-            if (orderInfo) orderInfo.textContent = 'Minimal order: ' + getMinimalOrder() + 'm (' + alatName + ')';
-            return;
-        }
+        // ===== HANDLING HARGA 0 (TAPI JANGAN RETURN!) =====
+        const isHargaZero = (hargaPerMeter === 0);
 
         if (kedalaman === 0 || jumlahTitik === 0) {
             if (totalPrice) totalPrice.textContent = 'Rp 0';
@@ -348,65 +399,96 @@
             return;
         }
 
-        const total = hargaPerMeter * kedalaman * jumlahTitik;
-        if (totalPrice) totalPrice.textContent = formatRupiah(total);
-
-        if (detailPrice) {
-            detailPrice.textContent = hargaPerMeter.toLocaleString('id-ID') + '/m × ' + kedalaman + 'm × ' + jumlahTitik + ' titik';
+        // ===== BATASI KEDALAMAN =====
+        let depthForCalc = kedalaman;
+        let warningMsg = '';
+        
+        if ((currentMethod === 'manual' || currentMachine === 'strauss') && depthForCalc > 10) {
+            depthForCalc = 10;
+            warningMsg = ' (dibatasi 10m maksimal)';
+        } else if (currentMethod === 'mesin' && currentMachine !== 'sany' && depthForCalc > 30) {
+            depthForCalc = 30;
+            warningMsg = ' (dibatasi 30m maksimal)';
+        } else if (currentMachine === 'sany' && depthForCalc > 27) {
+            depthForCalc = 27;
+            warningMsg = ' (dibatasi 27m maksimal)';
         }
 
-        // ESTIMASI WAKTU
-        const totalMeter = kedalaman * jumlahTitik;
+        const totalMeter = depthForCalc * jumlahTitik;
+        const total = hargaPerMeter * totalMeter;
+
+        // ===== TAMPILKAN TOTAL =====
+        if (isHargaZero) {
+            if (totalPrice) totalPrice.textContent = 'Hubungi Kami';
+            if (detailPrice) detailPrice.textContent = 'Konsultasi untuk harga diameter ' + diameter + ' cm';
+        } else {
+            if (totalPrice) totalPrice.textContent = formatRupiah(total);
+            if (detailPrice) {
+                detailPrice.textContent = formatRupiah(hargaPerMeter) + '/m × ' + depthForCalc + 'm × ' + jumlahTitik + ' titik' + warningMsg;
+            }
+        }
+
+        // ===== ESTIMASI WAKTU =====
         const kecepatan = getKecepatanPerHari();
-        const estimasiMin = Math.ceil(totalMeter / kecepatan.max);
-        const estimasiMax = Math.ceil(totalMeter / kecepatan.min);
+
+        let estimasiMin, estimasiMax;
+
+        if (jumlahTitik === 0) {
+            estimasiMin = 0;
+            estimasiMax = 0;
+        } else if (currentMachine === 'sany' || isHargaZero) {
+            estimasiMin = 0;
+            estimasiMax = 0;
+        } else {
+            estimasiMin = Math.ceil(jumlahTitik / kecepatan.max);
+            estimasiMax = Math.ceil(jumlahTitik / kecepatan.min);
+        }
 
         if (estimationTime) {
-            if (estimasiMin < 1) {
+            if (jumlahTitik === 0) {
+                estimationTime.textContent = 'Estimasi waktu: -';
+            } else if (currentMachine === 'sany' || isHargaZero) {
+                estimationTime.textContent = 'Estimasi waktu: konsultasi';
+            } else if (estimasiMin < 1 && estimasiMax < 1) {
                 estimationTime.textContent = 'Estimasi waktu: 1 hari kerja';
+            } else if (estimasiMin === estimasiMax) {
+                estimationTime.textContent = 'Estimasi waktu: ' + estimasiMin + ' hari kerja';
             } else {
                 estimationTime.textContent = 'Estimasi waktu: ' + estimasiMin + ' - ' + estimasiMax + ' hari kerja';
             }
         }
 
-        // ORDER INFO
+        // ===== MINIMAL ORDER =====
         const minimalOrder = getMinimalOrder();
         if (orderInfo) {
-            if (totalMeter < minimalOrder) {
+            if (isHargaZero) {
+                orderInfo.textContent = 'Minimal order: ' + minimalOrder + 'm (' + alatName + ')';
+                orderInfo.className = 'order-info alert';
+            } else if (totalMeter < minimalOrder) {
                 orderInfo.textContent = '⚠️ Order di bawah ' + minimalOrder + 'm (' + alatName + '), hubungi admin untuk penawaran khusus atau borongan';
+                orderInfo.className = 'order-info alert';
             } else {
                 orderInfo.textContent = '✅ Volume order: ' + totalMeter + 'm (' + alatName + ' - cukup)';
+                orderInfo.className = 'order-info success';
             }
         }
     }
 
-    // ===== UPDATE UI SAAT METHOD/MACHINE BERUBAH =====
+    // ===== UPDATE UI =====
     function updateUI() {
-        // TAMPIL/SEMBUNYIKAN ROW MESIN
-        const row = document.getElementById('machineSelectRow');
-        if (row) {
-            if (currentMethod === 'mesin') {
-                row.style.display = 'grid';
-            } else {
-                row.style.display = 'none';
-            }
-        }
-
-        // UPDATE DIAMETER OPTIONS
+        updateMachineOptions();
         updateDiameterOptions();
 
-        // RESET PRICE INPUT
         if (priceInput) {
             priceInput.value = '';
         }
 
-        // HITUNG ULANG
         hitungTotal();
     }
 
     // ===== EVENT LISTENER =====
 
-    // METHOD BTN (Mesin / Manual)
+    // METHOD BTN
     methodBtns.forEach(function(btn) {
         btn.addEventListener('click', function() {
             methodBtns.forEach(function(b) {
@@ -417,20 +499,46 @@
             this.setAttribute('aria-pressed', 'true');
             currentMethod = this.dataset.method;
 
-            // RESET MACHINE KE MINICRANE KALAU PILIH MESIN
-            if (currentMethod === 'mesin' && machineSelect) {
+            if (currentMethod === 'manual') {
+                currentMachine = 'strauss';
+                if (machineSelect) machineSelect.value = 'strauss';
+            } else {
                 currentMachine = 'minicrane';
-                machineSelect.value = 'minicrane';
+                if (machineSelect) machineSelect.value = 'minicrane';
             }
 
             updateUI();
         });
     });
 
-    // MACHINE SELECT (Mini Crane, Gawangan, SANY)
+    // MACHINE SELECT
     if (machineSelect) {
         machineSelect.addEventListener('change', function() {
-            currentMachine = this.value;
+            const val = this.value;
+            currentMachine = val;
+            
+            if (val === 'strauss') {
+                currentMethod = 'manual';
+                methodBtns.forEach(function(b) {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                    if (b.dataset.method === 'manual') {
+                        b.classList.add('active');
+                        b.setAttribute('aria-pressed', 'true');
+                    }
+                });
+            } else {
+                currentMethod = 'mesin';
+                methodBtns.forEach(function(b) {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                    if (b.dataset.method === 'mesin') {
+                        b.classList.add('active');
+                        b.setAttribute('aria-pressed', 'true');
+                    }
+                });
+            }
+            
             updateUI();
         });
     }
@@ -440,7 +548,7 @@
         diameterSelect.addEventListener('change', hitungTotal);
     }
 
-    // ✅ FIX 3: PRICE INPUT - lebih rapi
+    // PRICE INPUT
     if (priceInput) {
         priceInput.addEventListener('input', function() {
             const val = this.value.replace(/[^0-9]/g, '');
@@ -465,42 +573,48 @@
 
     // ===== 8. SEND TO WA =====
     window.sendToWA = function() {
-        const total = document.getElementById('totalPrice');
-        const detail = document.getElementById('detailPrice');
-        const estimasi = document.getElementById('estimationTime');
-
-        let alatName = '';
-        if (currentMethod === 'manual') {
-            alatName = 'Strauss Pile (Manual)';
-        } else if (currentMachine === 'sany') {
-            alatName = 'SANY Hidrolik';
-        } else if (currentMachine === 'gawangan') {
-            alatName = 'Gawangan';
-        } else {
-            alatName = 'Mini Crane';
-        }
-
-        const totalText = total ? total.textContent : 'Rp 0';
-        const detailText = detail ? detail.textContent : '-';
-        const estimasiText = estimasi ? estimasi.textContent : '-';
+        const alatName = getNamaAlat();
+        const diameter = diameterSelect ? diameterSelect.value : '-';
+        const depth = depthInput ? depthInput.value || '(belum diisi)' : '(belum diisi)';
+        const points = pointsInput ? pointsInput.value : '-';
+        const total = totalPrice ? totalPrice.textContent : '-';
+        const estimasi = estimationTime ? estimationTime.textContent : '-';
+        const order = orderInfo ? orderInfo.textContent : '';
 
         const pesan = 'Halo Agung Perkasa,%0A%0A' +
-            'Saya mau konsultasi untuk proyek bore pile.%0A%0A' +
-            'Alat: ' + alatName + '%0A' +
-            'Detail: ' + detailText + '%0A' +
-            'Estimasi biaya: ' + totalText + '%0A' +
-            'Estimasi waktu: ' + estimasiText + '%0A%0A' +
-            'Mohon info lebih lanjut. Terima kasih.';
+            'Saya mau tanya soal bore pile.%0A%0A' +
+            'Spesifikasi:%0A' +
+            '- Alat: ' + alatName + '%0A' +
+            '- Diameter: ' + diameter + ' cm%0A' +
+            '- Kedalaman: ' + depth + ' m%0A' +
+            '- Jumlah titik: ' + points + ' titik%0A%0A' +
+            'Estimasi total: ' + total + '%0A' +
+            'Estimasi waktu: ' + estimasi + '%0A' +
+            (order ? order + '%0A' : '') +
+            '%0A' +
+            'Mohon info penawaran harga dari Agung Perkasa.%0A' +
+            'Terima kasih.';
 
-        const url = 'https://wa.me/6285710277854?text=' + pesan;
-        window.open(url, '_blank');
+        window.open('https://wa.me/6285710277854?text=' + pesan, '_blank');
     };
 
     // ===== 9. INIT =====
-    // Set default machine
+    currentMethod = 'mesin';
+    currentMachine = 'minicrane';
+    
     if (machineSelect) {
-        currentMachine = machineSelect.value || 'minicrane';
+        machineSelect.value = 'minicrane';
     }
+    
+    methodBtns.forEach(function(b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+        if (b.dataset.method === 'mesin') {
+            b.classList.add('active');
+            b.setAttribute('aria-pressed', 'true');
+        }
+    });
+
     updateUI();
 
 })();

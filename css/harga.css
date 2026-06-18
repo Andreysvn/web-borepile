@@ -1434,7 +1434,8 @@ section p {
 
 .proyek-jakarta-item img {
     width: 100%;
-    height: 200px;
+    height: auto;                /* ← UBAH DARI 200px */
+    aspect-ratio: 372 / 350;     /* ← TAMBAHKAN INI */
     object-fit: cover;
     display: block;
 }
@@ -2372,3 +2373,65 @@ li,
     color: #ffffff !important;
 }
 
+/* ============================================================
+   TABEL HARGA - CLASS PENGGANTI INLINE STYLE
+   ============================================================ */
+
+/* Pengganti style="background:#fff3e0;" */
+.price-table tbody tr.row-highlight {
+    background: #fff3e0 !important;
+}
+
+/* Pengganti style="background:#f9f9f9;" */
+.price-table tbody tr.row-alt {
+    background: #f9f9f9 !important;
+}
+
+/* ============================================================
+   KOMITMEN & GARANSI - INLINE STYLE DIPINDAH KE SINI
+   ============================================================ */
+
+.commitment-box {
+    background: #e8f5e9;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.commitment-box .icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.commitment-box p {
+    margin: 0.5rem 0 0;
+    color: #1a3a6e;
+}
+
+/* ============================================================
+   AREA LAYANAN - INLINE STYLE DIPINDAH KE SINI
+   ============================================================ */
+
+.area-layanan-wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.area-layanan-wrapper h2 {
+    color: var(--primary-color);
+    margin: 25px 0 10px;
+}
+
+/* ============================================================
+   PERBANDINGAN DIAMETER - TABLE ROW HIGHLIGHT
+   ============================================================ */
+
+.price-table tbody tr.row-highlight {
+    background: #fff3e0 !important;
+}
+
+.price-table tbody tr.row-alt {
+    background: #f9f9f9 !important;
+}
