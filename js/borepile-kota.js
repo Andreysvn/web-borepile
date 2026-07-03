@@ -235,7 +235,7 @@
 
     // ===== DIAMETER OPTIONS =====
     const diameterMesin = [30, 40, 50, 60, 80];
-    const diameterManual = [20, 25, 30, 40];
+    const diamerManual = [20, 25, 30, 40];
     const diameterSany = [30, 40, 50, 60, 80, 90, 100, 110];
 
     // ===== STATE =====

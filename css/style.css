@@ -1,3 +1,104 @@
+/* ==============================================================
+   CSS INLINE YANG DIPISAHIN DARI HTML
+   ============================================================== */
+
+/* MAP SECTION - dari inline style map-container */
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    border: 0;
+    display: block;
+}
+
+.map-button {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.map-button a {
+    display: inline-block;
+    background: #1a3a6e;
+    color: white;
+    padding: 10px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.map-button a:hover {
+    background: #0d2b52;
+}
+
+/* ARTICLE LINKS BOX - dari inline style article-links-box */
+.article-links-box {
+    margin-top: 30px;
+    padding: 15px;
+    background: #e9ecef;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.article-links-box p {
+    margin: 0;
+    color: #1a3a6e;
+}
+
+.article-links-box strong {
+    color: #0d2b52;
+}
+
+.article-links-box a {
+    color: #1a3a6e;
+    text-decoration: underline;
+}
+
+.article-links-box a:hover {
+    color: #0d2b52;
+}
+
+/* ABOUT EXPERT BOX - dari inline style about-expert-box */
+.about-expert-box {
+    background: #f0f7ff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-expert-box i {
+    font-size: 3rem;
+    color: #1a3a6e;
+}
+
+.about-expert-box h3 {
+    margin: 0;
+    color: #1a3a6e;
+    font-size: 1.2rem;
+}
+
+.about-expert-box p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+/* SINGLE PROCESS - dari inline style single-process */
+.single-process {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* ==============================================================
+   LANJUTAN CSS LAMA LO DI BAWAH SINI
+   ============================================================== */
+
 /* ===== GLOBAL STYLES ===== */
 :root {
   --primary-color: #1a3a6e;
@@ -534,54 +635,54 @@ ul {
   transition: color 0.35s ease;
 }
 
-    /* DROPDOWN MOBILE */
-    .dropdown {
-        width: 100%;
-        position: relative;
-    }
-    
-    .dropdown .dropbtn {
-        width: 100%;
-        justify-content: center;
-        padding: 10px 0;
-        font-size: 1rem;
-        color: white !important;
-    }
-    
-    .dropdown-content {
-        position: static !important;
-        background: rgba(0, 0, 0, 0.2) !important;
-        box-shadow: none !important;
-        border-radius: 8px !important;
-        padding: 4px 0 4px 16px !important;
-        display: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-        pointer-events: auto !important;
-        width: 100% !important;
-        min-width: unset !important;
-    }
-    
-    .dropdown-content li a {
-        color: rgba(255, 255, 255, 0.85) !important;
-        padding: 10px 16px !important;
-        font-size: 0.9rem !important;
-        text-align: center !important;
-    }
-    
-    .dropdown-content li a:hover {
-        background-color: rgba(255, 255, 255, 0.1) !important;
-        padding-left: 16px !important;
-    }
-    
-    /* Aktif saat di-klik (bukan hover) */
-    .dropdown.active .dropdown-content {
-        display: block !important;
-    }
-    
-    .dropdown.active .dropbtn i {
-        transform: rotate(180deg);
-    }
+/* DROPDOWN MOBILE */
+.dropdown {
+    width: 100%;
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: white !important;
+}
+
+.dropdown-content {
+    position: static !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    padding: 4px 0 4px 16px !important;
+    display: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    width: 100% !important;
+    min-width: unset !important;
+}
+
+.dropdown-content li a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 10px 16px !important;
+    font-size: 0.9rem !important;
+    text-align: center !important;
+}
+
+.dropdown-content li a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    padding-left: 16px !important;
+}
+
+/* Aktif saat di-klik (bukan hover) */
+.dropdown.active .dropdown-content {
+    display: block !important;
+}
+
+.dropdown.active .dropbtn i {
+    transform: rotate(180deg);
+}
 
 .navbar.scrolled .nav-menu a,
 .home .navbar.solid .nav-menu a {
@@ -722,8 +823,20 @@ ul {
   padding-top: 60px;
   background-image: url('../imgs/header-beranda-bore-pile.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: center 25%;
   background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
+    z-index: 0;
 }
 
 .home .navbar,
@@ -755,47 +868,11 @@ ul {
   color: white;
 }
 
-.header {
-  background-position: center top;
-}
-
 .header-content {
-  padding-top: 120px;
-}
-
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.video-background video,
-.hero-video {
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.video-fallback {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.header-content {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
   padding: 120px 30px 40px;
-  z-index: 1;
 }
 
 .header-content h1 {
@@ -820,6 +897,28 @@ ul {
   justify-content: center;
   gap: 25px;
   margin-top: 30px;
+}
+
+/* Desktop header background position fix */
+@media screen and (min-width: 1200px) {
+    .header {
+        background-position: center 20% !important;
+        background-size: cover !important;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .header {
+        background-position: center 15% !important;
+        min-height: 700px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .header {
+        background-position: center 10% !important;
+        min-height: 800px;
+    }
 }
 
 /* ===== ENHANCED SERVICES SECTION ===== */
@@ -2809,74 +2908,6 @@ ul {
 .single-process {
     max-width: 800px;
     margin: 0 auto 40px;
-}
-
-/* ======================================== */
-/* FIX FOTO HEADER UNTUK DESKTOP - AGUNG PERKASA */
-/* ======================================== */
-
-/* Header utama - optimasi untuk desktop */
-.header {
-    background-position: center 25% !important;
-    background-attachment: scroll !important;
-}
-
-/* Untuk layar desktop lebar (1200px - 1600px) */
-@media screen and (min-width: 1200px) {
-    .header {
-        background-position: center 20% !important;
-        background-size: cover !important;
-    }
-}
-
-/* Untuk layar sangat lebar (1600px ke atas) */
-@media screen and (min-width: 1600px) {
-    .header {
-        background-position: center 15% !important;
-        min-height: 700px;
-    }
-}
-
-/* Untuk layar 4K (2560px ke atas) */
-@media screen and (min-width: 2560px) {
-    .header {
-        background-position: center 10% !important;
-        min-height: 800px;
-    }
-}
-
-/* Jika mau pake img tag instead of background-image (opsional) */
-.header-bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 25%;
-    z-index: 0;
-}
-
-/* Overlay gelap biar teks tetep kebaca */
-.header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
-    z-index: 0;
-}
-
-.header-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* Pastikan navbar di home transparan */
-.home .header {
-    margin-top: 0;
 }
 
 /* ==============================================================
